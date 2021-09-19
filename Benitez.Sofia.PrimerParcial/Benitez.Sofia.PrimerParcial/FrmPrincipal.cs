@@ -17,6 +17,14 @@ namespace Benitez.Sofia.PrimerParcial
             InitializeComponent();
         }
 
-       
+        // BOTONES COMPUTADORAS
+
+        private void btnCompu10_Click(object sender, EventArgs e)
+        {
+           
+           
+        }
+
+        
     }
 }
