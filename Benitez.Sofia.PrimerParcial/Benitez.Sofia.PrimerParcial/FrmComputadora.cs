@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Benitez.Sofia.PrimerParcial
 {
-    public partial class FrmPrincipal : Form
+    public partial class FrmComputadora : Form
     {
-        public FrmPrincipal()
+        public FrmComputadora()
         {
             InitializeComponent();
         }
-
-       
     }
 }
