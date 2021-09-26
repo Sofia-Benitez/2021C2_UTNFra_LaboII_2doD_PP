@@ -1,0 +1,1 @@
+﻿public enum TipoLlamada { Local, LargaDistancia, Internacional };

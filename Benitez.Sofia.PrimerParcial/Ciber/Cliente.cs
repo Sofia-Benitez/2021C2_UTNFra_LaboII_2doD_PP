@@ -13,14 +13,12 @@ namespace Ciber
         private string apellido;
         private int edad;
         private Necesidad necesidad;
-        private string numero;
+        private  string requisito;
         public enum Necesidad
         {
             Cabina,Computadora
         }
         
-
-        //constructor para compu
         public Cliente(string dni, string nombre, string apellido, int edad, Necesidad necesidad)
         {
             this.dni = dni;
@@ -29,13 +27,14 @@ namespace Ciber
             this.edad = edad;
             this.necesidad = necesidad;
         }
-        //constructor para cabina
 
-        public Cliente(string dni, string nombre, string apellido, int edad, Necesidad necesidad, string numero)
-            :this(dni, nombre, apellido, edad, necesidad)
+        //constructor para compu
+        public Cliente(string dni, string nombre, string apellido, int edad, Necesidad necesidad, string requisito):this(dni, nombre,apellido, edad, necesidad)
         {
-            this.numero = numero;
+            this.requisito = requisito;
         }
+
+        
 
         //calcular costo
 
