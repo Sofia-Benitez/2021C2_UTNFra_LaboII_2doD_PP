@@ -4,12 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ciber
+namespace CiberCafe
 {
-    public class Ciber
+    public sealed class Ciber
     {
-        Queue<Cliente> listaClientes;
+        private Queue<Cliente> listaClientes;
+        private List<UsoServicio> listaDeUsos;
+        private List<Servicios> listaServicios;
+        private string nombreUsuario;
+        private DateTime fechaActual;
 
+        public Ciber(string usuario, DateTime fecha)
+        {
+            Queue<Cliente> listaClientes = new Queue<Cliente>();
+            this.nombreUsuario = usuario;
+            this.fechaActual = fecha;
+        }
+
+        public string Usuario
+        {
+            get
+            {
+                return this.nombreUsuario;
+            }
+        }
 
         public static TipoLlamada ObtenerTipoLlamada(string codigoPais, string prefijo)
         {
@@ -28,13 +46,16 @@ namespace Ciber
             return tipo;
         }
 
-        public static double CalcularCosto(Llamada llamada)
+        public static double CalcularCosto(UsoServicio servicio)
         {
-            if(llamada.TiempoFinalizacion  != DateTime.MinValue)
+            
+            if(servicio.TiempoFinalizacion  != DateTime.MinValue)
             {
-                return ((llamada.TiempoInicio - llamada.TiempoFinalizacion).TotalSeconds) * llamada.Costo;
+                return ((servicio.TiempoInicio - servicio.TiempoFinalizacion).TotalSeconds) * servicio.Costo;
             }
             return 0;
         }
+
+       
     }
 }

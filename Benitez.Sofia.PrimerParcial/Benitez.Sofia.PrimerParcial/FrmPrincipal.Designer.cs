@@ -32,7 +32,6 @@ namespace Benitez.Sofia.PrimerParcial
             this.gbUsuario = new System.Windows.Forms.GroupBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lstvClientes = new System.Windows.Forms.ListView();
             this.lblClientes = new System.Windows.Forms.Label();
             this.gbEquipos = new System.Windows.Forms.GroupBox();
             this.btnCabina5 = new System.Windows.Forms.Button();
@@ -68,6 +67,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnAsignarCompu = new System.Windows.Forms.Button();
             this.btnAsignarCabina = new System.Windows.Forms.Button();
             this.btnEstadistica = new System.Windows.Forms.Button();
+            this.lstbClientes = new System.Windows.Forms.ListBox();
             this.gbUsuario.SuspendLayout();
             this.gbEquipos.SuspendLayout();
             this.SuspendLayout();
@@ -99,19 +99,9 @@ namespace Benitez.Sofia.PrimerParcial
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNombre.Location = new System.Drawing.Point(164, 14);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(68, 21);
+            this.lblNombre.Size = new System.Drawing.Size(99, 21);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Sofía Benítez";
-            
-            // 
-            // lstvClientes
-            // 
-            this.lstvClientes.HideSelection = false;
-            this.lstvClientes.Location = new System.Drawing.Point(12, 81);
-            this.lstvClientes.Name = "lstvClientes";
-            this.lstvClientes.Size = new System.Drawing.Size(240, 295);
-            this.lstvClientes.TabIndex = 1;
-            this.lstvClientes.UseCompatibleStateImageBehavior = false;
             // 
             // lblClientes
             // 
@@ -165,30 +155,33 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCabina5
             // 
+            this.btnCabina5.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCabina5.Location = new System.Drawing.Point(461, 148);
             this.btnCabina5.Name = "btnCabina5";
             this.btnCabina5.Size = new System.Drawing.Size(66, 24);
             this.btnCabina5.TabIndex = 29;
-            this.btnCabina5.Text = "button13";
-            this.btnCabina5.UseVisualStyleBackColor = true;
+            this.btnCabina5.Text = "Libre";
+            this.btnCabina5.UseVisualStyleBackColor = false;
             // 
             // btnCabina4
             // 
+            this.btnCabina4.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCabina4.Location = new System.Drawing.Point(461, 118);
             this.btnCabina4.Name = "btnCabina4";
             this.btnCabina4.Size = new System.Drawing.Size(66, 24);
             this.btnCabina4.TabIndex = 28;
-            this.btnCabina4.Text = "button14";
-            this.btnCabina4.UseVisualStyleBackColor = true;
+            this.btnCabina4.Text = "Libre";
+            this.btnCabina4.UseVisualStyleBackColor = false;
             // 
             // btnCabina3
             // 
+            this.btnCabina3.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCabina3.Location = new System.Drawing.Point(461, 88);
             this.btnCabina3.Name = "btnCabina3";
             this.btnCabina3.Size = new System.Drawing.Size(66, 24);
             this.btnCabina3.TabIndex = 27;
-            this.btnCabina3.Text = "button15";
-            this.btnCabina3.UseVisualStyleBackColor = true;
+            this.btnCabina3.Text = "Libre";
+            this.btnCabina3.UseVisualStyleBackColor = false;
             // 
             // btnCabina2
             // 
@@ -197,7 +190,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCabina2.Name = "btnCabina2";
             this.btnCabina2.Size = new System.Drawing.Size(66, 24);
             this.btnCabina2.TabIndex = 26;
-            this.btnCabina2.Text = "button16";
+            this.btnCabina2.Text = "Libre";
             this.btnCabina2.UseVisualStyleBackColor = false;
             // 
             // btnCabina1
@@ -456,6 +449,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnAsignarCompu.TabIndex = 4;
             this.btnAsignarCompu.Text = "Asignar computadora";
             this.btnAsignarCompu.UseVisualStyleBackColor = true;
+            this.btnAsignarCompu.Click += new System.EventHandler(this.btnAsignarCompu_Click);
             // 
             // btnAsignarCabina
             // 
@@ -475,20 +469,30 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnEstadistica.Text = "Consultar estadísticas";
             this.btnEstadistica.UseVisualStyleBackColor = true;
             // 
+            // lstbClientes
+            // 
+            this.lstbClientes.FormattingEnabled = true;
+            this.lstbClientes.ItemHeight = 15;
+            this.lstbClientes.Location = new System.Drawing.Point(18, 87);
+            this.lstbClientes.Name = "lstbClientes";
+            this.lstbClientes.Size = new System.Drawing.Size(223, 259);
+            this.lstbClientes.TabIndex = 7;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 386);
+            this.Controls.Add(this.lstbClientes);
             this.Controls.Add(this.btnEstadistica);
             this.Controls.Add(this.btnAsignarCabina);
             this.Controls.Add(this.btnAsignarCompu);
             this.Controls.Add(this.gbEquipos);
             this.Controls.Add(this.lblClientes);
-            this.Controls.Add(this.lstvClientes);
             this.Controls.Add(this.gbUsuario);
             this.Name = "FrmPrincipal";
             this.Text = "FrmPrincipal";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.gbUsuario.ResumeLayout(false);
             this.gbUsuario.PerformLayout();
             this.gbEquipos.ResumeLayout(false);
@@ -503,7 +507,6 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.GroupBox gbUsuario;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.ListView lstvClientes;
         private System.Windows.Forms.Label lblClientes;
         private System.Windows.Forms.GroupBox gbEquipos;
         private System.Windows.Forms.Button btnCompu5;
@@ -539,5 +542,6 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.Button btnCabina3;
         private System.Windows.Forms.Button btnCabina2;
         private System.Windows.Forms.Button btnCabina1;
+        private System.Windows.Forms.ListBox lstbClientes;
     }
 }

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ciber
+namespace CiberCafe
 {
     public abstract class UsoServicio
     {
-        protected DateTime tiempoInicio;//ver si es datetime
+        protected DateTime tiempoInicio;
         protected DateTime tiempoFinalizacion;
         protected double costo;
         
@@ -30,5 +30,16 @@ namespace Ciber
         }
 
         //mostrar
+
+        protected virtual string Mostrar()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Inicio del servicio: {this.TiempoInicio}");
+            sb.AppendLine($"Finalizacion del servicio: {this.TiempoFinalizacion}");
+            sb.AppendLine($"Costo por minuto: ${this.Costo}");
+
+            return sb.ToString();
+        }
     }
 }

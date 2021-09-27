@@ -2,31 +2,27 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ciber
+namespace CiberCafe
 {
     public class Computadora : Servicios
     {
-        private List<string> software;
-        private List<string> juegos;
-        private List<string> hardware;
-        private List<string> perifericos;
+        private Dictionary<string, string> caracteristicas;
+        
         
         /// <summary>
-        /// constructor de una computadora con costo fijo de 0.5 
+        /// constructor de una computadora
         /// </summary>
         /// <param name="id">id</param>
         /// <param name="estado">estado de la computadora (en uso o libre)</param>
-        public Computadora(int id, bool estado):base(id, estado)
+        public Computadora(string id, bool estado):base(id, estado)
         {
 
-            this.software = new List<string>();
-            this.juegos = new List<string>();
-            this.hardware = new List<string>();
-            this.perifericos = new List<string>();
+            this.caracteristicas = new Dictionary<string, string>();
              
         }
 
-        public override int Id
+        
+        public override string Id
         {
             get
             {
@@ -47,68 +43,40 @@ namespace Ciber
             }
         }
 
-
-
-        public void AgregarSoftware(string programa)
+        public Dictionary<string, string> Caracteristicas
         {
-            ///ver que no este repetido
-            this.software.Add(programa);
+            get
+            {
+                return this.caracteristicas;
+            }
+
         }
 
-        public void AgregarJuego(string juego)
+        public void AgregarCaracteristica(string key, string value)
         {
-            ///ver que no este repetido
-            this.juegos.Add(juego);
-        }
-
-        public void AgregarHardware(string especificacion)
-        {
-            ///ver que no este repetido
-            this.hardware.Add(especificacion);
-        }
-
-        public void AgregarPeriferico(string periferico)
-        {
-            ///ver que no este repetido
-            this.perifericos.Add(periferico);
+            this.caracteristicas.Add(key, value);
         }
 
 
 
 
         //mostrar
-        public override string ToString()
+        protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(base.ToString());
-            sb.AppendLine("************ Software **************");
-            foreach (string item in this.software)
+            sb.Append(base.Mostrar());
+            foreach(KeyValuePair <string, string> item in this.Caracteristicas)
             {
-                sb.AppendLine(item);
+                sb.Append($"{item.Value}, ");
             }
-            sb.AppendLine("*************************************");
-            sb.AppendLine("************ Hardware **************");
-            foreach (string item in this.hardware)
-            {
-                sb.AppendLine(item);
-            }
-            sb.AppendLine("*************************************");
-            sb.AppendLine("************ Perifericos **************");
-            foreach (string item in this.perifericos)
-            {
-                sb.AppendLine(item);
-            }
-            sb.AppendLine("*************************************");
-            sb.AppendLine("************ Juegos **************");
-            foreach (string item in this.juegos)
-            {
-                sb.AppendLine(item);
-            }
-            sb.AppendLine("*************************************");
 
-            return ToString();
+            return sb.ToString();
         }
 
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
 
 
 

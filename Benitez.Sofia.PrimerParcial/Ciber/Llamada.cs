@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ciber
+namespace CiberCafe
 {
     public abstract class Llamada : UsoServicio
     {
@@ -13,6 +13,7 @@ namespace Ciber
         private string codigoPais;
         private string numero;
         protected TipoLlamada tipoDeLlamada;
+        
         
        
 
@@ -58,20 +59,14 @@ namespace Ciber
             return costo;
         }
        
-        public string Prefijo
+        public string Numero
         {
             get
             {
-                return this.prefijo;
+                return this.codigoPais + this.prefijo + this.numero;
             }
         }
-        public string CodigoPais
-        {
-            get
-            {
-                return this.codigoPais;
-            }
-        }
+      
         public override DateTime TiempoInicio 
         {
             get
@@ -89,11 +84,20 @@ namespace Ciber
         }
 
         
-        
-        
-       
-
         //mostrar
+        protected override string Mostrar()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(base.Mostrar());
+            sb.AppendLine($"Numero: {this.Numero}");
+            sb.AppendLine($"Tipo de llamada: {this.tipoDeLlamada}");
 
+            return sb.ToString();
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
     }
 }

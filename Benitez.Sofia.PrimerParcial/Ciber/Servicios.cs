@@ -4,23 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ciber
+namespace CiberCafe
 {
     public abstract class Servicios
     {
         
-        protected int id;
+        protected string id;
         protected bool estado;
         public enum TipoServicio { Cabina, Computadora }
 
-        public Servicios(int id, bool estado)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="estado">true libre false en uso</param>
+        public Servicios(string id, bool estado)
         {
             
             this.id = id;
             this.estado = estado;
         }
         
-        public abstract int Id
+        public abstract string Id
         {
             get;
         }
@@ -29,9 +34,18 @@ namespace Ciber
             get; set;
         }
 
-        public virtual string ToString()
+        protected virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"ID: {this.id}");
+            if(this.estado)
+            {
+                sb.AppendLine($"Estado: disponible");
+            }
+            else
+            {
+                sb.AppendLine($"Estado: en uso");
+            }
             
 
             return sb.ToString();
