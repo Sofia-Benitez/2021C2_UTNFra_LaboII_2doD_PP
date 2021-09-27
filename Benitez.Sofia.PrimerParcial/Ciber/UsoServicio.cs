@@ -11,13 +11,26 @@ namespace CiberCafe
         protected DateTime tiempoInicio;
         protected DateTime tiempoFinalizacion;
         protected double costo;
-        
-        
 
-        public abstract DateTime TiempoInicio { get; }
-        public abstract DateTime TiempoFinalizacion { get; }
 
-        public abstract double Costo { get; set; }
+
+        public  DateTime TiempoInicio
+        {
+            get
+            {
+                return this.tiempoInicio;
+            }
+        }
+
+        public DateTime TiempoFinalizacion
+        {
+            get
+            {
+                return this.tiempoFinalizacion;
+            }
+        }
+
+        public abstract double Costo { get; }
 
         public UsoServicio(DateTime tiempoInicio)
         {

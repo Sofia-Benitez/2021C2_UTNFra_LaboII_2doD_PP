@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace CiberCafe
 {
-    public abstract class Llamada : UsoServicio
+    public class Llamada : UsoServicio
     {
-       
+
         private string prefijo;
         private string codigoPais;
         private string numero;
         protected TipoLlamada tipoDeLlamada;
-        
-        
-       
 
         //constructor 
-        public Llamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, TipoLlamada tipoDeLlamada):base(tiempoInicio)
+        public Llamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, TipoLlamada tipoDeLlamada) : base(tiempoInicio)
         {
             this.prefijo = prefijo;
             this.codigoPais = codigoPais;
@@ -36,29 +33,37 @@ namespace CiberCafe
         /// <param name="tiempoFinalizacion"></param>
         public Llamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, DateTime tiempoFinalizacion, TipoLlamada tipoDeLlamada) : this(tiempoInicio, prefijo, codigoPais, numero, tipoDeLlamada)
         {
-            
+
         }
 
         public double CostoPorTipo()
         {
             double costo = 0;
-            
-                if(this.tipoDeLlamada==TipoLlamada.Internacional)
-                {
-                    costo = 5;
-                }
-                else if(this.tipoDeLlamada==TipoLlamada.LargaDistancia)
-                {
-                    costo = 2.5;
-                }
-                else
-                {
-                    costo = 1;
-                }
+
+            if (this.tipoDeLlamada == TipoLlamada.Internacional)
+            {
+                costo = 5;
+            }
+            else if (this.tipoDeLlamada == TipoLlamada.LargaDistancia)
+            {
+                costo = 2.5;
+            }
+            else
+            {
+                costo = 1;
+            }
 
             return costo;
         }
-       
+
+        public override double Costo
+        {
+            get 
+            {
+                return this.costo;
+            }
+        }
+
         public string Numero
         {
             get
@@ -67,21 +72,7 @@ namespace CiberCafe
             }
         }
       
-        public override DateTime TiempoInicio 
-        {
-            get
-            {
-                return this.tiempoInicio;
-            }
-        }
-
-        public override DateTime TiempoFinalizacion 
-        {
-            get
-            {
-                return this.tiempoFinalizacion;
-            }
-        }
+        
 
         
         //mostrar
