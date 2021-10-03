@@ -29,6 +29,9 @@ namespace CiberCafe
         {
             get;
         }
+        /// <summary>
+        /// true: libre   false: en uso
+        /// </summary>
         public abstract  bool Estado
         {
             get; set;
@@ -50,5 +53,6 @@ namespace CiberCafe
 
             return sb.ToString();
         }
+
     }
 }

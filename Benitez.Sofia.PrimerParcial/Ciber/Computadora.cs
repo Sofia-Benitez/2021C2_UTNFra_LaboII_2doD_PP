@@ -67,7 +67,7 @@ namespace CiberCafe
             sb.Append(base.Mostrar());
             foreach(KeyValuePair <string, string> item in this.Caracteristicas)
             {
-                sb.Append($"{item.Value}, ");
+                sb.AppendLine($"{item.Value} ");
             }
 
             return sb.ToString();
@@ -76,6 +76,18 @@ namespace CiberCafe
         public override string ToString()
         {
             return this.Mostrar();
+        }
+
+        public static Computadora ComputadoraSeleccionada(string computadoraSeleccionada, Ciber miCiber)
+        {
+            foreach (Computadora item in miCiber.ListaDeServicios)
+            {
+                if (item.Mostrar() == computadoraSeleccionada)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
 
 

@@ -29,6 +29,7 @@ namespace Benitez.Sofia.PrimerParcial
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbUsuario = new System.Windows.Forms.GroupBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -68,6 +69,8 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnAsignarCabina = new System.Windows.Forms.Button();
             this.btnEstadistica = new System.Windows.Forms.Button();
             this.lstbClientes = new System.Windows.Forms.ListBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblDatosCliente = new System.Windows.Forms.Label();
             this.gbUsuario.SuspendLayout();
             this.gbEquipos.SuspendLayout();
             this.SuspendLayout();
@@ -196,12 +199,12 @@ namespace Benitez.Sofia.PrimerParcial
             // btnCabina1
             // 
             this.btnCabina1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCabina1.BackColor = System.Drawing.Color.Red;
+            this.btnCabina1.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCabina1.Location = new System.Drawing.Point(461, 27);
             this.btnCabina1.Name = "btnCabina1";
             this.btnCabina1.Size = new System.Drawing.Size(66, 24);
             this.btnCabina1.TabIndex = 25;
-            this.btnCabina1.Text = "En uso";
+            this.btnCabina1.Text = "Libre";
             this.btnCabina1.UseVisualStyleBackColor = false;
             // 
             // btnCompu10
@@ -224,6 +227,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCompu9.TabIndex = 23;
             this.btnCompu9.Text = "Libre";
             this.btnCompu9.UseVisualStyleBackColor = false;
+            this.btnCompu9.Click += new System.EventHandler(this.btnCompu9_Click);
             // 
             // btnCompu8
             // 
@@ -234,6 +238,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCompu8.TabIndex = 22;
             this.btnCompu8.Text = "Libre";
             this.btnCompu8.UseVisualStyleBackColor = false;
+            this.btnCompu8.Click += new System.EventHandler(this.btnCompu8_Click);
             // 
             // btnCompu7
             // 
@@ -244,16 +249,18 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCompu7.TabIndex = 21;
             this.btnCompu7.Text = "Libre";
             this.btnCompu7.UseVisualStyleBackColor = false;
+            this.btnCompu7.Click += new System.EventHandler(this.btnCompu7_Click);
             // 
             // btnCompu6
             // 
-            this.btnCompu6.BackColor = System.Drawing.Color.Red;
+            this.btnCompu6.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCompu6.Location = new System.Drawing.Point(301, 27);
             this.btnCompu6.Name = "btnCompu6";
             this.btnCompu6.Size = new System.Drawing.Size(66, 24);
             this.btnCompu6.TabIndex = 20;
-            this.btnCompu6.Text = "En uso";
+            this.btnCompu6.Text = "Libre";
             this.btnCompu6.UseVisualStyleBackColor = false;
+            this.btnCompu6.Click += new System.EventHandler(this.btnCompu6_Click);
             // 
             // btnCompu5
             // 
@@ -265,6 +272,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCompu5.TabIndex = 19;
             this.btnCompu5.Text = "Libre";
             this.btnCompu5.UseVisualStyleBackColor = false;
+            this.btnCompu5.Click += new System.EventHandler(this.btnCompu5_Click);
             // 
             // btnCompu4
             // 
@@ -275,6 +283,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCompu4.TabIndex = 18;
             this.btnCompu4.Text = "Libre";
             this.btnCompu4.UseVisualStyleBackColor = false;
+            this.btnCompu4.Click += new System.EventHandler(this.btnCompu4_Click);
             // 
             // btnCompu3
             // 
@@ -285,6 +294,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCompu3.TabIndex = 17;
             this.btnCompu3.Text = "Libre";
             this.btnCompu3.UseVisualStyleBackColor = false;
+            this.btnCompu3.Click += new System.EventHandler(this.btnCompu3_Click);
             // 
             // btnCompu2
             // 
@@ -295,6 +305,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCompu2.TabIndex = 16;
             this.btnCompu2.Text = "Libre";
             this.btnCompu2.UseVisualStyleBackColor = false;
+            this.btnCompu2.Click += new System.EventHandler(this.btnCompu2_Click);
             // 
             // btnCompu1
             // 
@@ -305,6 +316,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCompu1.TabIndex = 15;
             this.btnCompu1.Text = "En uso";
             this.btnCompu1.UseVisualStyleBackColor = false;
+            this.btnCompu1.Click += new System.EventHandler(this.btnCompu1_Click);
             // 
             // label12
             // 
@@ -443,7 +455,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnAsignarCompu
             // 
-            this.btnAsignarCompu.Location = new System.Drawing.Point(370, 283);
+            this.btnAsignarCompu.Location = new System.Drawing.Point(476, 285);
             this.btnAsignarCompu.Name = "btnAsignarCompu";
             this.btnAsignarCompu.Size = new System.Drawing.Size(160, 37);
             this.btnAsignarCompu.TabIndex = 4;
@@ -453,7 +465,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnAsignarCabina
             // 
-            this.btnAsignarCabina.Location = new System.Drawing.Point(536, 283);
+            this.btnAsignarCabina.Location = new System.Drawing.Point(642, 285);
             this.btnAsignarCabina.Name = "btnAsignarCabina";
             this.btnAsignarCabina.Size = new System.Drawing.Size(147, 37);
             this.btnAsignarCabina.TabIndex = 5;
@@ -462,12 +474,13 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica
             // 
-            this.btnEstadistica.Location = new System.Drawing.Point(370, 326);
+            this.btnEstadistica.Location = new System.Drawing.Point(476, 328);
             this.btnEstadistica.Name = "btnEstadistica";
             this.btnEstadistica.Size = new System.Drawing.Size(313, 38);
             this.btnEstadistica.TabIndex = 6;
             this.btnEstadistica.Text = "Consultar estadísticas";
             this.btnEstadistica.UseVisualStyleBackColor = true;
+            this.btnEstadistica.Click += new System.EventHandler(this.btnEstadistica_Click);
             // 
             // lstbClientes
             // 
@@ -477,12 +490,29 @@ namespace Benitez.Sofia.PrimerParcial
             this.lstbClientes.Name = "lstbClientes";
             this.lstbClientes.Size = new System.Drawing.Size(223, 259);
             this.lstbClientes.TabIndex = 7;
+            this.lstbClientes.SelectedValueChanged += new System.EventHandler(this.lstbClientes_SelectedValueChanged);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblDatosCliente
+            // 
+            this.lblDatosCliente.AutoSize = true;
+            this.lblDatosCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDatosCliente.Location = new System.Drawing.Point(274, 285);
+            this.lblDatosCliente.Name = "lblDatosCliente";
+            this.lblDatosCliente.Size = new System.Drawing.Size(58, 21);
+            this.lblDatosCliente.TabIndex = 8;
+            this.lblDatosCliente.Text = "Cliente";
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 386);
+            this.ClientSize = new System.Drawing.Size(829, 449);
+            this.Controls.Add(this.lblDatosCliente);
             this.Controls.Add(this.lstbClientes);
             this.Controls.Add(this.btnEstadistica);
             this.Controls.Add(this.btnAsignarCabina);
@@ -543,5 +573,7 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.Button btnCabina2;
         private System.Windows.Forms.Button btnCabina1;
         private System.Windows.Forms.ListBox lstbClientes;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblDatosCliente;
     }
 }

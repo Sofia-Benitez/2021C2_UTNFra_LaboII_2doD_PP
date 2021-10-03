@@ -23,20 +23,26 @@ namespace CiberCafe
         
         public Cliente(string dni, string nombre, string apellido, int edad, Necesidad necesidad)
         {
-            this.Dni = dni;
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            this.Edad = edad;
+            this.dni = dni;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.edad = edad;
             this.necesidad = necesidad;
             this.requerimientos = new Dictionary<string, string>();
         }
 
        
-        public string Dni { get => dni; set => dni = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Apellido { get => apellido; set => apellido = value; }
-        public int Edad { get => edad; set => edad = value; }
-        public Necesidad Necesidad1 { get => necesidad; set => necesidad = value; }
+        
+        public string Nombre { get { return nombre; } }
+
+        public string Dni
+        {
+            get
+            {
+                return this.dni;
+            }
+        }
+        public Necesidad NecesidadCliente { get => necesidad; set => necesidad = value; }
         public Dictionary<string, string> Requerimientos { get => requerimientos; set => requerimientos = value; }
 
 
@@ -58,6 +64,15 @@ namespace CiberCafe
             return sb.ToString();
         }
 
+        public string MostrarDatosCliente()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"{this.nombre} {this.apellido}");
+            sb.AppendLine($"Edad: {this.edad}");
+            sb.AppendLine($"DNI: {this.dni}");
+            return sb.ToString();
+        }
+
         public void AgregarRequerimiento(string key, string value)
         {
             if(requerimientos is not null)
@@ -75,8 +90,8 @@ namespace CiberCafe
         /// <returns></returns>
         public static bool operator ==(Cliente cliente, Computadora computadora)
         {
-            if (computadora.Estado == false)
-            {
+           
+            
                 foreach (KeyValuePair<string, string> item in cliente.Requerimientos)
                 {
                     if (!(computadora.Caracteristicas.ContainsKey(item.Key)))
@@ -86,8 +101,8 @@ namespace CiberCafe
 
                 }
                 return true;
-            }
-            return false;
+            
+            
         }
 
         public static bool operator !=(Cliente cliente, Computadora computadora)
@@ -96,10 +111,19 @@ namespace CiberCafe
         }
 
 
-        public void AsignarComputadora()
-        {
-
-        }
+        
         //sobrecargar equals y hash
+
+        public static Cliente ClienteSeleccionado(string clienteSeleccionado, Ciber miCiber)
+        {
+            foreach (Cliente item in miCiber.ListaDeClientes)
+            {
+                if (item.Mostrar() == clienteSeleccionado)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
     }
 }

@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace CiberCafe
 {
-    public class Llamada : UsoServicio
+    public class UsoLlamada : Uso
     {
 
         private string prefijo;
         private string codigoPais;
         private string numero;
         protected TipoLlamada tipoDeLlamada;
+        private double costoMinuto;
 
         //constructor 
-        public Llamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, TipoLlamada tipoDeLlamada) : base(tiempoInicio)
+        public UsoLlamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, TipoLlamada tipoDeLlamada) : base(tiempoInicio)
         {
             this.prefijo = prefijo;
             this.codigoPais = codigoPais;
             this.numero = numero;
-            this.costo = this.CostoPorTipo();
+            this.costoMinuto = this.CostoPorTipo();
             this.tipoDeLlamada = tipoDeLlamada;
         }
         /// <summary>
@@ -31,7 +32,7 @@ namespace CiberCafe
         /// <param name="codigoPais"></param>
         /// <param name="numero"></param>
         /// <param name="tiempoFinalizacion"></param>
-        public Llamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, DateTime tiempoFinalizacion, TipoLlamada tipoDeLlamada) : this(tiempoInicio, prefijo, codigoPais, numero, tipoDeLlamada)
+        public UsoLlamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, DateTime tiempoFinalizacion, TipoLlamada tipoDeLlamada) : this(tiempoInicio, prefijo, codigoPais, numero, tipoDeLlamada)
         {
 
         }
@@ -56,13 +57,18 @@ namespace CiberCafe
             return costo;
         }
 
-        public override double Costo
-        {
-            get 
-            {
-                return this.costo;
-            }
-        }
+        //public override double Costo
+        //{
+        //    get 
+        //    {
+        //        return this.costoMinuto;
+        //    }
+
+        //    set
+        //    {
+        //        this.costoMinuto = value;
+        //    }
+        //}
 
         public string Numero
         {
@@ -76,7 +82,7 @@ namespace CiberCafe
 
         
         //mostrar
-        protected override string Mostrar()
+        public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.Mostrar());
