@@ -44,12 +44,12 @@ namespace CiberCafe
         protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(base.ToString());
-            sb.AppendLine("************ Caracteristicas **************");
+            sb.Append(base.Mostrar());
+            sb.AppendLine($"Tipo: {this.tipo}");
+            sb.AppendLine($"Marca: {this.marca}");
+            
 
-            sb.AppendLine("*************************************");
-
-            return ToString();
+            return sb.ToString();
         }
 
         public override string ToString()
@@ -57,5 +57,20 @@ namespace CiberCafe
             return this.Mostrar();
         }
 
+        public static Cabina BuscarCabinaSeleccionada(string cabinaSeleccionada, Ciber miCiber)
+        {
+            foreach (Servicios item in miCiber.ListaDeServicios)
+            {
+                if(item is Cabina)
+                {
+                    if (item.ToString() == cabinaSeleccionada)
+                    {
+                        return (Cabina)item;
+                    }
+                }
+                
+            }
+            return null;
+        }
     }
 }

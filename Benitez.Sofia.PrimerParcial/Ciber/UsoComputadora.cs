@@ -8,13 +8,13 @@ namespace CiberCafe
 {
     public class UsoComputadora : Uso
     {
-        private Cliente cliente;
+        
         private Computadora computadora;
         protected double costoFraccion;
 
-        public UsoComputadora(DateTime tiempoInicio, Cliente cliente, Computadora computadora):base(tiempoInicio)
+        public UsoComputadora(DateTime tiempoInicio, Cliente cliente, Computadora computadora):base(tiempoInicio, cliente)
         {
-            this.cliente = cliente;
+            
             this.computadora = computadora;
             this.costoFraccion = 0.5F;
         }
@@ -37,13 +37,35 @@ namespace CiberCafe
             }
         }
 
-        public double CostoTotal
+        public double CostoBruto
         {
             get
             {
                 return CalcularCosto();
             }
         }
+
+        public double CostoNeto
+        {
+            get
+            {
+                return CalcularCostoNeto();
+            }
+        }
+
+        public double TiempoDeUso
+        {
+            get
+            {
+                if (this.TiempoFinalizacion != DateTime.MinValue)
+                {
+                    return ((this.tiempoFinalizacion - this.tiempoInicio).Seconds);
+                }
+                return 0;
+                    
+            }
+        }
+
         public Computadora Computadora
         {
             get
@@ -54,26 +76,50 @@ namespace CiberCafe
 
         public double CalcularCosto()
         {
+            double costoTotal = 0;
 
             if (this.TiempoFinalizacion != DateTime.MinValue)
             {
-                return ((this.tiempoFinalizacion-this.tiempoInicio).Seconds) * this.costoFraccion;
+                double segundosUtilizados = ((this.tiempoFinalizacion - this.tiempoInicio).Seconds);
+                
+                if(segundosUtilizados<30)
+                {
+                    costoTotal = this.costoFraccion;
+                }
+                else if(segundosUtilizados>30 && segundosUtilizados<60)
+                {
+                    costoTotal = this.costoFraccion * 2;
+                }
+                else
+                {
+                    //VER math.ceiling y math.floor
+                    costoTotal=(segundosUtilizados / 30) * this.costoFraccion;
+                }
+                
             }
-            return 0;
+            return costoTotal;
         }
+
+        public double CalcularCostoNeto()
+        {
+           return  this.CostoBruto * IVA;
+        }
+
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.Mostrar());
             sb.AppendLine($"Computadora: {this.computadora}");
-            sb.AppendLine($"Cliente: {this.cliente.Nombre}");
+            
+            sb.AppendLine($"Tiempo de uso: {this.TiempoDeUso} minutos");
             sb.AppendLine($"Costo media hora: ${this.costoFraccion}");
-            sb.AppendLine($"Costo total: ${this.CostoTotal}");
+            sb.AppendLine($"Costo bruto: ${this.CostoBruto}");
+            sb.AppendLine($"Costo neto: ${this.CostoNeto}");
 
             return sb.ToString();
         }
 
-
+       
     }
 }

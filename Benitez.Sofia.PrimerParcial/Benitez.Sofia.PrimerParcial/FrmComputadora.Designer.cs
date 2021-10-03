@@ -35,7 +35,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.rbtnC4 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numMinutos = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.gbxCompus = new System.Windows.Forms.GroupBox();
             this.rbtnC10 = new System.Windows.Forms.RadioButton();
@@ -45,7 +45,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.rbtnC6 = new System.Windows.Forms.RadioButton();
             this.rbtnC5 = new System.Windows.Forms.RadioButton();
             this.chbTiempoLibre = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinutos)).BeginInit();
             this.gbxCompus.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,12 +112,13 @@ namespace Benitez.Sofia.PrimerParcial
             this.lblCliente.TabIndex = 5;
             this.lblCliente.Text = "Cliente";
             // 
-            // numericUpDown1
+            // numMinutos
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(467, 330);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(133, 23);
-            this.numericUpDown1.TabIndex = 6;
+            this.numMinutos.Enabled = false;
+            this.numMinutos.Location = new System.Drawing.Point(467, 330);
+            this.numMinutos.Name = "numMinutos";
+            this.numMinutos.Size = new System.Drawing.Size(133, 23);
+            this.numMinutos.TabIndex = 6;
             // 
             // label1
             // 
@@ -216,12 +217,15 @@ namespace Benitez.Sofia.PrimerParcial
             // chbTiempoLibre
             // 
             this.chbTiempoLibre.AutoSize = true;
+            this.chbTiempoLibre.Checked = true;
+            this.chbTiempoLibre.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbTiempoLibre.Location = new System.Drawing.Point(252, 330);
             this.chbTiempoLibre.Name = "chbTiempoLibre";
             this.chbTiempoLibre.Size = new System.Drawing.Size(92, 19);
             this.chbTiempoLibre.TabIndex = 9;
             this.chbTiempoLibre.Text = "Tiempo libre";
             this.chbTiempoLibre.UseVisualStyleBackColor = true;
+            this.chbTiempoLibre.CheckedChanged += new System.EventHandler(this.chbTiempoLibre_CheckedChanged);
             // 
             // FrmComputadora
             // 
@@ -231,13 +235,12 @@ namespace Benitez.Sofia.PrimerParcial
             this.Controls.Add(this.chbTiempoLibre);
             this.Controls.Add(this.gbxCompus);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numMinutos);
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.button1);
             this.Name = "FrmComputadora";
-            this.Text = "FrmComputadora";
-            this.Load += new System.EventHandler(this.FrmComputadora_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Text = "Asignar computadora";
+            ((System.ComponentModel.ISupportInitialize)(this.numMinutos)).EndInit();
             this.gbxCompus.ResumeLayout(false);
             this.gbxCompus.PerformLayout();
             this.ResumeLayout(false);
@@ -253,7 +256,7 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.RadioButton rbtnC4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numMinutos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbxCompus;
         private System.Windows.Forms.RadioButton rbtnC8;

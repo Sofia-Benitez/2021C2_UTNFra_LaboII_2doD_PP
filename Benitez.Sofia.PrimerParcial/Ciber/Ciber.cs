@@ -195,6 +195,12 @@ namespace CiberCafe
             return ciber;
         }
 
+        /// <summary>
+        /// metodo que instancia un nuevo uso de computadora sin tiempo de finalizacion. remueve al cliente de la lista de espera y agrega el uso a la lista de usos del ciber 
+        /// </summary>
+        /// <param name="computadora">computadora que se pasara por referencia en el uso nuevo</param>
+        /// <param name="cliente">cliente que se pasara por referencia en el uso nuevo</param>
+        /// <returns></returns>
         public UsoComputadora AsignarComputadora(Computadora computadora, Cliente cliente)
         {
             computadora.Estado = false;//VER ACA EL ERROR EN EJECUCION  
@@ -204,21 +210,107 @@ namespace CiberCafe
             return uso;
         }
 
+        /// <summary>
+        /// sobrecarga de AsignarComputadora para que reciba el tiempo seleccionado de uso que viene desde el form de computadoras
+        /// </summary>
+        /// <param name="computadora"></param>
+        /// <param name="cliente"></param>
+        /// <param name="tiempoSeleccionado"></param>
+        /// <returns></returns>
+        public UsoComputadora AsignarComputadora(Computadora computadora, Cliente cliente, double tiempoSeleccionado)
+        {
+            DateTime tiempoFinalizacion = DateTime.Now.AddSeconds(tiempoSeleccionado);
+            computadora.Estado = false;//VER ACA EL ERROR EN EJECUCION  
+            UsoComputadora uso = new UsoComputadora(DateTime.Now, tiempoFinalizacion, cliente, computadora);
+            this.listaClientes.Remove(cliente);
+            this.listaDeUsos.Add(uso);
+            return uso;
+        }
+
+        //unificar las funciones de liberar
         public void LiberarComputadora(UsoComputadora uso)
         {
             uso.Computadora.Estado = true;
             uso.TiempoFinalizacion = DateTime.Now;
         }
 
+        public void LiberarCabina(UsoLlamada uso)
+        {
+            uso.Cabina.Estado = true;
+            uso.TiempoFinalizacion = DateTime.Now;
+        }
+
         public string MostrarUsos()
         {
             StringBuilder sb = new StringBuilder();
-            foreach (UsoComputadora item in this.listaDeUsos)
+            foreach (Uso item in this.listaDeUsos)
             {
                 sb.AppendLine(item.Mostrar());
                 sb.AppendLine("--------------------------");
             }
             return sb.ToString();
+        }
+
+        public UsoComputadora BuscarUsoPorComputadora(Computadora computadora)
+        {
+            foreach (UsoComputadora item in this.ListaDeUsos)
+            {
+
+                if (item.Computadora.Id == computadora.Id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        public UsoLlamada BuscarUsoPorCabina(Cabina cabina)
+        {
+            foreach (UsoLlamada item in this.ListaDeUsos)
+            {
+                if(item is UsoLlamada)
+                {
+                    if (item.Cabina.Id == cabina.Id)
+                {
+                    return item;
+                }
+                }
+                
+            }
+            return null;
+        }
+
+        public UsoComputadora BuscarUsoFinalizado()
+        {
+            foreach (UsoComputadora item in this.listaDeUsos)
+            {
+                if(item.TiempoFinalizacion>DateTime.Now)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// metodo que instancia un nuevo uso de computadora sin tiempo de finalizacion. remueve al cliente de la lista de espera y agrega el uso a la lista de usos del ciber 
+        /// </summary>
+        /// <param name="computadora">computadora que se pasara por referencia en el uso nuevo</param>
+        /// <param name="cliente">cliente que se pasara por referencia en el uso nuevo</param>
+        /// <returns></returns>
+        public UsoLlamada AsignarCabina(Cabina cabina, Cliente cliente, string numero, string codigo, string prefijo)
+        {
+            if(cabina.Estado==true)
+            {
+                cabina.Estado = false;//VER ACA EL ERROR EN EJECUCION  
+                TipoLlamada tipo = ObtenerTipoLlamada(codigo, prefijo);
+                UsoLlamada uso = new UsoLlamada(DateTime.Now, prefijo, codigo, numero, tipo, cliente, cabina);
+                this.listaClientes.Remove(cliente);
+                this.listaDeUsos.Add(uso);
+                return uso;
+            }
+            return null;
+            
         }
 
     }

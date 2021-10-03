@@ -165,6 +165,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCabina5.TabIndex = 29;
             this.btnCabina5.Text = "Libre";
             this.btnCabina5.UseVisualStyleBackColor = false;
+            this.btnCabina5.Click += new System.EventHandler(this.btnCabina5_Click);
             // 
             // btnCabina4
             // 
@@ -175,6 +176,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCabina4.TabIndex = 28;
             this.btnCabina4.Text = "Libre";
             this.btnCabina4.UseVisualStyleBackColor = false;
+            this.btnCabina4.Click += new System.EventHandler(this.btnCabina4_Click);
             // 
             // btnCabina3
             // 
@@ -185,6 +187,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCabina3.TabIndex = 27;
             this.btnCabina3.Text = "Libre";
             this.btnCabina3.UseVisualStyleBackColor = false;
+            this.btnCabina3.Click += new System.EventHandler(this.btnCabina3_Click);
             // 
             // btnCabina2
             // 
@@ -195,6 +198,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCabina2.TabIndex = 26;
             this.btnCabina2.Text = "Libre";
             this.btnCabina2.UseVisualStyleBackColor = false;
+            this.btnCabina2.Click += new System.EventHandler(this.btnCabina2_Click);
             // 
             // btnCabina1
             // 
@@ -206,6 +210,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnCabina1.TabIndex = 25;
             this.btnCabina1.Text = "Libre";
             this.btnCabina1.UseVisualStyleBackColor = false;
+            this.btnCabina1.Click += new System.EventHandler(this.btnCabina1_Click);
             // 
             // btnCompu10
             // 
@@ -471,6 +476,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnAsignarCabina.TabIndex = 5;
             this.btnAsignarCabina.Text = "Asignar cabina";
             this.btnAsignarCabina.UseVisualStyleBackColor = true;
+            this.btnAsignarCabina.Click += new System.EventHandler(this.btnAsignarCabina_Click);
             // 
             // btnEstadistica
             // 
@@ -521,6 +527,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.Controls.Add(this.lblClientes);
             this.Controls.Add(this.gbUsuario);
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrincipal";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.gbUsuario.ResumeLayout(false);

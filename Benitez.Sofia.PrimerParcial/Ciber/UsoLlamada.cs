@@ -14,15 +14,17 @@ namespace CiberCafe
         private string numero;
         protected TipoLlamada tipoDeLlamada;
         private double costoMinuto;
+        private Cabina cabina;
 
         //constructor 
-        public UsoLlamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, TipoLlamada tipoDeLlamada) : base(tiempoInicio)
+        public UsoLlamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, TipoLlamada tipoDeLlamada, Cliente cliente, Cabina cabina) : base(tiempoInicio, cliente)
         {
             this.prefijo = prefijo;
             this.codigoPais = codigoPais;
             this.numero = numero;
             this.costoMinuto = this.CostoPorTipo();
             this.tipoDeLlamada = tipoDeLlamada;
+            this.cabina = cabina;
         }
         /// <summary>
         /// sobrecarga del cosntructor con tiempo de finalizacion de la llamada
@@ -32,7 +34,7 @@ namespace CiberCafe
         /// <param name="codigoPais"></param>
         /// <param name="numero"></param>
         /// <param name="tiempoFinalizacion"></param>
-        public UsoLlamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, DateTime tiempoFinalizacion, TipoLlamada tipoDeLlamada) : this(tiempoInicio, prefijo, codigoPais, numero, tipoDeLlamada)
+        public UsoLlamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, DateTime tiempoFinalizacion, TipoLlamada tipoDeLlamada, Cliente cliente, Cabina cabina) : this(tiempoInicio, prefijo, codigoPais, numero, tipoDeLlamada, cliente, cabina)
         {
 
         }
@@ -57,18 +59,7 @@ namespace CiberCafe
             return costo;
         }
 
-        //public override double Costo
-        //{
-        //    get 
-        //    {
-        //        return this.costoMinuto;
-        //    }
-
-        //    set
-        //    {
-        //        this.costoMinuto = value;
-        //    }
-        //}
+   
 
         public string Numero
         {
@@ -77,10 +68,16 @@ namespace CiberCafe
                 return this.codigoPais + this.prefijo + this.numero;
             }
         }
-      
-        
 
-        
+
+        public Cabina Cabina
+        {
+            get
+            {
+                return this.cabina;
+            }
+        }
+
         //mostrar
         public override string Mostrar()
         {
@@ -96,5 +93,8 @@ namespace CiberCafe
         {
             return this.Mostrar();
         }
+
+        ///costo
+        ///((this.tiempoFinalizacion-this.tiempoInicio).Seconds) * this.costoFraccion
     }
 }

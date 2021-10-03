@@ -16,6 +16,7 @@ namespace Benitez.Sofia.PrimerParcial
         public Computadora computadora;
         public Ciber miCiber;
         public Cliente cliente;
+        public double tiempoSeleccionado=double.MinValue;
 
 
         public FrmComputadora(Ciber ciber, Cliente clienteSeleccionado)
@@ -31,17 +32,22 @@ namespace Benitez.Sofia.PrimerParcial
             rbtnC4.Text = ciber["C04"].ToString();
             rbtnC5.Text = ciber["C05"].ToString();
             rbtnC6.Text = ciber["C06"].ToString();
+            rbtnC7.Text = ciber["C07"].ToString();
+            rbtnC8.Text = ciber["C08"].ToString();
+            rbtnC9.Text = ciber["C09"].ToString();
+            rbtnC10.Text = ciber["C10"].ToString();
+
 
 
         }
-        private void FrmComputadora_Load(object sender, EventArgs e)
-        {
-            
-        }
+
+
+        
         private void button1_Click(object sender, EventArgs e)
         {
             
             string computadoraSeleccionada = "";
+            string tiempo = "";
             
            
             foreach (Control item in gbxCompus.Controls)
@@ -53,13 +59,23 @@ namespace Benitez.Sofia.PrimerParcial
                 }
             }
 
-            computadora = Computadora.ComputadoraSeleccionada(computadoraSeleccionada, miCiber);
+            if (chbTiempoLibre.Checked)
+            {
+                tiempo= "tiempo libre";
+            }
+            else
+            {
+                tiempo = numMinutos.Value.ToString();
+                tiempoSeleccionado= (double)numMinutos.Value;
+            }
+
+            computadora = Computadora.BuscarComputadoraSeleccionada(computadoraSeleccionada, miCiber);
             if(computadora.Estado==true && (cliente == computadora))
             {
                 string mensaje = $"Desea asignarle la computadora {computadora.Id.ToString()} al cliente {cliente.Nombre.ToString()}?";
                 if (MessageBox.Show(mensaje, "Asignar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show(computadora.ToString() + "\n Asignada");
+                    MessageBox.Show(computadora.ToString() + "\n Asignada " + tiempo);
                     this.Close();
                 }
                
@@ -71,6 +87,21 @@ namespace Benitez.Sofia.PrimerParcial
 
         }
 
-      
+        /// <summary>
+        /// maneja el bloqueo de la asignacion de minutos. Solo se puede elegir tiempo libre o la cantidad de minutos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chbTiempoLibre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbTiempoLibre.Checked)
+            {
+                numMinutos.Enabled = false;
+            }
+            else
+            {
+                numMinutos.Enabled = true;
+            }
+        }
     }
 }

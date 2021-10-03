@@ -78,17 +78,19 @@ namespace CiberCafe
             return this.Mostrar();
         }
 
-        public static Computadora ComputadoraSeleccionada(string computadoraSeleccionada, Ciber miCiber)
+        public static Computadora BuscarComputadoraSeleccionada(string computadoraSeleccionada, Ciber miCiber)
         {
             foreach (Computadora item in miCiber.ListaDeServicios)
             {
-                if (item.Mostrar() == computadoraSeleccionada)
+                if (item.ToString() == computadoraSeleccionada)
                 {
                     return item;
                 }
             }
             return null;
         }
+
+       
 
 
 
