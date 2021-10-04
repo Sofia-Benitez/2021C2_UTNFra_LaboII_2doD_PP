@@ -13,6 +13,13 @@ namespace CiberCafe
         private Tipo tipo;
         public enum Tipo { Disco, Teclado};
 
+        /// <summary>
+        /// constructor 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="marca"></param>
+        /// <param name="tipo"></param>
+        /// <param name="estado"></param>
         public Cabina(string id, string marca, Tipo tipo, bool estado):base(id, estado)
         {
             
@@ -40,7 +47,10 @@ namespace CiberCafe
             }
         }
 
-        //mostrar
+        /// <summary>
+        /// muestra los datos de la clase llamando a la clase base 
+        /// </summary>
+        /// <returns></returns>
         protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -52,11 +62,21 @@ namespace CiberCafe
             return sb.ToString();
         }
 
+        /// <summary>
+        /// sobrecarga del metodo ToString() para mostrar los datos de la clase 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return this.Mostrar();
         }
 
+        /// <summary>
+        /// metodo estatico que busca en la lista de servicios una cabina que corresponda con los datos pasados por parametros
+        /// </summary>
+        /// <param name="cabinaSeleccionada"></param>
+        /// <param name="miCiber"></param>
+        /// <returns>devuelve la cabina si alguna coincide y sino null</returns>
         public static Cabina BuscarCabinaSeleccionada(string cabinaSeleccionada, Ciber miCiber)
         {
             foreach (Servicios item in miCiber.ListaDeServicios)

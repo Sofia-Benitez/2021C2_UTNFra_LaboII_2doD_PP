@@ -12,6 +12,12 @@ namespace CiberCafe
         private Computadora computadora;
         protected double costoFraccion;
 
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="tiempoInicio"></param>
+        /// <param name="cliente"></param>
+        /// <param name="computadora"></param>
         public UsoComputadora(DateTime tiempoInicio, Cliente cliente, Computadora computadora):base(tiempoInicio, cliente)
         {
             
@@ -19,6 +25,13 @@ namespace CiberCafe
             this.costoFraccion = 0.5F;
         }
 
+        /// <summary>
+        /// sobrecarga del constructor con tiempo de finalizacion
+        /// </summary>
+        /// <param name="tiempoInicio"></param>
+        /// <param name="tiempoFinalizacion"></param>
+        /// <param name="cliente"></param>
+        /// <param name="computadora"></param>
         public UsoComputadora(DateTime tiempoInicio, DateTime tiempoFinalizacion, Cliente cliente, Computadora computadora) : this(tiempoInicio, cliente, computadora)
         {
 
@@ -37,6 +50,9 @@ namespace CiberCafe
             }
         }
 
+        /// <summary>
+        /// propiedad que devuelve lo que retorna el metodo CalcularCosto
+        /// </summary>
         public double CostoBruto
         {
             get
@@ -45,6 +61,9 @@ namespace CiberCafe
             }
         }
 
+        /// <summary>
+        /// propiedad que devuelve lo que retorna CalcularCostoNeto
+        /// </summary>
         public double CostoNeto
         {
             get
@@ -53,6 +72,9 @@ namespace CiberCafe
             }
         }
 
+        /// <summary>
+        /// propiedad que devuelve el tiempo de uso en segundos que cuentan como minutos para la aplicacion
+        /// </summary>
         public double TiempoDeUso
         {
             get
@@ -74,6 +96,10 @@ namespace CiberCafe
             }
         }
 
+        /// <summary>
+        /// calcula el costo total
+        /// </summary>
+        /// <returns></returns>
         public double CalcularCosto()
         {
             double costoTotal = 0;
@@ -100,11 +126,19 @@ namespace CiberCafe
             return costoTotal;
         }
 
+        /// <summary>
+        /// agrega el iva al costo total
+        /// </summary>
+        /// <returns></returns>
         public double CalcularCostoNeto()
         {
            return  this.CostoBruto * IVA;
         }
 
+        /// <summary>
+        /// muestra los datos
+        /// </summary>
+        /// <returns></returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -121,5 +155,6 @@ namespace CiberCafe
         }
 
        
+        //sobrecarga to string
     }
 }

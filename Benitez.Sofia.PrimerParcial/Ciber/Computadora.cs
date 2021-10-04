@@ -10,7 +10,7 @@ namespace CiberCafe
         
         
         /// <summary>
-        /// constructor de una computadora
+        /// constructor de una computadora. Instancia un diaccionario para las caracteristicas
         /// </summary>
         /// <param name="id">id</param>
         /// <param name="estado">estado de la computadora (en uso o libre)</param>
@@ -43,6 +43,7 @@ namespace CiberCafe
             }
         }
 
+
         public Dictionary<string, string> Caracteristicas
         {
             get
@@ -52,6 +53,11 @@ namespace CiberCafe
 
         }
 
+        /// <summary>
+        /// agrega al diccionary de caracteristicas una clave y un valor que recibe por parametros
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
         public void AgregarCaracteristica(string key, string value)
         {
             this.caracteristicas.Add(key, value);
@@ -60,7 +66,10 @@ namespace CiberCafe
 
 
 
-        //mostrar
+        /// <summary>
+        /// muestra los datos de la clase llamando a la clase base 
+        /// </summary>
+        /// <returns></returns>
         protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -73,11 +82,22 @@ namespace CiberCafe
             return sb.ToString();
         }
 
+        /// <summary>
+        /// sobrecarga del metodo ToString(). devuelve los datos de la clase 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return this.Mostrar();
         }
 
+        /// <summary>
+        /// metodo estatico que compara los datos de un string ingresada por parametros con las computadoras de un Ciber
+        /// y la devuelve si hay una coincidencia 
+        /// </summary>
+        /// <param name="computadoraSeleccionada">string con datos de una computadora</param>
+        /// <param name="miCiber">CCiber que contiene la lista de servicios a recorrer</param>
+        /// <returns></returns>
         public static Computadora BuscarComputadoraSeleccionada(string computadoraSeleccionada, Ciber miCiber)
         {
             foreach (Computadora item in miCiber.ListaDeServicios)

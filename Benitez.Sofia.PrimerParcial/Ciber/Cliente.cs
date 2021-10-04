@@ -21,6 +21,14 @@ namespace CiberCafe
             Cabina,Computadora
         }
         
+        /// <summary>
+        /// constructor cliente 
+        /// </summary>
+        /// <param name="dni"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="edad"></param>
+        /// <param name="necesidad"></param>
         public Cliente(string dni, string nombre, string apellido, int edad, Necesidad necesidad)
         {
             this.dni = dni;
@@ -42,13 +50,29 @@ namespace CiberCafe
                 return this.dni;
             }
         }
-        public Necesidad NecesidadCliente { get => necesidad; set => necesidad = value; }
-        public Dictionary<string, string> Requerimientos { get => requerimientos; set => requerimientos = value; }
-
+       
+        public Necesidad NecesidadCliente
+        {
+            get
+            {
+                return necesidad;
+            }
+        }
+        public Dictionary<string, string> Requerimientos
+        {
+            get
+            {
+                return this.requerimientos;
+            }
+            
+        }
 
         
 
-        //mostrar
+        /// <summary>
+        /// muestra el nombre del cliente, el servicio que necesita y los requerimientos
+        /// </summary>
+        /// <returns></returns>
         public string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -64,6 +88,10 @@ namespace CiberCafe
             return sb.ToString();
         }
 
+        /// <summary>
+        /// muestra los datos personales del cliente
+        /// </summary>
+        /// <returns></returns>
         public string MostrarDatosCliente()
         {
             StringBuilder sb = new StringBuilder();
@@ -73,6 +101,11 @@ namespace CiberCafe
             return sb.ToString();
         }
 
+        /// <summary>
+        /// agrega requerimientos al diccionario 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
         public void AgregarRequerimiento(string key, string value)
         {
             if(requerimientos is not null)
@@ -105,6 +138,12 @@ namespace CiberCafe
             
         }
 
+        /// <summary>
+        /// sobrecarga del operador 
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <param name="computadora"></param>
+        /// <returns></returns>
         public static bool operator !=(Cliente cliente, Computadora computadora)
         {
             return (!(cliente == computadora));
@@ -114,6 +153,12 @@ namespace CiberCafe
         
         //sobrecargar equals y hash
 
+        /// <summary>
+        /// busca al cliente que coincide con le string ue se pasa por parametros, si encuentra una coincidencia devuelve al cliente
+        /// </summary>
+        /// <param name="clienteSeleccionado"></param>
+        /// <param name="miCiber"></param>
+        /// <returns></returns>
         public static Cliente ClienteSeleccionado(string clienteSeleccionado, Ciber miCiber)
         {
             foreach (Cliente item in miCiber.ListaDeClientes)

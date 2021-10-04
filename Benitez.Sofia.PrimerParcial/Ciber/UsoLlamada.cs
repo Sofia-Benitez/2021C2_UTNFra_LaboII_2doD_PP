@@ -39,6 +39,10 @@ namespace CiberCafe
 
         }
 
+        /// <summary>
+        /// devuelve el costo correspondiente al tipo de llamada
+        /// </summary>
+        /// <returns></returns>
         public double CostoPorTipo()
         {
             double costo = 0;
@@ -78,7 +82,10 @@ namespace CiberCafe
             }
         }
 
-        //mostrar
+        /// <summary>
+        /// muestra los datos de la llamada
+        /// </summary>
+        /// <returns></returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -89,6 +96,10 @@ namespace CiberCafe
             return sb.ToString();
         }
 
+        /// <summary>
+        /// sobrecarga del metodo ToString para mostrar los datos de la llamada
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return this.Mostrar();

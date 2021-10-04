@@ -13,16 +13,31 @@ namespace CiberCafe
         protected DateTime tiempoFinalizacion;
         protected static double IVA;
 
-        public Uso()
+        /// <summary>
+        /// constructor estatico con el valor del iva
+        /// </summary>
+        static Uso()
         {
             IVA = 1.21;
         }
-        public Uso(DateTime tiempoInicio, Cliente cliente):this()
+
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="tiempoInicio"></param>
+        /// <param name="cliente"></param>
+        public Uso(DateTime tiempoInicio, Cliente cliente)
         {
             this.tiempoInicio = tiempoInicio;
             this.cliente = cliente;
 
         }
+        /// <summary>
+        /// sobrecarga de constructor con tiempo de finalizacion
+        /// </summary>
+        /// <param name="tiempoInicio"></param>
+        /// <param name="tiempoFinalizacion"></param>
+        /// <param name="cliente"></param>
         public Uso(DateTime tiempoInicio, DateTime tiempoFinalizacion, Cliente cliente) : this(tiempoInicio, cliente)
         {
             this.tiempoFinalizacion = tiempoFinalizacion;
@@ -67,8 +82,11 @@ namespace CiberCafe
 
         
 
-        //mostrar
-
+        
+        /// <summary>
+        /// muestra los datos de la clase
+        /// </summary>
+        /// <returns></returns>
         public virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -76,8 +94,6 @@ namespace CiberCafe
             sb.AppendLine($"Inicio del servicio: {this.HoraInicio}");
             sb.AppendLine($"Finalizacion del servicio: {this.HoraFinalizacion}");
             
-
-
             return sb.ToString();
         }
     }

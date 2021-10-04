@@ -42,7 +42,11 @@ namespace Benitez.Sofia.PrimerParcial
         }
 
 
-        
+        /// <summary>
+        /// al presional el boton de asignar controla que la computadora seleccionada tenga los elementos que el cliente necesita, sino no permite la asignacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             

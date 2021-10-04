@@ -210,6 +210,11 @@ namespace Benitez.Sofia.PrimerParcial
 
         #region Botones estados Cabinas
 
+        /// <summary>
+        /// busca el uso  relacionado con la cabina la libera y muestra la informacion del uso (tiempo, cliente, costo)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCabina1_Click(object sender, EventArgs e)
         {
             UsoLlamada usoAux = miCiber.BuscarUsoPorCabina((Cabina)miCiber["T01"]);
@@ -308,7 +313,7 @@ namespace Benitez.Sofia.PrimerParcial
         
 
         /// <summary>
-        /// 
+        /// funcion que se llama cada 10 segundos. servira para el corte automatico de usos pero todavia no funciona 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -341,11 +346,11 @@ namespace Benitez.Sofia.PrimerParcial
 
 
 
-          /// <summary>
-          /// cada vez que cambia el item seleccionado se modifica el label que muestra la informacion ampliada del cliente
-          /// </summary>
-          /// <param name="sender"></param>
-          /// <param name="e"></param>
+        /// <summary>
+        /// cada vez que cambia el item seleccionado se modifica el label que muestra la informacion ampliada del cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstbClientes_SelectedValueChanged(object sender, EventArgs e)
         {
             if(lstbClientes.SelectedItem is not null)
@@ -358,18 +363,21 @@ namespace Benitez.Sofia.PrimerParcial
             
         }
 
+        /// <summary>
+        /// muestra la estadistica del ciber, por el momento muestra usos historicos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEstadistica_Click(object sender, EventArgs e)
         {
             MessageBox.Show(miCiber.MostrarUsos());
         }
 
-        /// <summary>
-        /// busca el uso mas reciente de computadora que corresponda a un id y lo devuelve 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         
-
+        
+        /// <summary>
+        /// maneja la apariencia de los botones asociados a los servicios segun su estado
+        /// </summary>
         private void ManejarEstadosServicios()
         {
             if (miCiber["C01"].Estado == true)
@@ -568,6 +576,12 @@ namespace Benitez.Sofia.PrimerParcial
             }
         }
 
+        /// <summary>
+        /// si hay un cliente seleccionado y su necesidad es una cabina abre un nuevo formulario, sino muestra mensajes de errror
+        /// recibe los datos del formulario de cabina y asigna la cabina con los datos recibidos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAsignarCabina_Click(object sender, EventArgs e)
         {
             Cliente clienteAux;

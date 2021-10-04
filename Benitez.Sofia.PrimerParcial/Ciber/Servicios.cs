@@ -14,10 +14,10 @@ namespace CiberCafe
         public enum TipoServicio { Cabina, Computadora }
 
         /// <summary>
-        /// 
+        /// constructor
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="estado">true libre false en uso</param>
+        /// <param name="estado">true libre / false en uso</param>
         public Servicios(string id, bool estado)
         {
             
@@ -29,6 +29,7 @@ namespace CiberCafe
         {
             get;
         }
+
         /// <summary>
         /// true: libre   false: en uso
         /// </summary>
@@ -37,6 +38,10 @@ namespace CiberCafe
             get; set;
         }
 
+        /// <summary>
+        /// muestra los datos de la clase base
+        /// </summary>
+        /// <returns></returns>
         protected virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
