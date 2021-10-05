@@ -13,7 +13,7 @@ namespace Benitez.Sofia.PrimerParcial
 {
     public partial class FrmComputadora : Form
     {
-        public Computadora computadora;
+        public Computadora computadora = null;
         public Ciber miCiber;
         public Cliente cliente;
         public double tiempoSeleccionado=double.MinValue;
@@ -24,20 +24,37 @@ namespace Benitez.Sofia.PrimerParcial
             InitializeComponent();
             miCiber = ciber;
             cliente = clienteSeleccionado;
-            lblCliente.Text = clienteSeleccionado.Mostrar();
+            lblCliente.Text = clienteSeleccionado.ToString();
 
             rbtnC1.Text = ciber["C01"].ToString();
+            rbtnC1.Tag = ciber["C01"];
+
             rbtnC2.Text = ciber["C02"].ToString();
+            rbtnC2.Tag= ciber["C02"];
+
             rbtnC3.Text = ciber["C03"].ToString();
+            rbtnC3.Tag = ciber["C03"];
+
             rbtnC4.Text = ciber["C04"].ToString();
+            rbtnC4.Tag = ciber["C04"];
+
             rbtnC5.Text = ciber["C05"].ToString();
+            rbtnC5.Tag = ciber["C05"];
+
             rbtnC6.Text = ciber["C06"].ToString();
+            rbtnC6.Tag = ciber["C06"];
+
             rbtnC7.Text = ciber["C07"].ToString();
+            rbtnC7.Tag = ciber["C07"];
+
             rbtnC8.Text = ciber["C08"].ToString();
+            rbtnC8.Tag = ciber["C08"];
+
             rbtnC9.Text = ciber["C09"].ToString();
+            rbtnC9.Tag = ciber["C09"];
+
             rbtnC10.Text = ciber["C10"].ToString();
-
-
+            rbtnC10.Tag = ciber["C10"];
 
         }
 
@@ -47,19 +64,16 @@ namespace Benitez.Sofia.PrimerParcial
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAsignarComputadora_Click(object sender, EventArgs e)
         {
-            
-            string computadoraSeleccionada = "";
             string tiempo = "";
             
            
             foreach (Control item in gbxCompus.Controls)
             {
-
                 if (item is RadioButton && ((RadioButton)item).Checked is true)
                 {
-                    computadoraSeleccionada = item.Text;
+                    computadora = (Computadora)item.Tag;
                 }
             }
 
@@ -73,8 +87,8 @@ namespace Benitez.Sofia.PrimerParcial
                 tiempoSeleccionado= (double)numMinutos.Value;
             }
 
-            computadora = Computadora.BuscarComputadoraSeleccionada(computadoraSeleccionada, miCiber);
-            if(computadora.Estado==true && (cliente == computadora))
+            
+            if(computadora is not null && computadora.Estado==true && (cliente == computadora))
             {
                 string mensaje = $"Desea asignarle la computadora {computadora.Id.ToString()} al cliente {cliente.Nombre.ToString()}?";
                 if (MessageBox.Show(mensaje, "Asignar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

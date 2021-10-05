@@ -91,24 +91,7 @@ namespace CiberCafe
             return this.Mostrar();
         }
 
-        /// <summary>
-        /// metodo estatico que compara los datos de un string ingresada por parametros con las computadoras de un Ciber
-        /// y la devuelve si hay una coincidencia 
-        /// </summary>
-        /// <param name="computadoraSeleccionada">string con datos de una computadora</param>
-        /// <param name="miCiber">CCiber que contiene la lista de servicios a recorrer</param>
-        /// <returns></returns>
-        public static Computadora BuscarComputadoraSeleccionada(string computadoraSeleccionada, Ciber miCiber)
-        {
-            foreach (Computadora item in miCiber.ListaDeServicios)
-            {
-                if (item.ToString() == computadoraSeleccionada)
-                {
-                    return item;
-                }
-            }
-            return null;
-        }
+        
 
        
 

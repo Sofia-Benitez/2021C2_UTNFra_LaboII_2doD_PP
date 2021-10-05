@@ -15,7 +15,7 @@ namespace Benitez.Sofia.PrimerParcial
     {
         public Ciber miCiber;
         public Cliente cliente;
-        public Cabina cabina;
+        public Cabina cabina = null;
         public string codigoPais;
         public string prefijo;
         public string numero;
@@ -25,27 +25,30 @@ namespace Benitez.Sofia.PrimerParcial
             InitializeComponent();
             miCiber = ciber;
             cliente = clienteSeleccionado;
-            lblCliente.Text = clienteSeleccionado.Mostrar();
+            lblCliente.Text = clienteSeleccionado.ToString();
 
             rbtnCabina1.Text = ciber["T01"].ToString();
+            rbtnCabina1.Tag = ciber["T01"];
             rbtnCabina2.Text = ciber["T02"].ToString();
+            rbtnCabina2.Tag = ciber["T02"];
             rbtnCabina3.Text = ciber["T03"].ToString();
+            rbtnCabina3.Tag = ciber["T03"];
             rbtnCabina4.Text = ciber["T04"].ToString();
+            rbtnCabina4.Tag= ciber["T04"];
             rbtnCabina5.Text = ciber["T05"].ToString();
+            rbtnCabina5.Tag = ciber["T05"];
         }
 
         
 
         private void btnAsignarCabina_Click(object sender, EventArgs e)
         {
-            string cabinaSeleccionada = "";
-
-
+            
             foreach (Control item in gbxCabinas.Controls)
             {
                 if (item is RadioButton && ((RadioButton)item).Checked is true)
                 {
-                    cabinaSeleccionada = item.Text;
+                    cabina = (Cabina)item.Tag;
                 }
             }
 
@@ -53,8 +56,7 @@ namespace Benitez.Sofia.PrimerParcial
             prefijo = txtPrefijo.Text;
             numero = txtNumero.Text;
 
-            cabina = Cabina.BuscarCabinaSeleccionada(cabinaSeleccionada, miCiber);
-            if (cabina.Estado == true)
+            if (cabina is not null && cabina.Estado == true)
             {
                 string mensaje = $"Desea asignarle la cabina {cabina.Id.ToString()} al cliente {cliente.Nombre.ToString()}?";
                 if (MessageBox.Show(mensaje, "Asignar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

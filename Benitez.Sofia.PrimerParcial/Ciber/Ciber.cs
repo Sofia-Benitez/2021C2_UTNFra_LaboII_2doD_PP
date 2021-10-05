@@ -230,7 +230,7 @@ namespace CiberCafe
         /// <returns></returns>
         public UsoComputadora AsignarComputadora(Computadora computadora, Cliente cliente)
         {
-            if(computadora.Estado==true)
+            if(computadora is not null && computadora.Estado==true)
             {
                 computadora.Estado = false;//VER ACA EL ERROR EN EJECUCION  
                 UsoComputadora uso = new UsoComputadora(DateTime.Now, cliente, computadora);

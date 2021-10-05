@@ -259,7 +259,6 @@ namespace Benitez.Sofia.PrimerParcial
         private void btnAsignarCompu_Click(object sender, EventArgs e)
         {
             Cliente clienteAux;
-            string cliente = "";
             if(lstbClientes.SelectedItem is null)
             {
                 MessageBox.Show("Error. Tenés que seleccionar un cliente!");
@@ -267,8 +266,7 @@ namespace Benitez.Sofia.PrimerParcial
             }
             else
             {
-                cliente = lstbClientes.SelectedItem.ToString();
-                clienteAux = Cliente.ClienteSeleccionado(cliente, miCiber);
+                clienteAux = (Cliente)lstbClientes.SelectedItem;
                 if(clienteAux.NecesidadCliente is Cliente.Necesidad.Computadora)
                 {
                     FrmComputadora frmComputadora = new FrmComputadora(miCiber, clienteAux);
@@ -287,12 +285,8 @@ namespace Benitez.Sofia.PrimerParcial
                 {
                     MessageBox.Show("Error. El cliente necesita una cabina!");
                 }
-                
-
             }
 
-           
-           
         }
 
         /// <summary>
@@ -303,7 +297,7 @@ namespace Benitez.Sofia.PrimerParcial
             lstbClientes.Items.Clear();
             foreach (Cliente item in miCiber.ListaDeClientes)
             {
-                lstbClientes.Items.Add(item.Mostrar());
+                lstbClientes.Items.Add(item);
             }
 
             ManejarEstadosServicios();
@@ -355,10 +349,10 @@ namespace Benitez.Sofia.PrimerParcial
         {
             if(lstbClientes.SelectedItem is not null)
             {
-                string clienteSeleccionado = lstbClientes.SelectedItem.ToString();
-                Cliente aux = Cliente.ClienteSeleccionado(clienteSeleccionado, miCiber);
+              
+                Cliente clienteAux = (Cliente)lstbClientes.SelectedItem;
 
-                lblDatosCliente.Text = aux.MostrarDatosCliente();
+                lblDatosCliente.Text = clienteAux.MostrarDatosCliente();
             }
             
         }
@@ -585,7 +579,7 @@ namespace Benitez.Sofia.PrimerParcial
         private void btnAsignarCabina_Click(object sender, EventArgs e)
         {
             Cliente clienteAux;
-            string cliente = "";
+            
             if (lstbClientes.SelectedItem is null)
             {
                 MessageBox.Show("Error. Tenés que seleccionar un cliente!");
@@ -593,8 +587,7 @@ namespace Benitez.Sofia.PrimerParcial
             }
             else
             {
-                cliente = lstbClientes.SelectedItem.ToString();
-                clienteAux = Cliente.ClienteSeleccionado(cliente, miCiber);
+                clienteAux = (Cliente)lstbClientes.SelectedItem;
                 if (clienteAux.NecesidadCliente is Cliente.Necesidad.Cabina)
                 {
                     FrmCabina frmCabina = new FrmCabina(miCiber, clienteAux);

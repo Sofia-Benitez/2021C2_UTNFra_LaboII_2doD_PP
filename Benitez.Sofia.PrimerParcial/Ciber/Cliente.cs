@@ -73,7 +73,7 @@ namespace CiberCafe
         /// muestra el nombre del cliente, el servicio que necesita y los requerimientos
         /// </summary>
         /// <returns></returns>
-        public string Mostrar()
+        private string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{this.nombre} | {this.necesidad} | ");
@@ -99,6 +99,11 @@ namespace CiberCafe
             sb.AppendLine($"Edad: {this.edad}");
             sb.AppendLine($"DNI: {this.dni}");
             return sb.ToString();
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
         }
 
         /// <summary>
@@ -153,22 +158,6 @@ namespace CiberCafe
         
         //sobrecargar equals y hash
 
-        /// <summary>
-        /// busca al cliente que coincide con le string ue se pasa por parametros, si encuentra una coincidencia devuelve al cliente
-        /// </summary>
-        /// <param name="clienteSeleccionado"></param>
-        /// <param name="miCiber"></param>
-        /// <returns></returns>
-        public static Cliente ClienteSeleccionado(string clienteSeleccionado, Ciber miCiber)
-        {
-            foreach (Cliente item in miCiber.ListaDeClientes)
-            {
-                if (item.Mostrar() == clienteSeleccionado)
-                {
-                    return item;
-                }
-            }
-            return null;
-        }
+        
     }
 }

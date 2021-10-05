@@ -33,7 +33,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.rbtnC2 = new System.Windows.Forms.RadioButton();
             this.rbtnC3 = new System.Windows.Forms.RadioButton();
             this.rbtnC4 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAsignarComputadora = new System.Windows.Forms.Button();
             this.lblCliente = new System.Windows.Forms.Label();
             this.numMinutos = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -93,15 +93,15 @@ namespace Benitez.Sofia.PrimerParcial
             this.rbtnC4.Text = "radioButton1";
             this.rbtnC4.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAsignarComputadora
             // 
-            this.button1.Location = new System.Drawing.Point(743, 312);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 50);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Asignar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAsignarComputadora.Location = new System.Drawing.Point(743, 312);
+            this.btnAsignarComputadora.Name = "btnAsignarComputadora";
+            this.btnAsignarComputadora.Size = new System.Drawing.Size(169, 50);
+            this.btnAsignarComputadora.TabIndex = 4;
+            this.btnAsignarComputadora.Text = "Asignar";
+            this.btnAsignarComputadora.UseVisualStyleBackColor = true;
+            this.btnAsignarComputadora.Click += new System.EventHandler(this.btnAsignarComputadora_Click);
             // 
             // lblCliente
             // 
@@ -237,7 +237,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numMinutos);
             this.Controls.Add(this.lblCliente);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAsignarComputadora);
             this.Name = "FrmComputadora";
             this.Text = "Asignar computadora";
             ((System.ComponentModel.ISupportInitialize)(this.numMinutos)).EndInit();
@@ -254,7 +254,7 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.RadioButton rbtnC2;
         private System.Windows.Forms.RadioButton rbtnC3;
         private System.Windows.Forms.RadioButton rbtnC4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAsignarComputadora;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.NumericUpDown numMinutos;
         private System.Windows.Forms.Label label1;

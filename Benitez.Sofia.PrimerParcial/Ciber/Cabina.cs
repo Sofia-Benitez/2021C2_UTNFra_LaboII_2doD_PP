@@ -71,26 +71,6 @@ namespace CiberCafe
             return this.Mostrar();
         }
 
-        /// <summary>
-        /// metodo estatico que busca en la lista de servicios una cabina que corresponda con los datos pasados por parametros
-        /// </summary>
-        /// <param name="cabinaSeleccionada"></param>
-        /// <param name="miCiber"></param>
-        /// <returns>devuelve la cabina si alguna coincide y sino null</returns>
-        public static Cabina BuscarCabinaSeleccionada(string cabinaSeleccionada, Ciber miCiber)
-        {
-            foreach (Servicios item in miCiber.ListaDeServicios)
-            {
-                if(item is Cabina)
-                {
-                    if (item.ToString() == cabinaSeleccionada)
-                    {
-                        return (Cabina)item;
-                    }
-                }
-                
-            }
-            return null;
-        }
+        
     }
 }
