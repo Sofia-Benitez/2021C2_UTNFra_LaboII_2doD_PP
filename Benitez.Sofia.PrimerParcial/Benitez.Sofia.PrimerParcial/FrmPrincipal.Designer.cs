@@ -71,6 +71,8 @@ namespace Benitez.Sofia.PrimerParcial
             this.lstbClientes = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblDatosCliente = new System.Windows.Forms.Label();
+            this.lblAyudaEquipos = new System.Windows.Forms.Label();
+            this.lblAyudaClientes = new System.Windows.Forms.Label();
             this.gbUsuario.SuspendLayout();
             this.gbEquipos.SuspendLayout();
             this.SuspendLayout();
@@ -109,7 +111,7 @@ namespace Benitez.Sofia.PrimerParcial
             // lblClientes
             // 
             this.lblClientes.AutoSize = true;
-            this.lblClientes.Location = new System.Drawing.Point(12, 63);
+            this.lblClientes.Location = new System.Drawing.Point(18, 63);
             this.lblClientes.Name = "lblClientes";
             this.lblClientes.Size = new System.Drawing.Size(49, 15);
             this.lblClientes.TabIndex = 2;
@@ -155,6 +157,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.gbEquipos.TabIndex = 3;
             this.gbEquipos.TabStop = false;
             this.gbEquipos.Text = "Equipos";
+            this.gbEquipos.MouseHover += new System.EventHandler(this.gbEquipos_MouseHover);
             // 
             // btnCabina5
             // 
@@ -497,11 +500,13 @@ namespace Benitez.Sofia.PrimerParcial
             this.lstbClientes.Size = new System.Drawing.Size(223, 259);
             this.lstbClientes.TabIndex = 7;
             this.lstbClientes.SelectedValueChanged += new System.EventHandler(this.lstbClientes_SelectedValueChanged);
+            this.lstbClientes.MouseLeave += new System.EventHandler(this.lstbClientes_MouseLeave_1);
+            this.lstbClientes.MouseHover += new System.EventHandler(this.lstbClientes_MouseHover);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblDatosCliente
@@ -514,11 +519,34 @@ namespace Benitez.Sofia.PrimerParcial
             this.lblDatosCliente.TabIndex = 8;
             this.lblDatosCliente.Text = "Cliente";
             // 
+            // lblAyudaEquipos
+            // 
+            this.lblAyudaEquipos.AutoSize = true;
+            this.lblAyudaEquipos.Location = new System.Drawing.Point(444, 50);
+            this.lblAyudaEquipos.Name = "lblAyudaEquipos";
+            this.lblAyudaEquipos.Size = new System.Drawing.Size(342, 21);
+            this.lblAyudaEquipos.TabIndex = 9;
+            this.lblAyudaEquipos.Text = "Al cliquear el botón de un equipo en uso finaliza su utilización";
+            this.lblAyudaEquipos.UseCompatibleTextRendering = true;
+            this.lblAyudaEquipos.Visible = false;
+            // 
+            // lblAyudaClientes
+            // 
+            this.lblAyudaClientes.AutoSize = true;
+            this.lblAyudaClientes.Location = new System.Drawing.Point(18, 351);
+            this.lblAyudaClientes.Name = "lblAyudaClientes";
+            this.lblAyudaClientes.Size = new System.Drawing.Size(332, 15);
+            this.lblAyudaClientes.TabIndex = 10;
+            this.lblAyudaClientes.Text = "Lista de espera de clientes. Seleccionar el que se desea asignar";
+            this.lblAyudaClientes.Visible = false;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 449);
+            this.Controls.Add(this.lblAyudaClientes);
+            this.Controls.Add(this.lblAyudaEquipos);
             this.Controls.Add(this.lblDatosCliente);
             this.Controls.Add(this.lstbClientes);
             this.Controls.Add(this.btnEstadistica);
@@ -532,6 +560,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.Text = "FrmPrincipal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
+            this.MouseLeave += new System.EventHandler(this.gbEquipos_MouseLeave);
             this.gbUsuario.ResumeLayout(false);
             this.gbUsuario.PerformLayout();
             this.gbEquipos.ResumeLayout(false);
@@ -584,5 +613,7 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.ListBox lstbClientes;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblDatosCliente;
+        private System.Windows.Forms.Label lblAyudaEquipos;
+        private System.Windows.Forms.Label lblAyudaClientes;
     }
 }

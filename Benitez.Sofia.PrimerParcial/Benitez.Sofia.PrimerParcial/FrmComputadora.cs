@@ -17,6 +17,7 @@ namespace Benitez.Sofia.PrimerParcial
         public Ciber miCiber;
         public Cliente cliente;
         public double tiempoSeleccionado=double.MinValue;
+        public string tiempo = "";
 
 
         public FrmComputadora(Ciber ciber, Cliente clienteSeleccionado)
@@ -66,7 +67,7 @@ namespace Benitez.Sofia.PrimerParcial
         /// <param name="e"></param>
         private void btnAsignarComputadora_Click(object sender, EventArgs e)
         {
-            string tiempo = "";
+           
             
            
             foreach (Control item in gbxCompus.Controls)
@@ -83,7 +84,7 @@ namespace Benitez.Sofia.PrimerParcial
             }
             else
             {
-                tiempo = numMinutos.Value.ToString();
+                tiempo = " por " + numMinutos.Value.ToString() + " minutos";
                 tiempoSeleccionado= (double)numMinutos.Value;
             }
 
@@ -93,7 +94,7 @@ namespace Benitez.Sofia.PrimerParcial
                 string mensaje = $"Desea asignarle la computadora {computadora.Id.ToString()} al cliente {cliente.Nombre.ToString()}?";
                 if (MessageBox.Show(mensaje, "Asignar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show(computadora.ToString() + "\n Asignada " + tiempo);
+                    MessageBox.Show(computadora.Id.ToString() + "\n Asignada " + tiempo);
                     this.Close();
                 }
                

@@ -12,6 +12,7 @@ namespace CiberCafe
         private string marca;
         private Tipo tipo;
         public enum Tipo { Disco, Teclado};
+        private UsoLlamada usoActual;
 
         /// <summary>
         /// constructor 
@@ -22,7 +23,6 @@ namespace CiberCafe
         /// <param name="estado"></param>
         public Cabina(string id, string marca, Tipo tipo, bool estado):base(id, estado)
         {
-            
             this.marca = marca;
             this.tipo = tipo;
         }
@@ -46,7 +46,18 @@ namespace CiberCafe
                 this.estado = value;
             }
         }
+        public UsoLlamada UsoActual
+        {
+            get
+            {
+                return this.usoActual;
+            }
 
+            set
+            {
+                this.usoActual = value;
+            }
+        }
         /// <summary>
         /// muestra los datos de la clase llamando a la clase base 
         /// </summary>
@@ -69,6 +80,20 @@ namespace CiberCafe
         public override string ToString()
         {
             return this.Mostrar();
+        }
+
+        /// <summary>
+        /// libera el uso de una cabina, setea su tiempo de finalizacion
+        /// </summary>
+        /// <returns>devuelve </returns>
+        public string LiberarCabina()
+        {
+            this.Estado = true;
+            this.UsoActual.TiempoFinalizacion = DateTime.Now;
+            string aux = this.usoActual.Mostrar();
+            this.UsoActual = null;
+
+            return aux;
         }
 
         public static bool operator ==(Cabina cabina1, Cabina cabina2)

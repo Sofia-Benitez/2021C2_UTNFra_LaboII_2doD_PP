@@ -102,7 +102,8 @@ namespace CiberCafe
 
         public override double CalcularCosto()
         {
-            return this.TiempoDeUso * this.CostoPorTipo();
+            double horasAminutos = this.TiempoDeUsoHoras * 60;
+            return (this.TiempoDeUsoMinutos + horasAminutos) * this.CostoPorTipo();
         }
 
         public override double CalcularCostoNeto()
@@ -137,7 +138,8 @@ namespace CiberCafe
             return this.Mostrar();
         }
 
-        ///costo
-        ///((this.tiempoFinalizacion-this.tiempoInicio).Seconds) * this.costoFraccion
+        
     }
+
+
 }

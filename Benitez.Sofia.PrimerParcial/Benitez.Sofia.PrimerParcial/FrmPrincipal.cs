@@ -120,8 +120,6 @@ namespace Benitez.Sofia.PrimerParcial
             Refrescar();
 
            
-            
-
         }
 
         #region Botones estados computadoras
@@ -134,83 +132,72 @@ namespace Benitez.Sofia.PrimerParcial
         /// <param name="e"></param>
         private void btnCompu1_Click(object sender, EventArgs e)
         {
-            UsoComputadora usoAux = miCiber.BuscarUsoPorComputadora((Computadora)miCiber["C01"]);
-            miCiber.LiberarComputadora(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Computadora)miCiber["C01"]).LiberarComputadora();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
 
         }
 
         private void btnCompu2_Click(object sender, EventArgs e)
         {
-            UsoComputadora usoAux = miCiber.BuscarUsoPorComputadora((Computadora)miCiber["C02"]);
-            miCiber.LiberarComputadora(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Computadora)miCiber["C02"]).LiberarComputadora();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCompu3_Click(object sender, EventArgs e)
         {
-            UsoComputadora usoAux = miCiber.BuscarUsoPorComputadora((Computadora)miCiber["C03"]);
-            miCiber.LiberarComputadora(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Computadora)miCiber["C03"]).LiberarComputadora();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCompu4_Click(object sender, EventArgs e)
         {
-            UsoComputadora usoAux = miCiber.BuscarUsoPorComputadora((Computadora)miCiber["C04"]);
-            miCiber.LiberarComputadora(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Computadora)miCiber["C04"]).LiberarComputadora();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCompu5_Click(object sender, EventArgs e)
         {
-            UsoComputadora usoAux = miCiber.BuscarUsoPorComputadora((Computadora)miCiber["C05"]);
-            miCiber.LiberarComputadora(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Computadora)miCiber["C05"]).LiberarComputadora();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCompu6_Click(object sender, EventArgs e)
         {
-            UsoComputadora usoAux= miCiber.BuscarUsoPorComputadora((Computadora)miCiber["C06"]);
-            miCiber.LiberarComputadora(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Computadora)miCiber["C06"]).LiberarComputadora();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCompu7_Click(object sender, EventArgs e)
         {
-            UsoComputadora usoAux = miCiber.BuscarUsoPorComputadora((Computadora)miCiber["C07"]);
-            miCiber.LiberarComputadora(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Computadora)miCiber["C07"]).LiberarComputadora();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCompu8_Click(object sender, EventArgs e)
         {
-            UsoComputadora usoAux = miCiber.BuscarUsoPorComputadora((Computadora)miCiber["C08"]);
-            miCiber.LiberarComputadora(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Computadora)miCiber["C08"]).LiberarComputadora();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCompu9_Click(object sender, EventArgs e)
         {
-            UsoComputadora usoAux = miCiber.BuscarUsoPorComputadora((Computadora)miCiber["C09"]);
-            miCiber.LiberarComputadora(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Computadora)miCiber["C09"]).LiberarComputadora();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCompu10_Click(object sender, EventArgs e)
         {
-
-            UsoComputadora usoAux = miCiber.BuscarUsoPorComputadora((Computadora)miCiber["C10"]);
-            miCiber.LiberarComputadora(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Computadora)miCiber["C10"]).LiberarComputadora();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
@@ -219,47 +206,43 @@ namespace Benitez.Sofia.PrimerParcial
         #region Botones estados Cabinas
 
         /// <summary>
-        /// busca el uso  relacionado con la cabina la libera y muestra la informacion del uso (tiempo, cliente, costo)
+        /// libera la cabina correspondiente y muestra la informacion del uso (tiempo, cliente, costo)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnCabina1_Click(object sender, EventArgs e)
         {
-            UsoLlamada usoAux = miCiber.BuscarUsoPorCabina((Cabina)miCiber["T01"]);
-            miCiber.LiberarCabina(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+
+            string datosUso = ((Cabina)miCiber["T01"]).LiberarCabina();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCabina2_Click(object sender, EventArgs e)
         {
-            UsoLlamada usoAux = miCiber.BuscarUsoPorCabina((Cabina)miCiber["T02"]);
-            miCiber.LiberarCabina(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Cabina)miCiber["T02"]).LiberarCabina();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCabina3_Click(object sender, EventArgs e)
         {
-            UsoLlamada usoAux = miCiber.BuscarUsoPorCabina((Cabina)miCiber["T03"]);
-            miCiber.LiberarCabina(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Cabina)miCiber["T03"]).LiberarCabina();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCabina4_Click(object sender, EventArgs e)
         {
-            UsoLlamada usoAux = miCiber.BuscarUsoPorCabina((Cabina)miCiber["T04"]);
-            miCiber.LiberarCabina(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Cabina)miCiber["T04"]).LiberarCabina();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
         private void btnCabina5_Click(object sender, EventArgs e)
         {
-            UsoLlamada usoAux = miCiber.BuscarUsoPorCabina((Cabina)miCiber["T05"]);
-            miCiber.LiberarCabina(usoAux);
-            MessageBox.Show(usoAux.Mostrar());
+            string datosUso = ((Cabina)miCiber["T05"]).LiberarCabina();
+            MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
 
@@ -293,13 +276,20 @@ namespace Benitez.Sofia.PrimerParcial
 
 
                     frmComputadora.ShowDialog();
-                    if (frmComputadora.tiempoSeleccionado != double.MinValue)
-                    {
-                        miCiber.AsignarComputadora(frmComputadora.computadora, frmComputadora.cliente, frmComputadora.tiempoSeleccionado);
-                    }
+                    
                     if (frmComputadora.computadora is not null)
                     {
-                        miCiber.AsignarComputadora(frmComputadora.computadora, frmComputadora.cliente);
+                        if(frmComputadora.tiempo == "tiempo libre")
+                        {
+                            miCiber.AsignarComputadoraLibre(frmComputadora.computadora, frmComputadora.cliente);
+                        }
+                        else
+                        {
+                            miCiber.AsignarComputadoraPorTiempo(frmComputadora.computadora, frmComputadora.cliente, frmComputadora.tiempoSeleccionado);
+                        }
+                        
+                        
+                   
                     }
                     else
                     {
@@ -379,28 +369,15 @@ namespace Benitez.Sofia.PrimerParcial
         
 
         /// <summary>
-        /// funcion que se llama cada 10 segundos. servira para el corte automatico de usos pero todavia no funciona 
+        /// funcion que se llama cada 10 segundos. Chequea que el tiempo actual sea menor al tiepo de finalizacion 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            int flag = 0;
-            //EL TICK EJECUTA ESTA FUNCION CADA 100ms
-            UsoComputadora usoAux = miCiber.BuscarUsoFinalizado();
-            if(flag ==0)
-            {
-                if (usoAux is not null)
-                {
-                    miCiber.LiberarComputadora(usoAux);
-                    MessageBox.Show(usoAux.Mostrar());
-                    Refrescar();
-                    flag = 1;
-                }
-            }
-            
-            
+            BuscarUsosFinalizados();
+
             /// SI alguno de las compus ocupadas se paso del tiempo de uso.. 
             /// si es mas grande el daTEtime now que el tiempo de finalizacion
             /// en la lista de usoss
@@ -648,5 +625,53 @@ namespace Benitez.Sofia.PrimerParcial
                 e.Cancel = true;
             }
         }
+
+        private void BuscarUsosFinalizados()
+        {
+            foreach (Servicios item in miCiber.ListaDeServicios)
+            {
+                if (item is Computadora)
+                {
+                    Computadora aux = (Computadora)item;
+                    if (aux.UsoActual is not null)
+                    {
+                        if (aux.UsoActual.TiempoFinalizacion != DateTime.MinValue && aux.UsoActual.TiempoFinalizacion < DateTime.Now)
+                        {
+                            aux.Estado = true;
+
+                            string datos = aux.UsoActual.Mostrar();
+                            aux.UsoActual = null;
+                            MessageBox.Show(datos, "Tiempo de uso del usuario finalizado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            Refrescar();
+                        }
+                    }
+                }
+            }
+        }
+
+        #region mensajes ayuda
+        private void gbEquipos_MouseHover(object sender, EventArgs e)
+        {
+            lblAyudaEquipos.Visible = true;
+        }
+
+        private void gbEquipos_MouseLeave(object sender, EventArgs e)
+        {
+            lblAyudaEquipos.Visible = false;
+        }
+
+        private void lstbClientes_MouseHover(object sender, EventArgs e)
+        {
+            lblAyudaClientes.Visible = true;
+        }
+
+
+        private void lstbClientes_MouseLeave_1(object sender, EventArgs e)
+        {
+            lblAyudaClientes.Visible = false;
+        }
+
+        #endregion
+
     }
 }

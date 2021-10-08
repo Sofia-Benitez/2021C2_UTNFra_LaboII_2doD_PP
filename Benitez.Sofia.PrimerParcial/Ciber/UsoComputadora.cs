@@ -92,21 +92,12 @@ namespace CiberCafe
 
             if (this.TiempoFinalizacion != DateTime.MinValue)
             {
-                double segundosUtilizados = ((this.tiempoFinalizacion - this.tiempoInicio).Seconds);
+                double horasAminutos = this.TiempoDeUsoHoras * 60;
+                double segundosUtilizados = this.TiempoDeUsoMinutos + horasAminutos;
+
+                segundosUtilizados= segundosUtilizados / 30;
+                costoTotal= Math.Ceiling(segundosUtilizados) * this.costoFraccion;
                 
-                if(segundosUtilizados<30)
-                {
-                    costoTotal = this.costoFraccion;
-                }
-                else if(segundosUtilizados>30 && segundosUtilizados<60)
-                {
-                    costoTotal = this.costoFraccion * 2;
-                }
-                else
-                {
-                    //VER math.ceiling y math.floor
-                    costoTotal=(segundosUtilizados / 30) * this.costoFraccion;
-                }
                 
             }
             return costoTotal;
@@ -138,7 +129,10 @@ namespace CiberCafe
             return sb.ToString();
         }
 
-       
-        //sobrecarga to string
+
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
     }
 }

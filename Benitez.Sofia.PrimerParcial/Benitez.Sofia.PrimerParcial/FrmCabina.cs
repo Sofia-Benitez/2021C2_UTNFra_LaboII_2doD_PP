@@ -129,7 +129,7 @@ namespace Benitez.Sofia.PrimerParcial
                 string mensaje = $"Desea asignarle la cabina {cabina.Id.ToString()} al cliente {cliente.Nombre.ToString()}?";
                 if (MessageBox.Show(mensaje, "Asignar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show($"{cabina.ToString()}  \n Asignada.  \n Numero de destino: {numero}");
+                    MessageBox.Show($"{cabina.Id.ToString()}  \n Asignada.  \n Numero de destino: {numero}");
                     this.Close();
                 }
 

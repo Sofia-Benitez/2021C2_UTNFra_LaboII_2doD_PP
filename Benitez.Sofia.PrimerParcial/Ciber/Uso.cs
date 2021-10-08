@@ -30,18 +30,10 @@ namespace CiberCafe
         {
             this.tiempoInicio = tiempoInicio;
             this.cliente = cliente;
+            this.tiempoFinalizacion = DateTime.MinValue;
 
         }
-        /// <summary>
-        /// sobrecarga de constructor con tiempo de finalizacion
-        /// </summary>
-        /// <param name="tiempoInicio"></param>
-        /// <param name="tiempoFinalizacion"></param>
-        /// <param name="cliente"></param>
-        public Uso(DateTime tiempoInicio, DateTime tiempoFinalizacion, Cliente cliente) : this(tiempoInicio, cliente)
-        {
-            this.tiempoFinalizacion = tiempoFinalizacion;
-        }
+        
         public virtual DateTime TiempoInicio
         {
             get
@@ -80,13 +72,26 @@ namespace CiberCafe
         /// <summary>
         /// propiedad que devuelve el tiempo de uso en segundos que cuentan como minutos para la aplicacion
         /// </summary>
-        public double TiempoDeUso
+        public double TiempoDeUsoMinutos
         {
             get
             {
                 if (this.TiempoFinalizacion != DateTime.MinValue)
                 {
                     return ((this.tiempoFinalizacion - this.tiempoInicio).Seconds);
+                }
+                return 0;
+
+            }
+        }
+
+        public double TiempoDeUsoHoras
+        {
+            get
+            {
+                if (this.TiempoFinalizacion != DateTime.MinValue)
+                {
+                    return ((this.tiempoFinalizacion - this.tiempoInicio).Minutes);
                 }
                 return 0;
 
@@ -110,7 +115,7 @@ namespace CiberCafe
             sb.AppendLine($"Cliente: {this.cliente.Nombre}");
             sb.AppendLine($"Inicio del servicio: {this.HoraInicio}");
             sb.AppendLine($"Finalizacion del servicio: {this.HoraFinalizacion}");
-            sb.AppendLine($"Tiempo de uso: {this.TiempoDeUso} minutos");
+            sb.AppendLine($"Tiempo de uso: {this.TiempoDeUsoHoras} horas {this.TiempoDeUsoMinutos} minutos");
 
             return sb.ToString();
         }

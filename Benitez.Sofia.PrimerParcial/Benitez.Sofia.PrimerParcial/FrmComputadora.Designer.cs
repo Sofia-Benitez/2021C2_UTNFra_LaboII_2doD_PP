@@ -35,7 +35,6 @@ namespace Benitez.Sofia.PrimerParcial
             this.rbtnC4 = new System.Windows.Forms.RadioButton();
             this.btnAsignarComputadora = new System.Windows.Forms.Button();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.numMinutos = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.gbxCompus = new System.Windows.Forms.GroupBox();
             this.rbtnC10 = new System.Windows.Forms.RadioButton();
@@ -45,8 +44,10 @@ namespace Benitez.Sofia.PrimerParcial
             this.rbtnC6 = new System.Windows.Forms.RadioButton();
             this.rbtnC5 = new System.Windows.Forms.RadioButton();
             this.chbTiempoLibre = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinutos)).BeginInit();
+            this.numMinutos = new System.Windows.Forms.NumericUpDown();
+            this.lblAyudaTiempo = new System.Windows.Forms.Label();
             this.gbxCompus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinutos)).BeginInit();
             this.SuspendLayout();
             // 
             // rbtnC1
@@ -111,14 +112,6 @@ namespace Benitez.Sofia.PrimerParcial
             this.lblCliente.Size = new System.Drawing.Size(44, 15);
             this.lblCliente.TabIndex = 5;
             this.lblCliente.Text = "Cliente";
-            // 
-            // numMinutos
-            // 
-            this.numMinutos.Enabled = false;
-            this.numMinutos.Location = new System.Drawing.Point(467, 330);
-            this.numMinutos.Name = "numMinutos";
-            this.numMinutos.Size = new System.Drawing.Size(133, 23);
-            this.numMinutos.TabIndex = 6;
             // 
             // label1
             // 
@@ -227,23 +220,53 @@ namespace Benitez.Sofia.PrimerParcial
             this.chbTiempoLibre.UseVisualStyleBackColor = true;
             this.chbTiempoLibre.CheckedChanged += new System.EventHandler(this.chbTiempoLibre_CheckedChanged);
             // 
+            // numMinutos
+            // 
+            this.numMinutos.Enabled = false;
+            this.numMinutos.Increment = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numMinutos.Location = new System.Drawing.Point(467, 330);
+            this.numMinutos.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numMinutos.Name = "numMinutos";
+            this.numMinutos.ReadOnly = true;
+            this.numMinutos.Size = new System.Drawing.Size(138, 23);
+            this.numMinutos.TabIndex = 11;
+            // 
+            // lblAyudaTiempo
+            // 
+            this.lblAyudaTiempo.AutoSize = true;
+            this.lblAyudaTiempo.Location = new System.Drawing.Point(252, 356);
+            this.lblAyudaTiempo.Name = "lblAyudaTiempo";
+            this.lblAyudaTiempo.Size = new System.Drawing.Size(357, 15);
+            this.lblAyudaTiempo.TabIndex = 12;
+            this.lblAyudaTiempo.Text = "Elección de tiempo de uso. Solo es posible asignar una modalidad.";
+            this.lblAyudaTiempo.Visible = false;
+            // 
             // FrmComputadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 379);
+            this.Controls.Add(this.lblAyudaTiempo);
+            this.Controls.Add(this.numMinutos);
             this.Controls.Add(this.chbTiempoLibre);
             this.Controls.Add(this.gbxCompus);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numMinutos);
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.btnAsignarComputadora);
             this.Name = "FrmComputadora";
             this.Text = "Asignar computadora";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmComputadora_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.numMinutos)).EndInit();
             this.gbxCompus.ResumeLayout(false);
             this.gbxCompus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,7 +280,6 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.RadioButton rbtnC4;
         private System.Windows.Forms.Button btnAsignarComputadora;
         private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.NumericUpDown numMinutos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbxCompus;
         private System.Windows.Forms.RadioButton rbtnC8;
@@ -267,5 +289,7 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.RadioButton rbtnC10;
         private System.Windows.Forms.RadioButton rbtnC9;
         private System.Windows.Forms.CheckBox chbTiempoLibre;
+        private System.Windows.Forms.NumericUpDown numMinutos;
+        private System.Windows.Forms.Label lblAyudaTiempo;
     }
 }

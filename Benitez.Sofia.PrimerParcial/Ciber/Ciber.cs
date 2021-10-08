@@ -59,13 +59,6 @@ namespace CiberCafe
             }
         }
 
-        public DateTime TiempoAhora
-        {
-            get
-            {
-                return this.fechaYHora;
-            }
-        }
         public List<Cliente> ListaDeClientes
         {
             get
@@ -92,7 +85,7 @@ namespace CiberCafe
         /// <summary>
         /// indexador para acceder al servicio correspondiente de la lista de servicios
         /// </summary>
-        /// <param name="index"></param>
+        /// <param name="index">string con la inicial del cervicio y el numero</param>
         /// <returns></returns>
         public Servicios this[string index]
         { 
@@ -149,24 +142,6 @@ namespace CiberCafe
             return tipo;
         }
 
-        
-
-        //public static bool operator ==(Ciber ciber, Servicios servicio)
-        //{
-        //    foreach (Servicios item in ciber.listaServicios)
-        //    {
-        //        if(servicio.Id == item.Id)
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //    return false;
-        //}
-
-        //public static bool operator !=(Ciber ciber, Servicios servicio)
-        //{
-        //    return !(ciber == servicio);
-        //}
 
         /// <summary>
         /// Sobrecarga del operador para agregar clientes a la lista de espera del ciber
@@ -197,7 +172,7 @@ namespace CiberCafe
         /// <param name="computadora">computadora que se pasara por referencia en el uso nuevo</param>
         /// <param name="cliente">cliente que se pasara por referencia en el uso nuevo</param>
         /// <returns></returns>
-        public UsoComputadora AsignarComputadora(Computadora computadora, Cliente cliente)
+        public UsoComputadora AsignarComputadoraLibre(Computadora computadora, Cliente cliente)
         {
             if(computadora is not null && computadora.Estado==true)
             {
@@ -205,6 +180,7 @@ namespace CiberCafe
                 UsoComputadora uso = new UsoComputadora(DateTime.Now, cliente, computadora);
                 this.listaClientes.Remove(cliente);
                 this.listaDeUsos.Add(uso);
+                computadora.UsoActual = uso;
                 return uso;
             }
             return null;
@@ -217,32 +193,22 @@ namespace CiberCafe
         /// <param name="cliente"></param>
         /// <param name="tiempoSeleccionado"></param>
         /// <returns></returns>
-        public UsoComputadora AsignarComputadora(Computadora computadora, Cliente cliente, double tiempoSeleccionado)
+        public UsoComputadora AsignarComputadoraPorTiempo(Computadora computadora, Cliente cliente, double tiempoSeleccionado)
         {
-            DateTime tiempoFinalizacion = DateTime.Now.AddSeconds(tiempoSeleccionado);
-            computadora.Estado = false;//VER ACA EL ERROR EN EJECUCION  
-            UsoComputadora uso = new UsoComputadora(DateTime.Now, tiempoFinalizacion, cliente, computadora);
+            DateTime tiempoInicio = DateTime.Now;
+            UsoComputadora uso = new UsoComputadora(tiempoInicio, cliente, computadora);
+            computadora.UsoActual = uso;
+            computadora.UsoActual.TiempoFinalizacion = tiempoInicio.AddSeconds(tiempoSeleccionado);
+            computadora.Estado = false;
+            
+            
             this.listaClientes.Remove(cliente);
             this.listaDeUsos.Add(uso);
             return uso;
         }
 
-        //unificar las funciones de liberar
-        /// <summary>
-        /// libera la computadora y determina el tiempo de finalizacion
-        /// </summary>
-        /// <param name="uso"></param>
-        public void LiberarComputadora(UsoComputadora uso)
-        {
-            uso.Computadora.Estado = true;
-            uso.TiempoFinalizacion = DateTime.Now;
-        }
-
-        public void LiberarCabina(UsoLlamada uso)
-        {
-            uso.Cabina.Estado = true;
-            uso.TiempoFinalizacion = DateTime.Now;
-        }
+        
+        
 
         /// <summary>
         /// muestra los datos de los usos de la lista
@@ -259,79 +225,7 @@ namespace CiberCafe
             return sb.ToString();
         }
 
-        /// <summary>
-        /// busca entre los usos de la lista al que involucre la computadora que recibe. si hay alguno lo devuelve \
-        /// AGREGAR SI EL ESTADO ES OCUPADO PARA CUANDO HAYA MAS DE DOS USOS 
-        /// </summary>
-        /// <param name="computadora"></param>
-        /// <returns></returns>
-        public UsoComputadora BuscarUsoPorComputadora(Computadora computadora)
-        {
-
-            UsoComputadora usoAux = null;
-            foreach (Uso item in this.ListaDeUsos)
-            {
-                if(item is UsoComputadora)
-                {
-                    usoAux = (UsoComputadora)item;
-                    if (usoAux.Computadora == computadora)
-                    {
-                        usoAux = (UsoComputadora)item;
-                    }
-                    else
-                    {
-                        usoAux = null;
-                    }
-                }
-                
-            }
-            return usoAux;
-        }
-
-        /// <summary>
-        ///busca entre los usos de la lista al que involucre la cabina que recibe. 
-        ///si hay alguno lo devuelve 
-        /// </summary>
-        /// <param name="cabina"></param>
-        /// <returns></returns>
-        public UsoLlamada BuscarUsoPorCabina(Cabina cabina)
-        {
-            UsoLlamada usoAux = null;
-            foreach (Uso item in this.ListaDeUsos)
-            {
-                if(item is UsoLlamada)
-                {
-                    usoAux = (UsoLlamada)item;
-                    if (usoAux.Cabina == cabina)
-                    {
-                         usoAux = (UsoLlamada)item;
-                    }
-                    else
-                    {
-                        usoAux = null;
-                    }
-                   
-                }
-                
-            }
-            return usoAux;
-        }
-
-        /// <summary>
-        /// busca entre los usos alguno cuyo tiempo de finalizacion sea anterior al tiempo actual   TODAVIA NO FUNCIONA
-        /// </summary>
-        /// <returns></returns>
-        public UsoComputadora BuscarUsoFinalizado()
-        {
-            foreach (Uso item in this.listaDeUsos)
-            {
-                if(item.TiempoFinalizacion<DateTime.Now)
-                {
-                    return (UsoComputadora)item;
-                }
-            }
-            return null;
-        }
+     
 
         /// <summary>
         /// metodo que instancia un nuevo uso de computadora sin tiempo de finalizacion. remueve al cliente de la lista de espera y agrega el uso a la lista de usos del ciber 
@@ -346,6 +240,7 @@ namespace CiberCafe
                 cabina.Estado = false;
                 UsoLlamada.TipoLlamada tipo = ObtenerTipoLlamada(numero);
                 UsoLlamada uso = new UsoLlamada(DateTime.Now, numero, tipo, cliente, cabina);
+                cabina.UsoActual = uso;
                 this.listaClientes.Remove(cliente);
                 this.listaDeUsos.Add(uso);
                 return uso;

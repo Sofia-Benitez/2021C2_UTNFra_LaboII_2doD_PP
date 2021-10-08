@@ -7,6 +7,7 @@ namespace CiberCafe
     public class Computadora : Servicios
     {
         private Dictionary<string, string> caracteristicas;
+        private UsoComputadora usoActual;
         
         
         /// <summary>
@@ -51,6 +52,19 @@ namespace CiberCafe
                 return this.caracteristicas;
             }
 
+        }
+
+        public UsoComputadora UsoActual
+        {
+            get
+            {
+                return this.usoActual;
+            }
+
+            set
+            {
+                this.usoActual = value;
+            }
         }
 
         /// <summary>
@@ -101,7 +115,19 @@ namespace CiberCafe
             return !(computadora1.Id == computadora2.Id);
         }
 
+        /// <summary>
+        /// libera la computadora y determina el tiempo de finalizacion
+        /// </summary>
+        /// <returns>devuelve una cadena con los datos del uso</returns>
+        public string LiberarComputadora()
+        {
+            this.Estado = true;
+            this.UsoActual.TiempoFinalizacion = DateTime.Now;
+            string aux = this.usoActual.Mostrar();
+            this.UsoActual = null;
 
+            return aux;
+        }
 
 
 
