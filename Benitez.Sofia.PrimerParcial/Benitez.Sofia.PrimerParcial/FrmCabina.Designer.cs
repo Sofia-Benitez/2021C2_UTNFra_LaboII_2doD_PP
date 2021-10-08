@@ -29,13 +29,6 @@ namespace Benitez.Sofia.PrimerParcial
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblIngresarNum = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtPrefijo = new System.Windows.Forms.TextBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblPrefijo = new System.Windows.Forms.Label();
-            this.lblNumero = new System.Windows.Forms.Label();
             this.btnAsignarCabina = new System.Windows.Forms.Button();
             this.lblCliente = new System.Windows.Forms.Label();
             this.rbtnCabina1 = new System.Windows.Forms.RadioButton();
@@ -44,71 +37,27 @@ namespace Benitez.Sofia.PrimerParcial
             this.rbtnCabina3 = new System.Windows.Forms.RadioButton();
             this.rbtnCabina4 = new System.Windows.Forms.RadioButton();
             this.gbxCabinas = new System.Windows.Forms.GroupBox();
+            this.btn1 = new System.Windows.Forms.Button();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.btn3 = new System.Windows.Forms.Button();
+            this.btn6 = new System.Windows.Forms.Button();
+            this.btn5 = new System.Windows.Forms.Button();
+            this.btn4 = new System.Windows.Forms.Button();
+            this.btn9 = new System.Windows.Forms.Button();
+            this.btn8 = new System.Windows.Forms.Button();
+            this.btn7 = new System.Windows.Forms.Button();
+            this.txtNumeroDestino = new System.Windows.Forms.TextBox();
+            this.btnNumeral = new System.Windows.Forms.Button();
+            this.btn0 = new System.Windows.Forms.Button();
+            this.btnAsterisco = new System.Windows.Forms.Button();
             this.gbxCabinas.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblIngresarNum
-            // 
-            this.lblIngresarNum.AutoSize = true;
-            this.lblIngresarNum.Location = new System.Drawing.Point(316, 178);
-            this.lblIngresarNum.Name = "lblIngresarNum";
-            this.lblIngresarNum.Size = new System.Drawing.Size(147, 15);
-            this.lblIngresarNum.TabIndex = 0;
-            this.lblIngresarNum.Text = "Ingresá el número a llamar";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(269, 214);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(51, 23);
-            this.txtCodigo.TabIndex = 1;
-            // 
-            // txtPrefijo
-            // 
-            this.txtPrefijo.Location = new System.Drawing.Point(340, 214);
-            this.txtPrefijo.Name = "txtPrefijo";
-            this.txtPrefijo.Size = new System.Drawing.Size(57, 23);
-            this.txtPrefijo.TabIndex = 2;
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(412, 214);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(100, 23);
-            this.txtNumero.TabIndex = 3;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(264, 240);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(70, 15);
-            this.lblCodigo.TabIndex = 4;
-            this.lblCodigo.Text = "Código país";
-            // 
-            // lblPrefijo
-            // 
-            this.lblPrefijo.AutoSize = true;
-            this.lblPrefijo.Location = new System.Drawing.Point(340, 240);
-            this.lblPrefijo.Name = "lblPrefijo";
-            this.lblPrefijo.Size = new System.Drawing.Size(41, 15);
-            this.lblPrefijo.TabIndex = 5;
-            this.lblPrefijo.Text = "Prefijo";
-            // 
-            // lblNumero
-            // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(412, 240);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(51, 15);
-            this.lblNumero.TabIndex = 6;
-            this.lblNumero.Text = "Número";
-            // 
             // btnAsignarCabina
             // 
-            this.btnAsignarCabina.Location = new System.Drawing.Point(340, 286);
+            this.btnAsignarCabina.Location = new System.Drawing.Point(592, 327);
             this.btnAsignarCabina.Name = "btnAsignarCabina";
-            this.btnAsignarCabina.Size = new System.Drawing.Size(112, 40);
+            this.btnAsignarCabina.Size = new System.Drawing.Size(147, 40);
             this.btnAsignarCabina.TabIndex = 7;
             this.btnAsignarCabina.Text = "Asignar";
             this.btnAsignarCabina.UseVisualStyleBackColor = true;
@@ -192,23 +141,158 @@ namespace Benitez.Sofia.PrimerParcial
             this.gbxCabinas.TabStop = false;
             this.gbxCabinas.Text = "Cabinas";
             // 
+            // btn1
+            // 
+            this.btn1.Location = new System.Drawing.Point(316, 214);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(37, 33);
+            this.btn1.TabIndex = 15;
+            this.btn1.Text = "1";
+            this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
+            // 
+            // btn2
+            // 
+            this.btn2.Location = new System.Drawing.Point(369, 214);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(37, 33);
+            this.btn2.TabIndex = 16;
+            this.btn2.Text = "2";
+            this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
+            // 
+            // btn3
+            // 
+            this.btn3.Location = new System.Drawing.Point(422, 214);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(37, 33);
+            this.btn3.TabIndex = 17;
+            this.btn3.Text = "3";
+            this.btn3.UseVisualStyleBackColor = true;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
+            // 
+            // btn6
+            // 
+            this.btn6.Location = new System.Drawing.Point(422, 253);
+            this.btn6.Name = "btn6";
+            this.btn6.Size = new System.Drawing.Size(37, 33);
+            this.btn6.TabIndex = 20;
+            this.btn6.Text = "6";
+            this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
+            // 
+            // btn5
+            // 
+            this.btn5.Location = new System.Drawing.Point(369, 253);
+            this.btn5.Name = "btn5";
+            this.btn5.Size = new System.Drawing.Size(37, 33);
+            this.btn5.TabIndex = 19;
+            this.btn5.Text = "5";
+            this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
+            // 
+            // btn4
+            // 
+            this.btn4.Location = new System.Drawing.Point(316, 253);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(37, 33);
+            this.btn4.TabIndex = 18;
+            this.btn4.Text = "4";
+            this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
+            // 
+            // btn9
+            // 
+            this.btn9.Location = new System.Drawing.Point(422, 292);
+            this.btn9.Name = "btn9";
+            this.btn9.Size = new System.Drawing.Size(37, 33);
+            this.btn9.TabIndex = 23;
+            this.btn9.Text = "9";
+            this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
+            // 
+            // btn8
+            // 
+            this.btn8.Location = new System.Drawing.Point(369, 292);
+            this.btn8.Name = "btn8";
+            this.btn8.Size = new System.Drawing.Size(37, 33);
+            this.btn8.TabIndex = 22;
+            this.btn8.Text = "8";
+            this.btn8.UseVisualStyleBackColor = true;
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
+            // 
+            // btn7
+            // 
+            this.btn7.Location = new System.Drawing.Point(316, 292);
+            this.btn7.Name = "btn7";
+            this.btn7.Size = new System.Drawing.Size(37, 33);
+            this.btn7.TabIndex = 21;
+            this.btn7.Text = "7";
+            this.btn7.UseVisualStyleBackColor = true;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
+            // 
+            // txtNumeroDestino
+            // 
+            this.txtNumeroDestino.Location = new System.Drawing.Point(282, 174);
+            this.txtNumeroDestino.Name = "txtNumeroDestino";
+            this.txtNumeroDestino.Size = new System.Drawing.Size(214, 23);
+            this.txtNumeroDestino.TabIndex = 25;
+            this.txtNumeroDestino.Text = "Numero destino";
+            // 
+            // btnNumeral
+            // 
+            this.btnNumeral.Location = new System.Drawing.Point(422, 331);
+            this.btnNumeral.Name = "btnNumeral";
+            this.btnNumeral.Size = new System.Drawing.Size(37, 33);
+            this.btnNumeral.TabIndex = 28;
+            this.btnNumeral.Text = "#";
+            this.btnNumeral.UseVisualStyleBackColor = true;
+            this.btnNumeral.Click += new System.EventHandler(this.btnNumeral_Click);
+            // 
+            // btn0
+            // 
+            this.btn0.Location = new System.Drawing.Point(369, 331);
+            this.btn0.Name = "btn0";
+            this.btn0.Size = new System.Drawing.Size(37, 33);
+            this.btn0.TabIndex = 27;
+            this.btn0.Text = "0";
+            this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
+            // 
+            // btnAsterisco
+            // 
+            this.btnAsterisco.Location = new System.Drawing.Point(316, 331);
+            this.btnAsterisco.Name = "btnAsterisco";
+            this.btnAsterisco.Size = new System.Drawing.Size(37, 33);
+            this.btnAsterisco.TabIndex = 26;
+            this.btnAsterisco.Text = "*";
+            this.btnAsterisco.UseVisualStyleBackColor = true;
+            this.btnAsterisco.Click += new System.EventHandler(this.btnAsterisco_Click);
+            // 
             // FrmCabina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 341);
+            this.ClientSize = new System.Drawing.Size(778, 380);
+            this.Controls.Add(this.btnNumeral);
+            this.Controls.Add(this.btn0);
+            this.Controls.Add(this.btnAsterisco);
+            this.Controls.Add(this.txtNumeroDestino);
+            this.Controls.Add(this.btn9);
+            this.Controls.Add(this.btn8);
+            this.Controls.Add(this.btn7);
+            this.Controls.Add(this.btn6);
+            this.Controls.Add(this.btn5);
+            this.Controls.Add(this.btn4);
+            this.Controls.Add(this.btn3);
+            this.Controls.Add(this.btn2);
+            this.Controls.Add(this.btn1);
             this.Controls.Add(this.gbxCabinas);
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.btnAsignarCabina);
-            this.Controls.Add(this.lblNumero);
-            this.Controls.Add(this.lblPrefijo);
-            this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.txtNumero);
-            this.Controls.Add(this.txtPrefijo);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.lblIngresarNum);
             this.Name = "FrmCabina";
-            this.Text = "Asignar cabina";
+            this.Text = "t";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCabina_FormClosing);
             this.gbxCabinas.ResumeLayout(false);
             this.gbxCabinas.PerformLayout();
             this.ResumeLayout(false);
@@ -217,14 +301,6 @@ namespace Benitez.Sofia.PrimerParcial
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblIngresarNum;
-        private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.TextBox txtPrefijo;
-        private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.Label lblPrefijo;
-        private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Button btnAsignarCabina;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.RadioButton rbtnCabina1;
@@ -233,5 +309,18 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.RadioButton rbtnCabina3;
         private System.Windows.Forms.RadioButton rbtnCabina4;
         private System.Windows.Forms.GroupBox gbxCabinas;
+        private System.Windows.Forms.Button btn1;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn6;
+        private System.Windows.Forms.Button btn5;
+        private System.Windows.Forms.Button btn4;
+        private System.Windows.Forms.Button btn9;
+        private System.Windows.Forms.Button btn8;
+        private System.Windows.Forms.Button btn7;
+        private System.Windows.Forms.TextBox txtNumeroDestino;
+        private System.Windows.Forms.Button btnNumeral;
+        private System.Windows.Forms.Button btn0;
+        private System.Windows.Forms.Button btnAsterisco;
     }
 }

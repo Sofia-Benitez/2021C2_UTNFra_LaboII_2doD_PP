@@ -72,21 +72,7 @@ namespace CiberCafe
             }
         }
 
-        /// <summary>
-        /// propiedad que devuelve el tiempo de uso en segundos que cuentan como minutos para la aplicacion
-        /// </summary>
-        public double TiempoDeUso
-        {
-            get
-            {
-                if (this.TiempoFinalizacion != DateTime.MinValue)
-                {
-                    return ((this.tiempoFinalizacion - this.tiempoInicio).Seconds);
-                }
-                return 0;
-                    
-            }
-        }
+        
 
         public Computadora Computadora
         {
@@ -100,7 +86,7 @@ namespace CiberCafe
         /// calcula el costo total
         /// </summary>
         /// <returns></returns>
-        public double CalcularCosto()
+        public override double CalcularCosto()
         {
             double costoTotal = 0;
 
@@ -130,7 +116,7 @@ namespace CiberCafe
         /// agrega el iva al costo total
         /// </summary>
         /// <returns></returns>
-        public double CalcularCostoNeto()
+        public override double CalcularCostoNeto()
         {
            return  this.CostoBruto * IVA;
         }
@@ -145,8 +131,6 @@ namespace CiberCafe
 
             sb.AppendLine(base.Mostrar());
             sb.AppendLine($"Computadora: {this.computadora}");
-            
-            sb.AppendLine($"Tiempo de uso: {this.TiempoDeUso} minutos");
             sb.AppendLine($"Costo media hora: ${this.costoFraccion}");
             sb.AppendLine($"Costo bruto: ${this.CostoBruto}");
             sb.AppendLine($"Costo neto: ${this.CostoNeto}");

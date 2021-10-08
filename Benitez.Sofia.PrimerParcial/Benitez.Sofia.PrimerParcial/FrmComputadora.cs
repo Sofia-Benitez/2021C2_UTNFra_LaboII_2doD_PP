@@ -121,5 +121,17 @@ namespace Benitez.Sofia.PrimerParcial
                 numMinutos.Enabled = true;
             }
         }
+
+        private void FrmComputadora_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(computadora is null)
+            {
+                if (MessageBox.Show("¿Desea salir sin asignar una computadora?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            
+        }
     }
 }

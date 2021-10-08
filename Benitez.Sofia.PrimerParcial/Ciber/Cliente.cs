@@ -129,7 +129,6 @@ namespace CiberCafe
         public static bool operator ==(Cliente cliente, Computadora computadora)
         {
            
-            
                 foreach (KeyValuePair<string, string> item in cliente.Requerimientos)
                 {
                     if (!(computadora.Caracteristicas.ContainsKey(item.Key)))
@@ -155,9 +154,30 @@ namespace CiberCafe
         }
 
 
-        
+
         //sobrecargar equals y hash
 
-        
+
+        /// <summary>
+        /// sobrecarga del operador == para ocmparar clientes por su numero de DNI
+        /// </summary>
+        /// <param name="cliente1"></param>
+        /// <param name="cliente2"></param>
+        /// <returns></returns>
+        public static bool operator ==(Cliente cliente1, Cliente cliente2)
+        {
+            return (cliente1.Dni == cliente2.Dni);
+        }
+
+        /// <summary>
+        /// sobrecarga del operador != para ocmparar clientes por su numero de DNI
+        /// </summary>
+        /// <param name="cliente1"></param>
+        /// <param name="cliente2"></param>
+        /// <returns></returns>
+        public static bool operator !=(Cliente cliente1, Cliente cliente2)
+        {
+            return (!(cliente1 == cliente2));
+        }
     }
 }

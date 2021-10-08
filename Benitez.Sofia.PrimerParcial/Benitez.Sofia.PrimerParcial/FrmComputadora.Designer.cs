@@ -240,6 +240,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.Controls.Add(this.btnAsignarComputadora);
             this.Name = "FrmComputadora";
             this.Text = "Asignar computadora";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmComputadora_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numMinutos)).EndInit();
             this.gbxCompus.ResumeLayout(false);
             this.gbxCompus.PerformLayout();

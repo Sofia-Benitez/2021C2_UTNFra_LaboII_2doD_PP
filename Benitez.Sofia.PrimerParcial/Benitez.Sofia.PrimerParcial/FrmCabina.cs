@@ -16,9 +16,7 @@ namespace Benitez.Sofia.PrimerParcial
         public Ciber miCiber;
         public Cliente cliente;
         public Cabina cabina = null;
-        public string codigoPais;
-        public string prefijo;
-        public string numero;
+        public string numero = "";
 
         public FrmCabina(Ciber ciber, Cliente clienteSeleccionado)
         {
@@ -38,8 +36,80 @@ namespace Benitez.Sofia.PrimerParcial
             rbtnCabina5.Text = ciber["T05"].ToString();
             rbtnCabina5.Tag = ciber["T05"];
         }
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btn1.Text);
+        }
 
-        
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btn2.Text);
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btn3.Text);
+        }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btn4.Text);
+        }
+
+        private void btn5_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btn5.Text);
+        }
+
+        private void btn6_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btn6.Text);
+        }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btn7.Text);
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btn8.Text);
+        }
+
+        private void btn9_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btn9.Text);
+        }
+
+        private void btnAsterisco_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btnAsterisco.Text);
+        }
+
+        private void btn0_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btn0.Text);
+        }
+
+        private void btnNumeral_Click(object sender, EventArgs e)
+        {
+            CargarNumero(this.btnNumeral.Text);
+        }
+
+        /// <summary>
+        /// carfa un numero de destino
+        /// </summary>
+        /// <param name="digitoPresionado"></param>
+        private void CargarNumero(string digitoPresionado)
+        {
+            if (txtNumeroDestino.Text == "Numero destino")
+            {
+                txtNumeroDestino.Text = string.Empty;
+            }
+            txtNumeroDestino.Text += digitoPresionado;
+        }
+
+
 
         private void btnAsignarCabina_Click(object sender, EventArgs e)
         {
@@ -52,16 +122,14 @@ namespace Benitez.Sofia.PrimerParcial
                 }
             }
 
-            codigoPais = txtCodigo.Text;
-            prefijo = txtPrefijo.Text;
-            numero = txtNumero.Text;
+            numero = txtNumeroDestino.Text;
 
-            if (cabina is not null && cabina.Estado == true)
+            if (cabina is not null && cabina.Estado == true && numero!="")
             {
                 string mensaje = $"Desea asignarle la cabina {cabina.Id.ToString()} al cliente {cliente.Nombre.ToString()}?";
                 if (MessageBox.Show(mensaje, "Asignar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show(cabina.ToString() + "\n Asignada ");
+                    MessageBox.Show($"{cabina.ToString()}  \n Asignada.  \n Numero de destino: {numero}");
                     this.Close();
                 }
 
@@ -70,6 +138,18 @@ namespace Benitez.Sofia.PrimerParcial
             {
                 MessageBox.Show("La cabina esta ocupada o algún campo esta incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmCabina_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(cabina is null)
+            {
+                if (MessageBox.Show("¿Esta seguro de que desea salir sin asignar una cabina?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            
         }
 
         

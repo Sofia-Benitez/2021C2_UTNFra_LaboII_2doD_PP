@@ -71,6 +71,14 @@ namespace CiberCafe
             return this.Mostrar();
         }
 
-        
+        public static bool operator ==(Cabina cabina1, Cabina cabina2)
+        {
+            return (cabina1.Id == cabina2.Id);
+        }
+
+        public static bool operator !=(Cabina cabina1, Cabina cabina2)
+        {
+            return !(cabina1.Id == cabina2.Id);
+        }
     }
 }

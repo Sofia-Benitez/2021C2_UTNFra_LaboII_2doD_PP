@@ -77,12 +77,29 @@ namespace CiberCafe
                 return this.tiempoFinalizacion.ToLongTimeString();
             }
         }
+        /// <summary>
+        /// propiedad que devuelve el tiempo de uso en segundos que cuentan como minutos para la aplicacion
+        /// </summary>
+        public double TiempoDeUso
+        {
+            get
+            {
+                if (this.TiempoFinalizacion != DateTime.MinValue)
+                {
+                    return ((this.tiempoFinalizacion - this.tiempoInicio).Seconds);
+                }
+                return 0;
 
-        
+            }
+        }
 
-        
+        public abstract double CalcularCosto();
 
-        
+        public abstract double CalcularCostoNeto();
+
+
+
+
         /// <summary>
         /// muestra los datos de la clase
         /// </summary>
@@ -93,7 +110,8 @@ namespace CiberCafe
             sb.AppendLine($"Cliente: {this.cliente.Nombre}");
             sb.AppendLine($"Inicio del servicio: {this.HoraInicio}");
             sb.AppendLine($"Finalizacion del servicio: {this.HoraFinalizacion}");
-            
+            sb.AppendLine($"Tiempo de uso: {this.TiempoDeUso} minutos");
+
             return sb.ToString();
         }
     }

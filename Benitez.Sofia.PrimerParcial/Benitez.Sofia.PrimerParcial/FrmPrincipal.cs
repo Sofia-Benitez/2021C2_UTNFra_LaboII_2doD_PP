@@ -43,6 +43,9 @@ namespace Benitez.Sofia.PrimerParcial
         Cliente cliente5 = new Cliente("29876767", "Dwight", "Schrute", 32, Cliente.Necesidad.Computadora);
         Cliente cliente6 = new Cliente("32987676", "Pam", "Beesley", 39, Cliente.Necesidad.Computadora);
         Cliente cliente7 = new Cliente("35564456", "Chiqui", "Perez", 25, Cliente.Necesidad.Cabina);
+        Cliente cliente8 = new Cliente("33464456", "Ricardo", "Perez", 24, Cliente.Necesidad.Cabina);
+        Cliente cliente9 = new Cliente("323564456", "Pollo", "Perez", 27, Cliente.Necesidad.Cabina);
+        Cliente cliente10 = new Cliente("31564456", "Walter", "Perez", 24, Cliente.Necesidad.Cabina);
 
         public FrmPrincipal()
         {
@@ -56,23 +59,23 @@ namespace Benitez.Sofia.PrimerParcial
             lblNombre.Text = miCiber.Usuario;
 
             //agregar computadoras al ciber
-            miCiber += c1;
-            miCiber += c2;
-            miCiber += c3;
-            miCiber += c4;
-            miCiber += c5;
-            miCiber += c6;
-            miCiber += c7;
-            miCiber += c8;
-            miCiber += c9;
-            miCiber += c10;
+            miCiber["C01"] = c1;
+            miCiber["C02"] = c2;
+            miCiber["C03"] = c3;
+            miCiber["C04"] = c4;
+            miCiber["C05"] = c5;
+            miCiber["C06"] = c6;
+            miCiber["C07"] = c7;
+            miCiber["C08"] = c8;
+            miCiber["C09"] = c9;
+            miCiber["C10"] = c10;
 
-            //agregar cabinas al viber
-            miCiber += t1;
-            miCiber += t2;
-            miCiber += t3;
-            miCiber += t4;
-            miCiber += t5;
+            //agregar cabinas al ciber
+            miCiber["T01"] = t1;
+            miCiber["T02"] = t2;
+            miCiber["T03"] = t3;
+            miCiber["T04"] = t4;
+            miCiber["T05"] = t5;
 
             //agrego elementos a las computadoras
             c1.AgregarCaracteristica("J01", "Counter Strike");
@@ -91,6 +94,8 @@ namespace Benitez.Sofia.PrimerParcial
 
             c6.AgregarCaracteristica("P03", "Cámara");
 
+            c7.AgregarCaracteristica("J03", "Diablo II");
+
             //agrego requerimientos a los clientes 
             cliente1.AgregarRequerimiento("J01", "Counter Strike");
             cliente2.AgregarRequerimiento("P01", "Auriculares");
@@ -107,6 +112,9 @@ namespace Benitez.Sofia.PrimerParcial
             miCiber += cliente5;
             miCiber += cliente6;
             miCiber += cliente7;
+            miCiber += cliente8;
+            miCiber += cliente9;
+            miCiber += cliente10;
 
             //muestro fila de clientes
             Refrescar();
@@ -225,22 +233,34 @@ namespace Benitez.Sofia.PrimerParcial
 
         private void btnCabina2_Click(object sender, EventArgs e)
         {
-
+            UsoLlamada usoAux = miCiber.BuscarUsoPorCabina((Cabina)miCiber["T02"]);
+            miCiber.LiberarCabina(usoAux);
+            MessageBox.Show(usoAux.Mostrar());
+            Refrescar();
         }
 
         private void btnCabina3_Click(object sender, EventArgs e)
         {
-
+            UsoLlamada usoAux = miCiber.BuscarUsoPorCabina((Cabina)miCiber["T03"]);
+            miCiber.LiberarCabina(usoAux);
+            MessageBox.Show(usoAux.Mostrar());
+            Refrescar();
         }
 
         private void btnCabina4_Click(object sender, EventArgs e)
         {
-
+            UsoLlamada usoAux = miCiber.BuscarUsoPorCabina((Cabina)miCiber["T04"]);
+            miCiber.LiberarCabina(usoAux);
+            MessageBox.Show(usoAux.Mostrar());
+            Refrescar();
         }
 
         private void btnCabina5_Click(object sender, EventArgs e)
         {
-
+            UsoLlamada usoAux = miCiber.BuscarUsoPorCabina((Cabina)miCiber["T05"]);
+            miCiber.LiberarCabina(usoAux);
+            MessageBox.Show(usoAux.Mostrar());
+            Refrescar();
         }
 
         #endregion
@@ -273,18 +293,70 @@ namespace Benitez.Sofia.PrimerParcial
 
 
                     frmComputadora.ShowDialog();
-                    //if (frmComputadora.tiempoSeleccionado != double.MinValue)
-                    //{
-                    //    miCiber.AsignarComputadora(frmComputadora.computadora, frmComputadora.cliente, frmComputadora.tiempoSeleccionado);
-                    //}
-                    miCiber.AsignarComputadora(frmComputadora.computadora, frmComputadora.cliente);
+                    if (frmComputadora.tiempoSeleccionado != double.MinValue)
+                    {
+                        miCiber.AsignarComputadora(frmComputadora.computadora, frmComputadora.cliente, frmComputadora.tiempoSeleccionado);
+                    }
+                    if (frmComputadora.computadora is not null)
+                    {
+                        miCiber.AsignarComputadora(frmComputadora.computadora, frmComputadora.cliente);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha seleccionado ninguna computadora");
+                    }
+                    
 
                     Refrescar();
                 }
                 else
                 {
-                    MessageBox.Show("Error. El cliente necesita una cabina!");
+                    MessageBox.Show("Error. El cliente necesita una cabina");
                 }
+            }
+
+        }
+
+        /// <summary>
+        /// si hay un cliente seleccionado y su necesidad es una cabina abre un nuevo formulario, sino muestra mensajes de errror
+        /// recibe los datos del formulario de cabina y asigna la cabina con los datos recibidos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAsignarCabina_Click(object sender, EventArgs e)
+        {
+            Cliente clienteAux;
+
+            if (lstbClientes.SelectedItem is null)
+            {
+                MessageBox.Show("Error. Tenés que seleccionar un cliente!");
+
+            }
+            else
+            {
+                clienteAux = (Cliente)lstbClientes.SelectedItem;
+                if (clienteAux.NecesidadCliente is Cliente.Necesidad.Cabina)
+                {
+                    FrmCabina frmCabina = new FrmCabina(miCiber, clienteAux);
+
+
+                    frmCabina.ShowDialog();
+                    if(frmCabina.cabina is not null)
+                    {
+                        if(miCiber.AsignarCabina(frmCabina.cabina, frmCabina.cliente, frmCabina.numero) is null)
+                        {
+                            MessageBox.Show("No se asigno la cabina", "Error", MessageBoxButtons.OK);
+                        }
+                    }
+
+                    Refrescar();
+                }
+                else
+                {
+                    MessageBox.Show("Error. El cliente necesita una computadora.");
+                }
+
+
             }
 
         }
@@ -314,23 +386,20 @@ namespace Benitez.Sofia.PrimerParcial
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-
+            int flag = 0;
             //EL TICK EJECUTA ESTA FUNCION CADA 100ms
-            //UsoComputadora usoAux=null;
-            //foreach (UsoComputadora item in miCiber.ListaDeUsos)
-            //{
-            //    if (item.TiempoFinalizacion > DateTime.Now)
-            //    {
-            //        usoAux= item;
-            //    }
-            //}
+            UsoComputadora usoAux = miCiber.BuscarUsoFinalizado();
+            if(flag ==0)
+            {
+                if (usoAux is not null)
+                {
+                    miCiber.LiberarComputadora(usoAux);
+                    MessageBox.Show(usoAux.Mostrar());
+                    Refrescar();
+                    flag = 1;
+                }
+            }
             
-            //if (usoAux is not null)
-            //{
-            //    miCiber.LiberarComputadora(usoAux);
-            //    MessageBox.Show(usoAux.Mostrar());
-            //    Refrescar();
-            //}
             
             /// SI alguno de las compus ocupadas se paso del tiempo de uso.. 
             /// si es mas grande el daTEtime now que el tiempo de finalizacion
@@ -570,44 +639,14 @@ namespace Benitez.Sofia.PrimerParcial
             }
         }
 
-        /// <summary>
-        /// si hay un cliente seleccionado y su necesidad es una cabina abre un nuevo formulario, sino muestra mensajes de errror
-        /// recibe los datos del formulario de cabina y asigna la cabina con los datos recibidos
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAsignarCabina_Click(object sender, EventArgs e)
-        {
-            Cliente clienteAux;
-            
-            if (lstbClientes.SelectedItem is null)
-            {
-                MessageBox.Show("Error. Tenés que seleccionar un cliente!");
-
-            }
-            else
-            {
-                clienteAux = (Cliente)lstbClientes.SelectedItem;
-                if (clienteAux.NecesidadCliente is Cliente.Necesidad.Cabina)
-                {
-                    FrmCabina frmCabina = new FrmCabina(miCiber, clienteAux);
-
-
-                    frmCabina.ShowDialog();
-                    miCiber.AsignarCabina(frmCabina.cabina, frmCabina.cliente, frmCabina.numero, frmCabina.codigoPais, frmCabina.prefijo);
-
-                    Refrescar();
-                }
-                else
-                {
-                    MessageBox.Show("Error. El cliente necesita una computadora.");
-                }
-
-
-            }
-            
-        }
-
         
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro de que desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

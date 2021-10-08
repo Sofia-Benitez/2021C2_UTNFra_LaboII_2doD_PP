@@ -501,6 +501,7 @@ namespace Benitez.Sofia.PrimerParcial
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblDatosCliente
@@ -529,6 +530,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrincipal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.gbUsuario.ResumeLayout(false);
             this.gbUsuario.PerformLayout();

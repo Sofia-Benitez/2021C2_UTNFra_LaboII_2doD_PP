@@ -9,20 +9,16 @@ namespace CiberCafe
     public class UsoLlamada : Uso
     {
 
-        private string prefijo;
-        private string codigoPais;
         private string numero;
         protected TipoLlamada tipoDeLlamada;
-        private double costoMinuto;
         private Cabina cabina;
+        public enum TipoLlamada { Local, LargaDistancia, Internacional };
 
         //constructor 
-        public UsoLlamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, TipoLlamada tipoDeLlamada, Cliente cliente, Cabina cabina) : base(tiempoInicio, cliente)
+        public UsoLlamada(DateTime tiempoInicio, string numero, TipoLlamada tipoDeLlamada, Cliente cliente, Cabina cabina) : base(tiempoInicio, cliente)
         {
-            this.prefijo = prefijo;
-            this.codigoPais = codigoPais;
+            
             this.numero = numero;
-            this.costoMinuto = this.CostoPorTipo();
             this.tipoDeLlamada = tipoDeLlamada;
             this.cabina = cabina;
         }
@@ -34,7 +30,7 @@ namespace CiberCafe
         /// <param name="codigoPais"></param>
         /// <param name="numero"></param>
         /// <param name="tiempoFinalizacion"></param>
-        public UsoLlamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, DateTime tiempoFinalizacion, TipoLlamada tipoDeLlamada, Cliente cliente, Cabina cabina) : this(tiempoInicio, prefijo, codigoPais, numero, tipoDeLlamada, cliente, cabina)
+        public UsoLlamada(DateTime tiempoInicio, string prefijo, string codigoPais, string numero, DateTime tiempoFinalizacion, TipoLlamada tipoDeLlamada, Cliente cliente, Cabina cabina) : this(tiempoInicio, numero, tipoDeLlamada, cliente, cabina)
         {
 
         }
@@ -69,7 +65,7 @@ namespace CiberCafe
         {
             get
             {
-                return this.codigoPais + this.prefijo + this.numero;
+                return this.numero;
             }
         }
 
@@ -83,6 +79,38 @@ namespace CiberCafe
         }
 
         /// <summary>
+        /// propiedad que devuelve lo que retorna el metodo CalcularCosto
+        /// </summary>
+        public double CostoBruto
+        {
+            get
+            {
+                return CalcularCosto();
+            }
+        }
+
+        /// <summary>
+        /// propiedad que devuelve lo que retorna CalcularCostoNeto
+        /// </summary>
+        public double CostoNeto
+        {
+            get
+            {
+                return CalcularCostoNeto();
+            }
+        }
+
+        public override double CalcularCosto()
+        {
+            return this.TiempoDeUso * this.CostoPorTipo();
+        }
+
+        public override double CalcularCostoNeto()
+        {
+            return this.CostoBruto * IVA;
+        }
+
+        /// <summary>
         /// muestra los datos de la llamada
         /// </summary>
         /// <returns></returns>
@@ -90,8 +118,12 @@ namespace CiberCafe
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.Mostrar());
+            sb.AppendLine($"Cabina: {this.cabina}");
             sb.AppendLine($"Numero: {this.Numero}");
             sb.AppendLine($"Tipo de llamada: {this.tipoDeLlamada}");
+            sb.AppendLine($"Costo minuto: ${this.CostoPorTipo()}");
+            sb.AppendLine($"Costo bruto: ${this.CostoBruto}");
+            sb.AppendLine($"Costo neto: ${this.CostoNeto}");
 
             return sb.ToString();
         }

@@ -91,9 +91,18 @@ namespace CiberCafe
             return this.Mostrar();
         }
 
-        
+        public static bool operator ==(Computadora computadora1, Computadora computadora2)
+        {
+            return (computadora1.Id == computadora2.Id);
+        }
 
-       
+        public static bool operator !=(Computadora computadora1, Computadora computadora2)
+        {
+            return !(computadora1.Id == computadora2.Id);
+        }
+
+
+
 
 
 

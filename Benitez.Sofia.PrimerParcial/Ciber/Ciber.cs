@@ -111,12 +111,18 @@ namespace CiberCafe
                 return null;
 
             }
-            ///terminar el set para agregar los servicios a la lista
-            //set
-            //{
-
-            //    listaServicios[index] = value;
-            //}
+            
+            set
+            {
+                foreach (Servicios item in this.listaServicios)
+                {
+                    if(item.Id == index)
+                    {
+                        break;
+                    }
+                }
+                listaServicios.Add(value);
+            }
         }
 
         /// <summary>
@@ -125,17 +131,18 @@ namespace CiberCafe
         /// <param name="codigoPais"></param>
         /// <param name="prefijo"></param>
         /// <returns></returns>
-        public static TipoLlamada ObtenerTipoLlamada(string codigoPais, string prefijo)
+        public static UsoLlamada.TipoLlamada ObtenerTipoLlamada(string numero)
         {
-            TipoLlamada tipo = TipoLlamada.LargaDistancia;
+            UsoLlamada.TipoLlamada tipo = UsoLlamada.TipoLlamada.LargaDistancia;
 
-            if (codigoPais != "54")
+            if ((numero[0]=='5' && numero[1] == '4' && numero[2] == '0' && numero[3] == '1' && numero[4] == '1')
+                || (numero[0] == '5' && numero[1] == '4' && numero[2] == '1' && numero[3] == '1' ))
             {
-                tipo = TipoLlamada.Internacional;
+                tipo = UsoLlamada.TipoLlamada.Local;
             }
-            else if (codigoPais=="54" && (prefijo == "011" || prefijo == "11"))
+            else if (numero[0] != '5' && numero[1] != '4')
             {
-                tipo = TipoLlamada.Local;
+                tipo = UsoLlamada.TipoLlamada.Internacional;
             }
 
 
@@ -162,65 +169,27 @@ namespace CiberCafe
         //}
 
         /// <summary>
-        /// sobrecarga del operador + para agregar servicios a la lista de servicios 
+        /// Sobrecarga del operador para agregar clientes a la lista de espera del ciber
         /// </summary>
         /// <param name="ciber"></param>
-        /// <param name="servicio"></param>
+        /// <param name="cliente"></param>
         /// <returns></returns>
-        public static Ciber operator +(Ciber ciber, Servicios servicio)
-        {
-            //if (ciber.listaServicios is not null)
-            //{
-                foreach (Servicios item in ciber.listaServicios)
-                {
-                    if (item.Id == servicio.Id)
-                    {
-                        return ciber;
-                    }
-
-                }
-            //}
-
-
-            ciber.listaServicios.Add(servicio);
-                return ciber;
-        }
-
         public static Ciber operator +(Ciber ciber, Cliente cliente)
         {
-            //if (ciber.listaServicios is not null)
-            //{
+            
             foreach (Cliente item in ciber.listaClientes)
             {
-                if (item.Dni == cliente.Dni)
+                if (item == cliente)
                 {
                     return ciber;
                 }
 
             }
-            //}
-
-
             ciber.listaClientes.Add(cliente);
             return ciber;
         }
 
-        public static Ciber operator -(Ciber ciber, Cliente cliente)
-        {
-            //if (ciber.listaServicios is not null)
-            //{
-            foreach (Cliente item in ciber.listaClientes)
-            {
-                if (item.Dni == cliente.Dni)
-                {
-                    ciber.listaClientes.Remove(item);
-                }
-
-            }
-            //}
-
-            return ciber;
-        }
+        
 
         /// <summary>
         /// metodo que instancia un nuevo uso de computadora sin tiempo de finalizacion. remueve al cliente de la lista de espera y agrega el uso a la lista de usos del ciber 
@@ -232,7 +201,7 @@ namespace CiberCafe
         {
             if(computadora is not null && computadora.Estado==true)
             {
-                computadora.Estado = false;//VER ACA EL ERROR EN EJECUCION  
+                computadora.Estado = false;
                 UsoComputadora uso = new UsoComputadora(DateTime.Now, cliente, computadora);
                 this.listaClientes.Remove(cliente);
                 this.listaDeUsos.Add(uso);
@@ -298,15 +267,25 @@ namespace CiberCafe
         /// <returns></returns>
         public UsoComputadora BuscarUsoPorComputadora(Computadora computadora)
         {
-            foreach (UsoComputadora item in this.ListaDeUsos)
-            {
 
-                if (item.Computadora.Id == computadora.Id && item.Computadora.Estado==false)
+            UsoComputadora usoAux = null;
+            foreach (Uso item in this.ListaDeUsos)
+            {
+                if(item is UsoComputadora)
                 {
-                    return item;
+                    usoAux = (UsoComputadora)item;
+                    if (usoAux.Computadora == computadora)
+                    {
+                        usoAux = (UsoComputadora)item;
+                    }
+                    else
+                    {
+                        usoAux = null;
+                    }
                 }
+                
             }
-            return null;
+            return usoAux;
         }
 
         /// <summary>
@@ -317,18 +296,25 @@ namespace CiberCafe
         /// <returns></returns>
         public UsoLlamada BuscarUsoPorCabina(Cabina cabina)
         {
-            foreach (UsoLlamada item in this.ListaDeUsos)
+            UsoLlamada usoAux = null;
+            foreach (Uso item in this.ListaDeUsos)
             {
                 if(item is UsoLlamada)
                 {
-                    if (item.Cabina.Id == cabina.Id && item.Cabina.Estado ==false)
-                {
-                    return item;
-                }
+                    usoAux = (UsoLlamada)item;
+                    if (usoAux.Cabina == cabina)
+                    {
+                         usoAux = (UsoLlamada)item;
+                    }
+                    else
+                    {
+                        usoAux = null;
+                    }
+                   
                 }
                 
             }
-            return null;
+            return usoAux;
         }
 
         /// <summary>
@@ -337,11 +323,11 @@ namespace CiberCafe
         /// <returns></returns>
         public UsoComputadora BuscarUsoFinalizado()
         {
-            foreach (UsoComputadora item in this.listaDeUsos)
+            foreach (Uso item in this.listaDeUsos)
             {
                 if(item.TiempoFinalizacion<DateTime.Now)
                 {
-                    return item;
+                    return (UsoComputadora)item;
                 }
             }
             return null;
@@ -353,13 +339,13 @@ namespace CiberCafe
         /// <param name="computadora">computadora que se pasara por referencia en el uso nuevo</param>
         /// <param name="cliente">cliente que se pasara por referencia en el uso nuevo</param>
         /// <returns></returns>
-        public UsoLlamada AsignarCabina(Cabina cabina, Cliente cliente, string numero, string codigo, string prefijo)
+        public UsoLlamada AsignarCabina(Cabina cabina, Cliente cliente, string numero)
         {
-            if(cabina.Estado==true)
+            if(cabina is not null && cabina.Estado==true)
             {
-                cabina.Estado = false;//VER ACA EL ERROR EN EJECUCION  
-                TipoLlamada tipo = ObtenerTipoLlamada(codigo, prefijo);
-                UsoLlamada uso = new UsoLlamada(DateTime.Now, prefijo, codigo, numero, tipo, cliente, cabina);
+                cabina.Estado = false;
+                UsoLlamada.TipoLlamada tipo = ObtenerTipoLlamada(numero);
+                UsoLlamada uso = new UsoLlamada(DateTime.Now, numero, tipo, cliente, cabina);
                 this.listaClientes.Remove(cliente);
                 this.listaDeUsos.Add(uso);
                 return uso;
