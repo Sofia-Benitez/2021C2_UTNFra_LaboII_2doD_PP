@@ -92,11 +92,8 @@ namespace CiberCafe
 
             if (this.TiempoFinalizacion != DateTime.MinValue)
             {
-                double horasAminutos = this.TiempoDeUsoHoras * 60;
-                double segundosUtilizados = this.TiempoDeUsoMinutos + horasAminutos;
 
-                segundosUtilizados= segundosUtilizados / 30;
-                costoTotal= Math.Ceiling(segundosUtilizados) * this.costoFraccion;
+                costoTotal= Math.Ceiling(this.UsoEnMinutosTotales / 30) * this.costoFraccion;
                 
                 
             }

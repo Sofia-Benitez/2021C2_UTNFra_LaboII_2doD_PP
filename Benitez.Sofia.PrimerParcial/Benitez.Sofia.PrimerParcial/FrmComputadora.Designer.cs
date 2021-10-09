@@ -96,7 +96,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnAsignarComputadora
             // 
-            this.btnAsignarComputadora.Location = new System.Drawing.Point(743, 312);
+            this.btnAsignarComputadora.Location = new System.Drawing.Point(734, 335);
             this.btnAsignarComputadora.Name = "btnAsignarComputadora";
             this.btnAsignarComputadora.Size = new System.Drawing.Size(169, 50);
             this.btnAsignarComputadora.TabIndex = 4;
@@ -116,7 +116,7 @@ namespace Benitez.Sofia.PrimerParcial
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(467, 312);
+            this.label1.Location = new System.Drawing.Point(467, 330);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 15);
             this.label1.TabIndex = 7;
@@ -136,7 +136,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.gbxCompus.Controls.Add(this.rbtnC4);
             this.gbxCompus.Location = new System.Drawing.Point(25, 40);
             this.gbxCompus.Name = "gbxCompus";
-            this.gbxCompus.Size = new System.Drawing.Size(887, 261);
+            this.gbxCompus.Size = new System.Drawing.Size(887, 276);
             this.gbxCompus.TabIndex = 8;
             this.gbxCompus.TabStop = false;
             this.gbxCompus.Text = "Computadoras";
@@ -212,7 +212,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.chbTiempoLibre.AutoSize = true;
             this.chbTiempoLibre.Checked = true;
             this.chbTiempoLibre.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbTiempoLibre.Location = new System.Drawing.Point(252, 330);
+            this.chbTiempoLibre.Location = new System.Drawing.Point(252, 352);
             this.chbTiempoLibre.Name = "chbTiempoLibre";
             this.chbTiempoLibre.Size = new System.Drawing.Size(92, 19);
             this.chbTiempoLibre.TabIndex = 9;
@@ -228,7 +228,7 @@ namespace Benitez.Sofia.PrimerParcial
             0,
             0,
             0});
-            this.numMinutos.Location = new System.Drawing.Point(467, 330);
+            this.numMinutos.Location = new System.Drawing.Point(467, 348);
             this.numMinutos.Maximum = new decimal(new int[] {
             180,
             0,
@@ -242,7 +242,7 @@ namespace Benitez.Sofia.PrimerParcial
             // lblAyudaTiempo
             // 
             this.lblAyudaTiempo.AutoSize = true;
-            this.lblAyudaTiempo.Location = new System.Drawing.Point(252, 356);
+            this.lblAyudaTiempo.Location = new System.Drawing.Point(252, 385);
             this.lblAyudaTiempo.Name = "lblAyudaTiempo";
             this.lblAyudaTiempo.Size = new System.Drawing.Size(357, 15);
             this.lblAyudaTiempo.TabIndex = 12;
@@ -253,7 +253,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 379);
+            this.ClientSize = new System.Drawing.Size(941, 409);
             this.Controls.Add(this.lblAyudaTiempo);
             this.Controls.Add(this.numMinutos);
             this.Controls.Add(this.chbTiempoLibre);
@@ -262,6 +262,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.btnAsignarComputadora);
             this.Name = "FrmComputadora";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignar computadora";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmComputadora_FormClosing);
             this.gbxCompus.ResumeLayout(false);

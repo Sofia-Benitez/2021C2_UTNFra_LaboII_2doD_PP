@@ -118,29 +118,7 @@ namespace CiberCafe
             }
         }
 
-        /// <summary>
-        /// metodo estatico que devuelve el tipo de llamada segun el prefijo y el codigo que recibe
-        /// </summary>
-        /// <param name="codigoPais"></param>
-        /// <param name="prefijo"></param>
-        /// <returns></returns>
-        public static UsoLlamada.TipoLlamada ObtenerTipoLlamada(string numero)
-        {
-            UsoLlamada.TipoLlamada tipo = UsoLlamada.TipoLlamada.LargaDistancia;
-
-            if ((numero[0]=='5' && numero[1] == '4' && numero[2] == '0' && numero[3] == '1' && numero[4] == '1')
-                || (numero[0] == '5' && numero[1] == '4' && numero[2] == '1' && numero[3] == '1' ))
-            {
-                tipo = UsoLlamada.TipoLlamada.Local;
-            }
-            else if (numero[0] != '5' && numero[1] != '4')
-            {
-                tipo = UsoLlamada.TipoLlamada.Internacional;
-            }
-
-
-            return tipo;
-        }
+        
 
 
         /// <summary>
@@ -238,7 +216,7 @@ namespace CiberCafe
             if(cabina is not null && cabina.Estado==true)
             {
                 cabina.Estado = false;
-                UsoLlamada.TipoLlamada tipo = ObtenerTipoLlamada(numero);
+                UsoLlamada.TipoLlamada tipo = UsoLlamada.ObtenerTipoLlamada(numero);
                 UsoLlamada uso = new UsoLlamada(DateTime.Now, numero, tipo, cliente, cabina);
                 cabina.UsoActual = uso;
                 this.listaClientes.Remove(cliente);
@@ -246,8 +224,128 @@ namespace CiberCafe
                 return uso;
             }
             return null;
-            
+
         }
+
+        /// <summary>
+        /// Busca entre la lista de Servicios las computadoras utlizadas en el momento que ya tengan un tiempo de finalizacion y que sea anterior al tiempo actual
+        /// si encuentra una guarda los datos y la desocupa
+        /// </summary>
+        /// <returns></returns>
+        public string BuscarUsosFinalizados()
+        {
+            string datos = "";
+            foreach (Servicios item in this.ListaDeServicios)
+            {
+                if (item is Computadora)
+                {
+                    Computadora aux = (Computadora)item;
+                    if (aux.UsoActual is not null)
+                    {
+                        if (aux.UsoActual.TiempoFinalizacion != DateTime.MinValue && aux.UsoActual.TiempoFinalizacion < DateTime.Now)
+                        {
+                            aux.Estado = true;
+
+                            datos = aux.UsoActual.Mostrar();
+                            aux.UsoActual = null;
+
+                        }
+                    }
+                }
+            }
+
+            return datos;
+        }
+
+        #region ESTADISTICAS
+
+        //Lista de computadoras ordenadas por minutos de uso de forma descendente.
+
+        private int CompararTiempoDeUsoComputadora(UsoComputadora uso1, UsoComputadora uso2)
+        {
+            int minutosUso1 = (int)uso1.UsoEnMinutosTotales;
+            int minutosUso2 = (int)uso2.UsoEnMinutosTotales;
+
+            return minutosUso1 - minutosUso2;
+        }
+        public string OrdenarUsosComputadoraPorTiempoDeUso()
+        {
+            List<UsoComputadora> listaUsosComputadora = new List<UsoComputadora>();
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Uso item in this.listaDeUsos)
+            {
+                if(item is UsoComputadora)
+                {
+                    listaUsosComputadora.Add((UsoComputadora)item);
+                }
+                 
+            }
+
+            listaUsosComputadora.Sort(CompararTiempoDeUsoComputadora);
+            sb.AppendLine("Lista de computadoras ordenadas por minutos de uso de forma descendente\n");
+            foreach (UsoComputadora item in listaUsosComputadora)
+            {
+                sb.AppendLine(item.ToString());
+                sb.AppendLine("-----------------------------");
+            }
+
+            return sb.ToString();
+        }
+
+
+        //Lista de cabinas ordenadas por minutos de uso de forma descendente.
+
+        private int CompararTiempoDeUsoCabina(UsoLlamada uso1, UsoLlamada uso2)
+        {
+            int minutosUso1 = (int)uso1.UsoEnMinutosTotales;
+            int minutosUso2 = (int)uso2.UsoEnMinutosTotales;
+
+            return minutosUso1 - minutosUso2;
+        }
+        public string OrdenarUsosCabinaPorTiempoDeUso()
+        {
+            List<UsoLlamada> listaUsosCabina = new List<UsoLlamada>();
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Uso item in this.listaDeUsos)
+            {
+                if (item is UsoLlamada)
+                {
+                    listaUsosCabina.Add((UsoLlamada)item);
+                }
+
+            }
+
+            listaUsosCabina.Sort(CompararTiempoDeUsoCabina);
+            sb.AppendLine("Lista de cabinas ordenadas por minutos de uso de forma descendente\n");
+            foreach(UsoLlamada item in listaUsosCabina)
+            {
+                sb.AppendLine(item.ToString());
+                sb.AppendLine("-----------------------------");
+            }
+
+            return sb.ToString();
+        }
+
+       
+
+
+        //Ganancias totales y clasificadas por servicio(teléfono/computadora).
+
+
+        //Horas totales y la recaudación por tipo de llamada.
+
+
+        //El software más pedido por los clientes.
+
+
+        //El periférico más pedido por los clientes.
+
+
+        //El juego más pedido por los clientes.
+
+        #endregion
 
     }
 }

@@ -138,7 +138,29 @@ namespace CiberCafe
             return this.Mostrar();
         }
 
-        
+        /// <summary>
+        /// metodo estatico que devuelve el tipo de llamada segun el prefijo y el codigo que recibe
+        /// </summary>
+        /// <param name="codigoPais"></param>
+        /// <param name="prefijo"></param>
+        /// <returns></returns>
+        public static UsoLlamada.TipoLlamada ObtenerTipoLlamada(string numero)
+        {
+            UsoLlamada.TipoLlamada tipo = UsoLlamada.TipoLlamada.LargaDistancia;
+
+            if ((numero[0] == '5' && numero[1] == '4' && numero[2] == '0' && numero[3] == '1' && numero[4] == '1')
+                || (numero[0] == '5' && numero[1] == '4' && numero[2] == '1' && numero[3] == '1'))
+            {
+                tipo = UsoLlamada.TipoLlamada.Local;
+            }
+            else if (numero[0] != '5' && numero[1] != '4')
+            {
+                tipo = UsoLlamada.TipoLlamada.Internacional;
+            }
+
+
+            return tipo;
+        }
     }
 
 

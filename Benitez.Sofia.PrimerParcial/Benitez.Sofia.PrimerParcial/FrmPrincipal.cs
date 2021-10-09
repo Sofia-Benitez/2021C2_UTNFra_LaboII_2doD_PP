@@ -17,10 +17,10 @@ namespace Benitez.Sofia.PrimerParcial
         Ciber miCiber = new Ciber("Sofía Benítez", DateTime.Now);
 
         //harcodeo cabinas
-        Cabina t1 = new Cabina("T01", "Philips", Cabina.Tipo.Disco, true);
-        Cabina t2 = new Cabina("T02", "Philips", Cabina.Tipo.Teclado, true);
-        Cabina t3 = new Cabina("T03", "Philips", Cabina.Tipo.Disco, true);
-        Cabina t4 = new Cabina("T04", "Philips", Cabina.Tipo.Teclado, true);
+        Cabina t1 = new Cabina("T01", "Siemens", Cabina.Tipo.Disco, true);
+        Cabina t2 = new Cabina("T02", "Sony", Cabina.Tipo.Teclado, true);
+        Cabina t3 = new Cabina("T03", "Siemens", Cabina.Tipo.Disco, true);
+        Cabina t4 = new Cabina("T04", "Panasonic", Cabina.Tipo.Teclado, true);
         Cabina t5 = new Cabina("T05", "Philips", Cabina.Tipo.Teclado, true);
 
         //Harcodeo computadoras
@@ -46,6 +46,10 @@ namespace Benitez.Sofia.PrimerParcial
         Cliente cliente8 = new Cliente("33464456", "Ricardo", "Perez", 24, Cliente.Necesidad.Cabina);
         Cliente cliente9 = new Cliente("323564456", "Pollo", "Perez", 27, Cliente.Necesidad.Cabina);
         Cliente cliente10 = new Cliente("31564456", "Walter", "Perez", 24, Cliente.Necesidad.Cabina);
+        Cliente cliente11 = new Cliente("28564456", "Rachel", "Green", 29, Cliente.Necesidad.Computadora);
+        Cliente cliente12 = new Cliente("23334456", "Chandler", "Bing", 32, Cliente.Necesidad.Computadora);
+        Cliente cliente13 = new Cliente("25674456", "Ross", "Geller", 34, Cliente.Necesidad.Computadora);
+        Cliente cliente14 = new Cliente("24564456", "Mónica", "Geller", 29, Cliente.Necesidad.Computadora);
 
         public FrmPrincipal()
         {
@@ -57,6 +61,48 @@ namespace Benitez.Sofia.PrimerParcial
             
             lblFecha.Text = miCiber.Fecha;
             lblNombre.Text = miCiber.Usuario;
+
+
+            //agrego elementos a las computadoras
+            c1.AgregarCaracteristica("J01", "Counter Strike");
+            c1.AgregarCaracteristica("S01", "Ares");
+            c1.AgregarCaracteristica("P01", "Auriculares");
+            c1.AgregarCaracteristica("P02", "Micrófono");
+
+            c2.AgregarCaracteristica("J01", "Counter Strike");
+            c2.AgregarCaracteristica("P01", "Auriculares");
+            c2.AgregarCaracteristica("P02", "Micrófono");
+
+            c3.AgregarCaracteristica("J02", "Age of Empires II");
+            c3.AgregarCaracteristica("S02", "MSN");
+
+            c4.AgregarCaracteristica("P03", "Cámara");
+            c4.AgregarCaracteristica("J05", "Warcraft III");
+
+            c5.AgregarCaracteristica("P02", "Micrófono");
+            c5.AgregarCaracteristica("P01", "Auriculares");
+            c5.AgregarCaracteristica("S03", "Office");
+            c5.AgregarCaracteristica("S04", "ICQ");
+
+            c6.AgregarCaracteristica("P03", "Cámara");
+            c6.AgregarCaracteristica("S03", "Office");
+
+            c7.AgregarCaracteristica("J03", "Diablo II");
+            c7.AgregarCaracteristica("J02", "Age of Empires II");
+            c7.AgregarCaracteristica("S02", "MSN");
+            c7.AgregarCaracteristica("P01", "Auriculares"); 
+
+            c8.AgregarCaracteristica("P02", "Micrófono");
+            c8.AgregarCaracteristica("P01", "Auriculares");
+            c8.AgregarCaracteristica("S03", "Office");
+
+            c9.AgregarCaracteristica("P02", "Micrófono");
+            c9.AgregarCaracteristica("P01", "Auriculares");
+
+            c10.AgregarCaracteristica("P01", "Auriculares");
+            c10.AgregarCaracteristica("P02", "Micrófono");
+            c10.AgregarCaracteristica("P03", "Cámara");
+            c10.AgregarCaracteristica("S04", "ICQ");
 
             //agregar computadoras al ciber
             miCiber["C01"] = c1;
@@ -77,32 +123,34 @@ namespace Benitez.Sofia.PrimerParcial
             miCiber["T04"] = t4;
             miCiber["T05"] = t5;
 
-            //agrego elementos a las computadoras
-            c1.AgregarCaracteristica("J01", "Counter Strike");
-            c1.AgregarCaracteristica("S01", "Ares");
-            c1.AgregarCaracteristica("P01", "Auriculares");
-            c1.AgregarCaracteristica("P02", "Micrófono");
-
-            c2.AgregarCaracteristica("J01", "Counter Strike");
-            c2.AgregarCaracteristica("P01", "Auriculares");
-            c2.AgregarCaracteristica("P02", "Micrófono");
-
-            c3.AgregarCaracteristica("J02", "Age of Empires II");
-            c3.AgregarCaracteristica("S02", "MSN");
-
-            c4.AgregarCaracteristica("P03", "Cámara");
-
-            c6.AgregarCaracteristica("P03", "Cámara");
-
-            c7.AgregarCaracteristica("J03", "Diablo II");
-
             //agrego requerimientos a los clientes 
             cliente1.AgregarRequerimiento("J01", "Counter Strike");
+
             cliente2.AgregarRequerimiento("P01", "Auriculares");
+
             cliente3.AgregarRequerimiento("S02", "MSN");
+
             cliente4.AgregarRequerimiento("J02", "Age of Empires II");
+
             cliente5.AgregarRequerimiento("P03", "Cámara");
+
             cliente6.AgregarRequerimiento("P02", "Micrófono");
+            cliente6.AgregarRequerimiento("P03", "Cámara");
+
+            cliente11.AgregarRequerimiento("P02", "Micrófono");
+            cliente11.AgregarRequerimiento("S04", "ICQ");
+            cliente11.AgregarRequerimiento("P01", "Auriculares");
+
+            cliente12.AgregarRequerimiento("P02", "Micrófono");
+            cliente12.AgregarRequerimiento("P03", "Cámara");
+
+            cliente13.AgregarRequerimiento("P02", "Micrófono");
+            cliente13.AgregarRequerimiento("J04", "Mu Online");
+
+            cliente14.AgregarRequerimiento("J02", "Age of Empires II");
+            cliente14.AgregarRequerimiento("P01", "Auriculares");
+
+
 
             // Agrego clientes a la cola
             miCiber += cliente1;
@@ -115,6 +163,10 @@ namespace Benitez.Sofia.PrimerParcial
             miCiber += cliente8;
             miCiber += cliente9;
             miCiber += cliente10;
+            miCiber += cliente11;
+            miCiber += cliente12;
+            miCiber += cliente13;
+            miCiber += cliente14;
 
             //muestro fila de clientes
             Refrescar();
@@ -352,6 +404,20 @@ namespace Benitez.Sofia.PrimerParcial
         }
 
         /// <summary>
+        /// muestra la estadistica del ciber, por el momento muestra usos historicos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEstadistica_Click(object sender, EventArgs e)
+        {
+            
+            string usosComputadoras = miCiber.OrdenarUsosComputadoraPorTiempoDeUso();
+            string usosCabinas = miCiber.OrdenarUsosCabinaPorTiempoDeUso();
+            FrmEstadisticas frmEstadisticas = new FrmEstadisticas(usosComputadoras, usosCabinas);
+            frmEstadisticas.ShowDialog();
+        }
+
+        /// <summary>
         /// actualiza la fila de clientes y los botones con estados de cada servicio
         /// </summary>
         public void Refrescar()
@@ -369,19 +435,18 @@ namespace Benitez.Sofia.PrimerParcial
         
 
         /// <summary>
-        /// funcion que se llama cada 10 segundos. Chequea que el tiempo actual sea menor al tiepo de finalizacion 
+        /// funcion que se llama cada 10 segundos. Busca usos finalizados y si encuentra uno lo muestra y actualiza los estados de los equipos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
-
-            BuscarUsosFinalizados();
-
-            /// SI alguno de las compus ocupadas se paso del tiempo de uso.. 
-            /// si es mas grande el daTEtime now que el tiempo de finalizacion
-            /// en la lista de usoss
-            /// liberar computadora
+            string datos = miCiber.BuscarUsosFinalizados();
+            if(datos!="")
+            {
+                MessageBox.Show(datos, "Tiempo de uso del usuario finalizado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Refrescar();
+            }
         }
 
 
@@ -395,7 +460,6 @@ namespace Benitez.Sofia.PrimerParcial
         {
             if(lstbClientes.SelectedItem is not null)
             {
-              
                 Cliente clienteAux = (Cliente)lstbClientes.SelectedItem;
 
                 lblDatosCliente.Text = clienteAux.MostrarDatosCliente();
@@ -403,15 +467,7 @@ namespace Benitez.Sofia.PrimerParcial
             
         }
 
-        /// <summary>
-        /// muestra la estadistica del ciber, por el momento muestra usos historicos
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEstadistica_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(miCiber.MostrarUsos());
-        }
+        
 
         
         
@@ -626,28 +682,7 @@ namespace Benitez.Sofia.PrimerParcial
             }
         }
 
-        private void BuscarUsosFinalizados()
-        {
-            foreach (Servicios item in miCiber.ListaDeServicios)
-            {
-                if (item is Computadora)
-                {
-                    Computadora aux = (Computadora)item;
-                    if (aux.UsoActual is not null)
-                    {
-                        if (aux.UsoActual.TiempoFinalizacion != DateTime.MinValue && aux.UsoActual.TiempoFinalizacion < DateTime.Now)
-                        {
-                            aux.Estado = true;
-
-                            string datos = aux.UsoActual.Mostrar();
-                            aux.UsoActual = null;
-                            MessageBox.Show(datos, "Tiempo de uso del usuario finalizado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            Refrescar();
-                        }
-                    }
-                }
-            }
-        }
+       
 
         #region mensajes ayuda
         private void gbEquipos_MouseHover(object sender, EventArgs e)

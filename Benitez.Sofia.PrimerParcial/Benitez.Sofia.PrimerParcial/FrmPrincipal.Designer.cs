@@ -79,17 +79,21 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // gbUsuario
             // 
+            this.gbUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbUsuario.Controls.Add(this.lblFecha);
             this.gbUsuario.Controls.Add(this.lblNombre);
             this.gbUsuario.Location = new System.Drawing.Point(162, 2);
             this.gbUsuario.Name = "gbUsuario";
-            this.gbUsuario.Size = new System.Drawing.Size(542, 45);
+            this.gbUsuario.Size = new System.Drawing.Size(540, 45);
             this.gbUsuario.TabIndex = 0;
             this.gbUsuario.TabStop = false;
             this.gbUsuario.Text = "Usuario";
             // 
             // lblFecha
             // 
+            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblFecha.Location = new System.Drawing.Point(395, 14);
@@ -100,6 +104,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblNombre
             // 
+            this.lblNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNombre.Location = new System.Drawing.Point(164, 14);
@@ -110,6 +116,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblClientes
             // 
+            this.lblClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblClientes.AutoSize = true;
             this.lblClientes.Location = new System.Drawing.Point(18, 63);
             this.lblClientes.Name = "lblClientes";
@@ -119,8 +127,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // gbEquipos
             // 
-            this.gbEquipos.AutoSize = true;
-            this.gbEquipos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.gbEquipos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbEquipos.Controls.Add(this.btnCabina5);
             this.gbEquipos.Controls.Add(this.btnCabina4);
             this.gbEquipos.Controls.Add(this.btnCabina3);
@@ -153,7 +160,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.gbEquipos.Controls.Add(this.lblCompu1);
             this.gbEquipos.Location = new System.Drawing.Point(258, 63);
             this.gbEquipos.Name = "gbEquipos";
-            this.gbEquipos.Size = new System.Drawing.Size(533, 194);
+            this.gbEquipos.Size = new System.Drawing.Size(558, 208);
             this.gbEquipos.TabIndex = 3;
             this.gbEquipos.TabStop = false;
             this.gbEquipos.Text = "Equipos";
@@ -161,10 +168,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCabina5
             // 
+            this.btnCabina5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCabina5.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnCabina5.Location = new System.Drawing.Point(461, 148);
+            this.btnCabina5.Location = new System.Drawing.Point(461, 153);
+            this.btnCabina5.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCabina5.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCabina5.Name = "btnCabina5";
-            this.btnCabina5.Size = new System.Drawing.Size(66, 24);
+            this.btnCabina5.Size = new System.Drawing.Size(91, 24);
             this.btnCabina5.TabIndex = 29;
             this.btnCabina5.Text = "Libre";
             this.btnCabina5.UseVisualStyleBackColor = false;
@@ -172,10 +183,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCabina4
             // 
+            this.btnCabina4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCabina4.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCabina4.Location = new System.Drawing.Point(461, 118);
+            this.btnCabina4.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCabina4.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCabina4.Name = "btnCabina4";
-            this.btnCabina4.Size = new System.Drawing.Size(66, 24);
+            this.btnCabina4.Size = new System.Drawing.Size(91, 24);
             this.btnCabina4.TabIndex = 28;
             this.btnCabina4.Text = "Libre";
             this.btnCabina4.UseVisualStyleBackColor = false;
@@ -183,10 +198,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCabina3
             // 
+            this.btnCabina3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCabina3.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCabina3.Location = new System.Drawing.Point(461, 88);
+            this.btnCabina3.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCabina3.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCabina3.Name = "btnCabina3";
-            this.btnCabina3.Size = new System.Drawing.Size(66, 24);
+            this.btnCabina3.Size = new System.Drawing.Size(91, 24);
             this.btnCabina3.TabIndex = 27;
             this.btnCabina3.Text = "Libre";
             this.btnCabina3.UseVisualStyleBackColor = false;
@@ -194,10 +213,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCabina2
             // 
+            this.btnCabina2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCabina2.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCabina2.Location = new System.Drawing.Point(461, 58);
+            this.btnCabina2.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCabina2.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCabina2.Name = "btnCabina2";
-            this.btnCabina2.Size = new System.Drawing.Size(66, 24);
+            this.btnCabina2.Size = new System.Drawing.Size(91, 24);
             this.btnCabina2.TabIndex = 26;
             this.btnCabina2.Text = "Libre";
             this.btnCabina2.UseVisualStyleBackColor = false;
@@ -205,11 +228,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCabina1
             // 
-            this.btnCabina1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCabina1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCabina1.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnCabina1.Location = new System.Drawing.Point(461, 27);
+            this.btnCabina1.Location = new System.Drawing.Point(461, 28);
+            this.btnCabina1.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCabina1.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCabina1.Name = "btnCabina1";
-            this.btnCabina1.Size = new System.Drawing.Size(66, 24);
+            this.btnCabina1.Size = new System.Drawing.Size(91, 24);
             this.btnCabina1.TabIndex = 25;
             this.btnCabina1.Text = "Libre";
             this.btnCabina1.UseVisualStyleBackColor = false;
@@ -217,10 +243,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCompu10
             // 
+            this.btnCompu10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompu10.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnCompu10.Location = new System.Drawing.Point(301, 148);
+            this.btnCompu10.Location = new System.Drawing.Point(299, 148);
+            this.btnCompu10.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCompu10.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCompu10.Name = "btnCompu10";
-            this.btnCompu10.Size = new System.Drawing.Size(66, 24);
+            this.btnCompu10.Size = new System.Drawing.Size(91, 24);
             this.btnCompu10.TabIndex = 24;
             this.btnCompu10.Text = "Libre";
             this.btnCompu10.UseVisualStyleBackColor = false;
@@ -228,10 +258,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCompu9
             // 
+            this.btnCompu9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompu9.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCompu9.Location = new System.Drawing.Point(301, 118);
+            this.btnCompu9.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCompu9.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCompu9.Name = "btnCompu9";
-            this.btnCompu9.Size = new System.Drawing.Size(66, 24);
+            this.btnCompu9.Size = new System.Drawing.Size(91, 24);
             this.btnCompu9.TabIndex = 23;
             this.btnCompu9.Text = "Libre";
             this.btnCompu9.UseVisualStyleBackColor = false;
@@ -239,10 +273,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCompu8
             // 
+            this.btnCompu8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompu8.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCompu8.Location = new System.Drawing.Point(301, 88);
+            this.btnCompu8.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCompu8.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCompu8.Name = "btnCompu8";
-            this.btnCompu8.Size = new System.Drawing.Size(66, 24);
+            this.btnCompu8.Size = new System.Drawing.Size(91, 24);
             this.btnCompu8.TabIndex = 22;
             this.btnCompu8.Text = "Libre";
             this.btnCompu8.UseVisualStyleBackColor = false;
@@ -250,10 +288,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCompu7
             // 
+            this.btnCompu7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompu7.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCompu7.Location = new System.Drawing.Point(301, 58);
+            this.btnCompu7.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCompu7.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCompu7.Name = "btnCompu7";
-            this.btnCompu7.Size = new System.Drawing.Size(66, 24);
+            this.btnCompu7.Size = new System.Drawing.Size(91, 24);
             this.btnCompu7.TabIndex = 21;
             this.btnCompu7.Text = "Libre";
             this.btnCompu7.UseVisualStyleBackColor = false;
@@ -261,10 +303,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCompu6
             // 
+            this.btnCompu6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompu6.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnCompu6.Location = new System.Drawing.Point(301, 27);
+            this.btnCompu6.Location = new System.Drawing.Point(301, 28);
+            this.btnCompu6.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCompu6.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCompu6.Name = "btnCompu6";
-            this.btnCompu6.Size = new System.Drawing.Size(66, 24);
+            this.btnCompu6.Size = new System.Drawing.Size(91, 24);
             this.btnCompu6.TabIndex = 20;
             this.btnCompu6.Text = "Libre";
             this.btnCompu6.UseVisualStyleBackColor = false;
@@ -272,11 +318,15 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCompu5
             // 
+            this.btnCompu5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompu5.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCompu5.ForeColor = System.Drawing.Color.Black;
             this.btnCompu5.Location = new System.Drawing.Point(112, 148);
+            this.btnCompu5.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCompu5.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCompu5.Name = "btnCompu5";
-            this.btnCompu5.Size = new System.Drawing.Size(66, 24);
+            this.btnCompu5.Size = new System.Drawing.Size(91, 24);
             this.btnCompu5.TabIndex = 19;
             this.btnCompu5.Text = "Libre";
             this.btnCompu5.UseVisualStyleBackColor = false;
@@ -284,10 +334,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCompu4
             // 
+            this.btnCompu4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompu4.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCompu4.Location = new System.Drawing.Point(112, 118);
+            this.btnCompu4.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCompu4.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCompu4.Name = "btnCompu4";
-            this.btnCompu4.Size = new System.Drawing.Size(66, 24);
+            this.btnCompu4.Size = new System.Drawing.Size(91, 24);
             this.btnCompu4.TabIndex = 18;
             this.btnCompu4.Text = "Libre";
             this.btnCompu4.UseVisualStyleBackColor = false;
@@ -295,10 +349,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCompu3
             // 
+            this.btnCompu3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompu3.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCompu3.Location = new System.Drawing.Point(112, 88);
+            this.btnCompu3.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCompu3.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCompu3.Name = "btnCompu3";
-            this.btnCompu3.Size = new System.Drawing.Size(66, 24);
+            this.btnCompu3.Size = new System.Drawing.Size(91, 24);
             this.btnCompu3.TabIndex = 17;
             this.btnCompu3.Text = "Libre";
             this.btnCompu3.UseVisualStyleBackColor = false;
@@ -306,10 +364,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCompu2
             // 
+            this.btnCompu2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompu2.BackColor = System.Drawing.Color.GreenYellow;
             this.btnCompu2.Location = new System.Drawing.Point(112, 58);
+            this.btnCompu2.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCompu2.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCompu2.Name = "btnCompu2";
-            this.btnCompu2.Size = new System.Drawing.Size(66, 24);
+            this.btnCompu2.Size = new System.Drawing.Size(91, 24);
             this.btnCompu2.TabIndex = 16;
             this.btnCompu2.Text = "Libre";
             this.btnCompu2.UseVisualStyleBackColor = false;
@@ -317,10 +379,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnCompu1
             // 
+            this.btnCompu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompu1.BackColor = System.Drawing.Color.Red;
-            this.btnCompu1.Location = new System.Drawing.Point(112, 27);
+            this.btnCompu1.Location = new System.Drawing.Point(112, 28);
+            this.btnCompu1.MaximumSize = new System.Drawing.Size(200, 60);
+            this.btnCompu1.MinimumSize = new System.Drawing.Size(91, 24);
             this.btnCompu1.Name = "btnCompu1";
-            this.btnCompu1.Size = new System.Drawing.Size(66, 24);
+            this.btnCompu1.Size = new System.Drawing.Size(91, 24);
             this.btnCompu1.TabIndex = 15;
             this.btnCompu1.Text = "En uso";
             this.btnCompu1.UseVisualStyleBackColor = false;
@@ -328,6 +394,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(402, 153);
             this.label12.Name = "label12";
@@ -337,6 +405,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(402, 123);
             this.label13.Name = "label13";
@@ -346,6 +416,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(402, 91);
             this.label14.Name = "label14";
@@ -355,6 +427,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(402, 63);
             this.label15.Name = "label15";
@@ -364,6 +438,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(402, 32);
             this.label16.Name = "label16";
@@ -373,6 +449,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCompu10
             // 
+            this.lblCompu10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompu10.AutoSize = true;
             this.lblCompu10.Location = new System.Drawing.Point(205, 153);
             this.lblCompu10.Name = "lblCompu10";
@@ -382,6 +460,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCompu9
             // 
+            this.lblCompu9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompu9.AutoSize = true;
             this.lblCompu9.Location = new System.Drawing.Point(205, 122);
             this.lblCompu9.Name = "lblCompu9";
@@ -391,6 +471,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCompu8
             // 
+            this.lblCompu8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompu8.AutoSize = true;
             this.lblCompu8.Location = new System.Drawing.Point(205, 91);
             this.lblCompu8.Name = "lblCompu8";
@@ -400,6 +482,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCompu7
             // 
+            this.lblCompu7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompu7.AutoSize = true;
             this.lblCompu7.Location = new System.Drawing.Point(205, 63);
             this.lblCompu7.Name = "lblCompu7";
@@ -409,6 +493,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCompu6
             // 
+            this.lblCompu6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompu6.AutoSize = true;
             this.lblCompu6.Location = new System.Drawing.Point(205, 32);
             this.lblCompu6.Name = "lblCompu6";
@@ -418,6 +504,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCompu5
             // 
+            this.lblCompu5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompu5.AutoSize = true;
             this.lblCompu5.Location = new System.Drawing.Point(16, 153);
             this.lblCompu5.Name = "lblCompu5";
@@ -427,6 +515,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCompu4
             // 
+            this.lblCompu4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompu4.AutoSize = true;
             this.lblCompu4.Location = new System.Drawing.Point(16, 122);
             this.lblCompu4.Name = "lblCompu4";
@@ -436,6 +526,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCompu3
             // 
+            this.lblCompu3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompu3.AutoSize = true;
             this.lblCompu3.Location = new System.Drawing.Point(16, 91);
             this.lblCompu3.Name = "lblCompu3";
@@ -445,6 +537,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCompu2
             // 
+            this.lblCompu2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompu2.AutoSize = true;
             this.lblCompu2.Location = new System.Drawing.Point(16, 63);
             this.lblCompu2.Name = "lblCompu2";
@@ -454,6 +548,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCompu1
             // 
+            this.lblCompu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompu1.AutoSize = true;
             this.lblCompu1.Location = new System.Drawing.Point(16, 32);
             this.lblCompu1.Name = "lblCompu1";
@@ -463,9 +559,12 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnAsignarCompu
             // 
+            this.btnAsignarCompu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAsignarCompu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAsignarCompu.Location = new System.Drawing.Point(476, 285);
             this.btnAsignarCompu.Name = "btnAsignarCompu";
-            this.btnAsignarCompu.Size = new System.Drawing.Size(160, 37);
+            this.btnAsignarCompu.Size = new System.Drawing.Size(158, 46);
             this.btnAsignarCompu.TabIndex = 4;
             this.btnAsignarCompu.Text = "Asignar computadora";
             this.btnAsignarCompu.UseVisualStyleBackColor = true;
@@ -473,9 +572,12 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnAsignarCabina
             // 
+            this.btnAsignarCabina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAsignarCabina.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAsignarCabina.Location = new System.Drawing.Point(642, 285);
             this.btnAsignarCabina.Name = "btnAsignarCabina";
-            this.btnAsignarCabina.Size = new System.Drawing.Size(147, 37);
+            this.btnAsignarCabina.Size = new System.Drawing.Size(158, 46);
             this.btnAsignarCabina.TabIndex = 5;
             this.btnAsignarCabina.Text = "Asignar cabina";
             this.btnAsignarCabina.UseVisualStyleBackColor = true;
@@ -483,21 +585,30 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica
             // 
-            this.btnEstadistica.Location = new System.Drawing.Point(476, 328);
+            this.btnEstadistica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEstadistica.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEstadistica.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnEstadistica.Location = new System.Drawing.Point(476, 337);
             this.btnEstadistica.Name = "btnEstadistica";
-            this.btnEstadistica.Size = new System.Drawing.Size(313, 38);
+            this.btnEstadistica.Size = new System.Drawing.Size(324, 47);
             this.btnEstadistica.TabIndex = 6;
             this.btnEstadistica.Text = "Consultar estadísticas";
-            this.btnEstadistica.UseVisualStyleBackColor = true;
+            this.btnEstadistica.UseVisualStyleBackColor = false;
             this.btnEstadistica.Click += new System.EventHandler(this.btnEstadistica_Click);
             // 
             // lstbClientes
             // 
+            this.lstbClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstbClientes.FormattingEnabled = true;
             this.lstbClientes.ItemHeight = 15;
             this.lstbClientes.Location = new System.Drawing.Point(18, 87);
+            this.lstbClientes.MaximumSize = new System.Drawing.Size(600, 700);
+            this.lstbClientes.MinimumSize = new System.Drawing.Size(150, 150);
             this.lstbClientes.Name = "lstbClientes";
-            this.lstbClientes.Size = new System.Drawing.Size(223, 259);
+            this.lstbClientes.Size = new System.Drawing.Size(232, 184);
             this.lstbClientes.TabIndex = 7;
             this.lstbClientes.SelectedValueChanged += new System.EventHandler(this.lstbClientes_SelectedValueChanged);
             this.lstbClientes.MouseLeave += new System.EventHandler(this.lstbClientes_MouseLeave_1);
@@ -511,9 +622,11 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblDatosCliente
             // 
+            this.lblDatosCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDatosCliente.AutoSize = true;
             this.lblDatosCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDatosCliente.Location = new System.Drawing.Point(274, 285);
+            this.lblDatosCliente.Location = new System.Drawing.Point(306, 328);
             this.lblDatosCliente.Name = "lblDatosCliente";
             this.lblDatosCliente.Size = new System.Drawing.Size(58, 21);
             this.lblDatosCliente.TabIndex = 8;
@@ -533,7 +646,7 @@ namespace Benitez.Sofia.PrimerParcial
             // lblAyudaClientes
             // 
             this.lblAyudaClientes.AutoSize = true;
-            this.lblAyudaClientes.Location = new System.Drawing.Point(18, 351);
+            this.lblAyudaClientes.Location = new System.Drawing.Point(18, 274);
             this.lblAyudaClientes.Name = "lblAyudaClientes";
             this.lblAyudaClientes.Size = new System.Drawing.Size(332, 15);
             this.lblAyudaClientes.TabIndex = 10;
@@ -544,7 +657,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 449);
+            this.ClientSize = new System.Drawing.Size(827, 399);
             this.Controls.Add(this.lblAyudaClientes);
             this.Controls.Add(this.lblAyudaEquipos);
             this.Controls.Add(this.lblDatosCliente);
@@ -557,7 +670,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.Controls.Add(this.gbUsuario);
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmPrincipal";
+            this.Text = "Ciber";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.MouseLeave += new System.EventHandler(this.gbEquipos_MouseLeave);

@@ -85,6 +85,9 @@ namespace CiberCafe
             }
         }
 
+        /// <summary>
+        /// propiedad que devuelve el tiempo de uso en minutos que cuentan como horas para la aplicacion
+        /// </summary>
         public double TiempoDeUsoHoras
         {
             get
@@ -92,6 +95,19 @@ namespace CiberCafe
                 if (this.TiempoFinalizacion != DateTime.MinValue)
                 {
                     return ((this.tiempoFinalizacion - this.tiempoInicio).Minutes);
+                }
+                return 0;
+
+            }
+        }
+
+        public double UsoEnMinutosTotales
+        {
+            get
+            {
+                if (this.TiempoFinalizacion != DateTime.MinValue)
+                {
+                    return ((this.TiempoDeUsoHoras * 60) + this.TiempoDeUsoMinutos);
                 }
                 return 0;
 

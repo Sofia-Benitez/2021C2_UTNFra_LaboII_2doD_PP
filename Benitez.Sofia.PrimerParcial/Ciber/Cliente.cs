@@ -111,13 +111,21 @@ namespace CiberCafe
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
-        public void AgregarRequerimiento(string key, string value)
+        public bool AgregarRequerimiento(string key, string value)
         {
-            if(requerimientos is not null)
+            if(this.necesidad == Necesidad.Computadora)
             {
+                foreach (KeyValuePair<string, string> item in this.requerimientos)
+                {
+                    if (this.requerimientos.ContainsKey(key))
+                    {
+                        return false;
+                    }
+                }
                 this.requerimientos.Add(key, value);
+                return true;
             }
-           
+            return false;
         }
 
         /// <summary>

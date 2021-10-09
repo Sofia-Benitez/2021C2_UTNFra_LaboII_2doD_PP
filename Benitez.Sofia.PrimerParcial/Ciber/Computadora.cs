@@ -72,9 +72,17 @@ namespace CiberCafe
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
-        public void AgregarCaracteristica(string key, string value)
+        public bool AgregarCaracteristica(string key, string value)
         {
+            foreach (KeyValuePair<string, string> item in this.caracteristicas)
+            {
+                if(this.caracteristicas.ContainsKey(key))
+                {
+                    return false;
+                }
+            }
             this.caracteristicas.Add(key, value);
+            return true;
         }
 
 
