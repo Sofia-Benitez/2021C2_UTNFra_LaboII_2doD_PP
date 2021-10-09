@@ -84,13 +84,16 @@ namespace Benitez.Sofia.PrimerParcial
             c5.AgregarCaracteristica("S03", "Office");
             c5.AgregarCaracteristica("S04", "ICQ");
 
+
             c6.AgregarCaracteristica("P03", "Cámara");
             c6.AgregarCaracteristica("S03", "Office");
+            c6.AgregarCaracteristica("J01", "Counter Strike");
 
             c7.AgregarCaracteristica("J03", "Diablo II");
             c7.AgregarCaracteristica("J02", "Age of Empires II");
             c7.AgregarCaracteristica("S02", "MSN");
-            c7.AgregarCaracteristica("P01", "Auriculares"); 
+            c7.AgregarCaracteristica("P01", "Auriculares");
+            c7.AgregarCaracteristica("P03", "Cámara");
 
             c8.AgregarCaracteristica("P02", "Micrófono");
             c8.AgregarCaracteristica("P01", "Auriculares");
@@ -98,6 +101,7 @@ namespace Benitez.Sofia.PrimerParcial
 
             c9.AgregarCaracteristica("P02", "Micrófono");
             c9.AgregarCaracteristica("P01", "Auriculares");
+            c8.AgregarCaracteristica("S02", "MSN");
 
             c10.AgregarCaracteristica("P01", "Auriculares");
             c10.AgregarCaracteristica("P02", "Micrófono");
@@ -128,14 +132,17 @@ namespace Benitez.Sofia.PrimerParcial
 
             cliente2.AgregarRequerimiento("P01", "Auriculares");
 
-            cliente3.AgregarRequerimiento("S02", "MSN");
+            
+            cliente3.AgregarRequerimiento("J01", "Counter Strike");
 
             cliente4.AgregarRequerimiento("J02", "Age of Empires II");
 
             cliente5.AgregarRequerimiento("P03", "Cámara");
+            cliente5.AgregarRequerimiento("S02", "MSN");
 
             cliente6.AgregarRequerimiento("P02", "Micrófono");
             cliente6.AgregarRequerimiento("P03", "Cámara");
+            cliente6.AgregarRequerimiento("S02", "MSN");
 
             cliente11.AgregarRequerimiento("P02", "Micrófono");
             cliente11.AgregarRequerimiento("S04", "ICQ");
@@ -413,7 +420,12 @@ namespace Benitez.Sofia.PrimerParcial
             
             string usosComputadoras = miCiber.OrdenarUsosComputadoraPorTiempoDeUso();
             string usosCabinas = miCiber.OrdenarUsosCabinaPorTiempoDeUso();
-            FrmEstadisticas frmEstadisticas = new FrmEstadisticas(usosComputadoras, usosCabinas);
+            string gananciasTotales = miCiber.CalcularGananciasTotalesYPorServicio();
+            string tiempoLlamadasYRecaudacion = miCiber.CalcularHorasTotalesLlamadasYRecaudacionPorTipo();
+            string softwareMasPedido=miCiber.BuscarRequerimientoMasPedido('S');
+            string juegoMasPedido= miCiber.BuscarRequerimientoMasPedido('J');
+            string perifericoMasPedido= miCiber.BuscarRequerimientoMasPedido('P');
+            FrmEstadisticas frmEstadisticas = new FrmEstadisticas(usosComputadoras, usosCabinas, gananciasTotales, tiempoLlamadasYRecaudacion, softwareMasPedido, juegoMasPedido, perifericoMasPedido);
             frmEstadisticas.ShowDialog();
         }
 

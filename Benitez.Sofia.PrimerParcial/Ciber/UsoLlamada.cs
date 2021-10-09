@@ -69,12 +69,11 @@ namespace CiberCafe
             }
         }
 
-
-        public Cabina Cabina
+        public TipoLlamada TipoDeLlamada
         {
             get
             {
-                return this.cabina;
+                return this.tipoDeLlamada;
             }
         }
 
@@ -92,7 +91,8 @@ namespace CiberCafe
         /// <summary>
         /// propiedad que devuelve lo que retorna CalcularCostoNeto
         /// </summary>
-        public double CostoNeto
+        
+        public override double CostoNeto
         {
             get
             {

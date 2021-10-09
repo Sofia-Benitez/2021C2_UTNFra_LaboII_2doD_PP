@@ -64,7 +64,7 @@ namespace CiberCafe
         /// <summary>
         /// propiedad que devuelve lo que retorna CalcularCostoNeto
         /// </summary>
-        public double CostoNeto
+        public override double CostoNeto
         {
             get
             {

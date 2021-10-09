@@ -118,6 +118,7 @@ namespace CiberCafe
 
         public abstract double CalcularCostoNeto();
 
+        public abstract double CostoNeto { get; }
 
 
 

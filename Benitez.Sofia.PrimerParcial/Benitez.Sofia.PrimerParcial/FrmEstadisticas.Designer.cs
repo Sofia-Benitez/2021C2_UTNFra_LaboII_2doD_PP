@@ -32,11 +32,11 @@ namespace Benitez.Sofia.PrimerParcial
             this.rtbxEstadisticas = new System.Windows.Forms.RichTextBox();
             this.btnEstadistica1 = new System.Windows.Forms.Button();
             this.btnEstadistica2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnEstadistica3 = new System.Windows.Forms.Button();
+            this.btnEstadistica4 = new System.Windows.Forms.Button();
+            this.btnEstadistica5 = new System.Windows.Forms.Button();
+            this.btnEstadistica6 = new System.Windows.Forms.Button();
+            this.btnEstadistica7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbxEstadisticas
@@ -67,61 +67,66 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnEstadistica2.UseVisualStyleBackColor = true;
             this.btnEstadistica2.Click += new System.EventHandler(this.btnEstadistica2_Click);
             // 
-            // button3
+            // btnEstadistica3
             // 
-            this.button3.Location = new System.Drawing.Point(520, 117);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(202, 41);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEstadistica3.Location = new System.Drawing.Point(520, 117);
+            this.btnEstadistica3.Name = "btnEstadistica3";
+            this.btnEstadistica3.Size = new System.Drawing.Size(202, 41);
+            this.btnEstadistica3.TabIndex = 3;
+            this.btnEstadistica3.Text = "Ganancias totales";
+            this.btnEstadistica3.UseVisualStyleBackColor = true;
+            this.btnEstadistica3.Click += new System.EventHandler(this.btnEstadistica3_Click);
             // 
-            // button4
+            // btnEstadistica4
             // 
-            this.button4.Location = new System.Drawing.Point(520, 164);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(202, 41);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnEstadistica4.Location = new System.Drawing.Point(520, 164);
+            this.btnEstadistica4.Name = "btnEstadistica4";
+            this.btnEstadistica4.Size = new System.Drawing.Size(202, 41);
+            this.btnEstadistica4.TabIndex = 4;
+            this.btnEstadistica4.Text = "Tiempo de llamadas y recaudación";
+            this.btnEstadistica4.UseVisualStyleBackColor = true;
+            this.btnEstadistica4.Click += new System.EventHandler(this.btnEstadistica4_Click);
             // 
-            // button5
+            // btnEstadistica5
             // 
-            this.button5.Location = new System.Drawing.Point(520, 211);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(202, 41);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnEstadistica5.Location = new System.Drawing.Point(520, 211);
+            this.btnEstadistica5.Name = "btnEstadistica5";
+            this.btnEstadistica5.Size = new System.Drawing.Size(202, 41);
+            this.btnEstadistica5.TabIndex = 5;
+            this.btnEstadistica5.Text = "Software más pedido";
+            this.btnEstadistica5.UseVisualStyleBackColor = true;
+            this.btnEstadistica5.Click += new System.EventHandler(this.btnEstadistica5_Click);
             // 
-            // button6
+            // btnEstadistica6
             // 
-            this.button6.Location = new System.Drawing.Point(520, 258);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(202, 41);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnEstadistica6.Location = new System.Drawing.Point(520, 258);
+            this.btnEstadistica6.Name = "btnEstadistica6";
+            this.btnEstadistica6.Size = new System.Drawing.Size(202, 41);
+            this.btnEstadistica6.TabIndex = 6;
+            this.btnEstadistica6.Text = "Juego más pedido";
+            this.btnEstadistica6.UseVisualStyleBackColor = true;
+            this.btnEstadistica6.Click += new System.EventHandler(this.btnEstadistica6_Click);
             // 
-            // button7
+            // btnEstadistica7
             // 
-            this.button7.Location = new System.Drawing.Point(520, 305);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(202, 41);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnEstadistica7.Location = new System.Drawing.Point(520, 305);
+            this.btnEstadistica7.Name = "btnEstadistica7";
+            this.btnEstadistica7.Size = new System.Drawing.Size(202, 41);
+            this.btnEstadistica7.TabIndex = 7;
+            this.btnEstadistica7.Text = "Periférico más pedido";
+            this.btnEstadistica7.UseVisualStyleBackColor = true;
+            this.btnEstadistica7.Click += new System.EventHandler(this.btnEstadistica7_Click);
             // 
             // FrmEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 367);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnEstadistica7);
+            this.Controls.Add(this.btnEstadistica6);
+            this.Controls.Add(this.btnEstadistica5);
+            this.Controls.Add(this.btnEstadistica4);
+            this.Controls.Add(this.btnEstadistica3);
             this.Controls.Add(this.btnEstadistica2);
             this.Controls.Add(this.btnEstadistica1);
             this.Controls.Add(this.rtbxEstadisticas);
@@ -136,10 +141,10 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.RichTextBox rtbxEstadisticas;
         private System.Windows.Forms.Button btnEstadistica1;
         private System.Windows.Forms.Button btnEstadistica2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnEstadistica3;
+        private System.Windows.Forms.Button btnEstadistica4;
+        private System.Windows.Forms.Button btnEstadistica5;
+        private System.Windows.Forms.Button btnEstadistica6;
+        private System.Windows.Forms.Button btnEstadistica7;
     }
 }

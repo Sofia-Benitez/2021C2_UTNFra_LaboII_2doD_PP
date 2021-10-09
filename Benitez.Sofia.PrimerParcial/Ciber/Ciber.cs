@@ -13,6 +13,7 @@ namespace CiberCafe
         private List<Servicios> listaServicios;
         private string nombreUsuario;
         private DateTime fechaYHora;
+        private List<Cliente> listaClientesAtendidos;
         /// <summary>
         /// constructor que instancia las listas 
         /// </summary>
@@ -21,6 +22,7 @@ namespace CiberCafe
             this.listaClientes = new List<Cliente>();
             this.listaServicios = new List<Servicios>();
             this.listaDeUsos = new List<Uso>();
+            this.listaClientesAtendidos = new List<Cliente>();
         }
 
         /// <summary>
@@ -157,6 +159,7 @@ namespace CiberCafe
                 computadora.Estado = false;
                 UsoComputadora uso = new UsoComputadora(DateTime.Now, cliente, computadora);
                 this.listaClientes.Remove(cliente);
+                this.listaClientesAtendidos.Add(cliente);
                 this.listaDeUsos.Add(uso);
                 computadora.UsoActual = uso;
                 return uso;
@@ -181,6 +184,7 @@ namespace CiberCafe
             
             
             this.listaClientes.Remove(cliente);
+            this.listaClientesAtendidos.Add(cliente);
             this.listaDeUsos.Add(uso);
             return uso;
         }
@@ -220,6 +224,7 @@ namespace CiberCafe
                 UsoLlamada uso = new UsoLlamada(DateTime.Now, numero, tipo, cliente, cabina);
                 cabina.UsoActual = uso;
                 this.listaClientes.Remove(cliente);
+                this.listaClientesAtendidos.Add(cliente);
                 this.listaDeUsos.Add(uso);
                 return uso;
             }
@@ -330,20 +335,168 @@ namespace CiberCafe
 
        
 
-
         //Ganancias totales y clasificadas por servicio(teléfono/computadora).
+        public string CalcularGananciasTotalesYPorServicio()
+        {
+            double gananciasTotales=0;
+            double gananciasComputadora = 0;
+            double gananciasCabina = 0;
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Uso item in this.listaDeUsos)
+            {
+                gananciasTotales += item.CostoNeto;
+                if (item is UsoComputadora)
+                {
+                    gananciasComputadora += item.CostoNeto;
+                }
+                else if (item is UsoLlamada)
+                {
+                    gananciasCabina += item.CostoNeto;
+                }
+            }
+            sb.AppendLine(" ****************************************Ganancias ***********************************");
+            sb.AppendLine($"Ganancias totales: ${gananciasTotales}");
+            sb.AppendLine("**************************************************************************************");
+            sb.AppendLine($"Ganancias uso de cabinas: ${gananciasCabina}");
+            sb.AppendLine($"Ganancias uso de computadoras: ${gananciasComputadora}");
+            sb.AppendLine("**************************************************************************************");
+
+
+            return sb.ToString();
+        }
 
 
         //Horas totales y la recaudación por tipo de llamada.
+        public string CalcularHorasTotalesLlamadasYRecaudacionPorTipo()
+        {
+            double minutosLlamadas = 0;
+            int horasTotales;
+            double gananciasLocal = 0;
+            double gananciasInternacional = 0;
+            double gananciasLargaDistancia = 0;
+            StringBuilder sb = new StringBuilder();
 
+            UsoLlamada usoAux;
+
+            foreach (Uso item in this.listaDeUsos)
+            {
+                if (item is UsoLlamada)
+                {
+                    minutosLlamadas += item.UsoEnMinutosTotales;
+                    usoAux = (UsoLlamada)item;
+                    if(usoAux.TipoDeLlamada == UsoLlamada.TipoLlamada.Local)
+                    {
+                        gananciasLocal += item.CostoNeto;
+                    }
+                    else if(usoAux.TipoDeLlamada == UsoLlamada.TipoLlamada.LargaDistancia)
+                    {
+                        gananciasLargaDistancia += item.CostoNeto;
+                    }
+                    else if(usoAux.TipoDeLlamada == UsoLlamada.TipoLlamada.Internacional)
+                    {
+                        gananciasInternacional += item.CostoNeto;
+                    }
+                }
+            }
+            horasTotales = (int) minutosLlamadas / 60;
+            
+            sb.AppendLine("*************** Horas totales y la recaudación por tipo de llamada ****************\n");
+            if (horasTotales < 1)
+            {
+                sb.AppendLine($"Tiempo total de llamadas: menos de 1 hora");
+            }
+            else if (horasTotales==1)
+            {
+                sb.AppendLine($"Tiempo total de llamadas: 1 hora");
+            }
+            else
+            {
+                sb.AppendLine($"Tiempo total de llamadas: {horasTotales} horas");
+            }
+            sb.AppendLine("**************************************************************************************");
+            sb.AppendLine($"Ganancias por llamadas locales: ${gananciasLocal}");
+            sb.AppendLine($"Ganancias por llamadas de larga distancia: ${gananciasLargaDistancia}");
+            sb.AppendLine($"Ganancias por llamadas internacionales: ${gananciasInternacional}");
+            sb.AppendLine("**************************************************************************************");
+
+
+            return sb.ToString();
+        }
 
         //El software más pedido por los clientes.
-
-
         //El periférico más pedido por los clientes.
-
-
         //El juego más pedido por los clientes.
+        private int CompararCantidadRepeticiones(KeyValuePair<string, int> primerElemento, KeyValuePair<string, int> segundoElemento)
+        {
+            if (primerElemento.Value < segundoElemento.Value)
+            {
+                return 1;
+            }
+            if (primerElemento.Value > segundoElemento.Value)
+            {
+                return -1;
+            }
+            return 0;
+        }
+        
+        /// <summary>
+        /// recorre los clientes atendidos buscando entre lo que utilizaron el elemento mas repetido
+        /// </summary>
+        /// <param name="inicial">Recibe la inicial del tipo de requerimiento para poder filtrar</param>
+        /// <returns>Muestra el requerimiento más pedido o los más pedidos si hay empate</returns>
+        public string BuscarRequerimientoMasPedido(char inicial)
+        {
+            StringBuilder sb = new StringBuilder();
+            bool flag = false;
+            Dictionary<string, int> diccionario = new Dictionary<string, int>();
+            foreach (Cliente cliente in this.listaClientesAtendidos)
+            {
+                foreach (KeyValuePair<string,string> item in cliente.Requerimientos)
+                {
+                    if(item.Key[0] == inicial)
+                    {
+                        if (diccionario.ContainsKey(item.Value))
+                        {
+                            diccionario[item.Value]++;
+                        }
+                        else
+                        {
+                            diccionario.Add(item.Value, 1);
+                        }
+                    }
+                    
+                }
+            }
+
+            List<KeyValuePair<string, int>> podio = diccionario.ToList();
+            podio.Sort(CompararCantidadRepeticiones);
+            if(podio.Count>=1)
+            {
+                sb.AppendLine(podio[0].Key);
+                foreach (KeyValuePair<string, int> item in podio)
+                {
+                    if(!flag)
+                    {
+                        flag = true;
+                    }
+                    else
+                    {
+                        if (item.Value == podio[0].Value)
+                        {
+                            sb.AppendLine(item.Key);
+                       
+                        }
+                    }
+                    
+                }
+                return sb.ToString();
+            }
+            return "";
+
+        }
+
+        
 
         #endregion
 
