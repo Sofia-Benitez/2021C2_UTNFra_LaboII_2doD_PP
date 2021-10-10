@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CiberCafe
 {
-    public class Cabina : Servicios
+    public class Cabina : Servicio
     {
         
         private string marca;
         private Tipo tipo;
-        public enum Tipo { Disco, Teclado};
-        private UsoLlamada usoActual;
+        public enum Tipo { Disco, Teclado };
+        private UsoCabina usoActual;
 
         /// <summary>
         /// constructor 
@@ -27,6 +27,10 @@ namespace CiberCafe
             this.tipo = tipo;
         }
 
+
+        /// <summary>
+        /// Propiedad id solo lectura
+        /// </summary>
        public override string Id
        {
             get
@@ -35,6 +39,9 @@ namespace CiberCafe
             }
        }
 
+        /// <summary>
+        /// Propiedad estado. Se puede leer y asignar
+        /// </summary>
         public override bool Estado
         {
             get
@@ -46,7 +53,11 @@ namespace CiberCafe
                 this.estado = value;
             }
         }
-        public UsoLlamada UsoActual
+
+        /// <summary>
+        /// Propiedad UsoActual permite leer o setear el uso que esta ocurriendo en la cabina. Es null cuando no se esta usando
+        /// </summary>
+        public UsoCabina UsoActual
         {
             get
             {
@@ -58,6 +69,7 @@ namespace CiberCafe
                 this.usoActual = value;
             }
         }
+
         /// <summary>
         /// muestra los datos de la clase llamando a la clase base 
         /// </summary>
@@ -85,15 +97,15 @@ namespace CiberCafe
         /// <summary>
         /// libera el uso de una cabina, setea su tiempo de finalizacion
         /// </summary>
-        /// <returns>devuelve </returns>
+        /// <returns>devuelve la informacion del uso que finalizó </returns>
         public string LiberarCabina()
         {
             this.Estado = true;
             this.UsoActual.TiempoFinalizacion = DateTime.Now;
-            string aux = this.usoActual.Mostrar();
+            string datosUso = this.usoActual.Mostrar();
             this.UsoActual = null;
 
-            return aux;
+            return datosUso;
         }
 
         

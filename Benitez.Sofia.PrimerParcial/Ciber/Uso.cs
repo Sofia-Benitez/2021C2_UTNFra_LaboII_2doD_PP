@@ -8,19 +8,12 @@ namespace CiberCafe
 {
     public abstract class Uso
     {
-        private Cliente cliente;
+        protected Cliente cliente;
         protected DateTime tiempoInicio;
         protected DateTime tiempoFinalizacion;
-        protected static double IVA;
+        protected static decimal IVA = 1.21M;
 
-        /// <summary>
-        /// constructor estatico con el valor del iva
-        /// </summary>
-        static Uso()
-        {
-            IVA = 1.21;
-        }
-
+        
         /// <summary>
         /// constructor
         /// </summary>
@@ -34,14 +27,9 @@ namespace CiberCafe
 
         }
         
-        public virtual DateTime TiempoInicio
-        {
-            get
-            {
-                return this.tiempoInicio;
-            }
-        }
-
+       /// <summary>
+       /// Propiedad tiempo de finalización. permite leer y setear el valor en el momento que finaliza un servicio.
+       /// </summary>
         public virtual DateTime TiempoFinalizacion
         {
             get
@@ -50,25 +38,14 @@ namespace CiberCafe
             }
             set
             {
-                this.tiempoFinalizacion = value;
+                if(value>this.tiempoInicio)
+                {
+                    this.tiempoFinalizacion = value;
+                }
             }
         }
 
-        public virtual string HoraInicio
-        {
-            get
-            {
-                return this.tiempoInicio.ToLongTimeString();
-            }
-        }
-
-        public virtual string HoraFinalizacion
-        {
-            get
-            {
-                return this.tiempoFinalizacion.ToLongTimeString();
-            }
-        }
+        
         /// <summary>
         /// propiedad que devuelve el tiempo de uso en segundos que cuentan como minutos para la aplicacion
         /// </summary>
@@ -101,6 +78,9 @@ namespace CiberCafe
             }
         }
 
+        /// <summary>
+        /// Propiedad que permite ver cuantos tiempo se utilizó un servicio en minutos
+        /// </summary>
         public double UsoEnMinutosTotales
         {
             get
@@ -114,11 +94,14 @@ namespace CiberCafe
             }
         }
 
-        public abstract double CalcularCosto();
+        public abstract decimal CostoNeto { get; }
+        public abstract decimal CostoBruto { get; }
 
-        public abstract double CalcularCostoNeto();
+        public abstract decimal CalcularCosto();
 
-        public abstract double CostoNeto { get; }
+        public abstract decimal CalcularCostoNeto();
+
+        
 
 
 
@@ -130,9 +113,11 @@ namespace CiberCafe
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Cliente: {this.cliente.Nombre}");
-            sb.AppendLine($"Inicio del servicio: {this.HoraInicio}");
-            sb.AppendLine($"Finalizacion del servicio: {this.HoraFinalizacion}");
+            sb.AppendLine($"Inicio del servicio: {this.tiempoInicio.ToLongTimeString()}");
+            sb.AppendLine($"Finalizacion del servicio: {this.tiempoFinalizacion.ToLongTimeString()}");
             sb.AppendLine($"Tiempo de uso: {this.TiempoDeUsoHoras} horas {this.TiempoDeUsoMinutos} minutos");
+            sb.AppendFormat("Costo bruto: {0:C2}\n", this.CostoBruto);
+            sb.AppendFormat("Costo neto: {0:C2}", this.CostoNeto);
 
             return sb.ToString();
         }

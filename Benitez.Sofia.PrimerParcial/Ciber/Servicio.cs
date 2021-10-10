@@ -6,32 +6,35 @@ using System.Threading.Tasks;
 
 namespace CiberCafe
 {
-    public abstract class Servicios
+    public abstract class Servicio
     {
         
         protected string id;
         protected bool estado;
-        public enum TipoServicio { Cabina, Computadora }
+        
 
         /// <summary>
         /// constructor
         /// </summary>
         /// <param name="id"></param>
         /// <param name="estado">true libre / false en uso</param>
-        public Servicios(string id, bool estado)
+        public Servicio(string id, bool estado)
         {
             
             this.id = id;
             this.estado = estado;
         }
         
+        /// <summary>
+        /// Propiedad abstracta ID
+        /// </summary>
         public abstract string Id
         {
             get;
         }
 
         /// <summary>
-        /// true: libre   false: en uso
+        /// Propiedad abstracta Estado: true: libre   false: en uso
         /// </summary>
         public abstract  bool Estado
         {
@@ -39,7 +42,7 @@ namespace CiberCafe
         }
 
         /// <summary>
-        /// muestra los datos de la clase base
+        /// muestra los datos de la clase base, el id y el estado que corresponda
         /// </summary>
         /// <returns></returns>
         protected virtual string Mostrar()

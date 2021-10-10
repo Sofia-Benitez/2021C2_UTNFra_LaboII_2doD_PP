@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CiberCafe
 {
-    public class Computadora : Servicios
+    public class Computadora : Servicio
     {
         private Dictionary<string, string> caracteristicas;
         private UsoComputadora usoActual;
@@ -26,7 +26,9 @@ namespace CiberCafe
              
         }
 
-        
+        /// <summary>
+        /// propiedad id, solo lectura
+        /// </summary>
         public override string Id
         {
             get
@@ -35,7 +37,9 @@ namespace CiberCafe
             }
         }
         
-
+        /// <summary>
+        /// propiedad estado. permite leerlo y setearlo
+        /// </summary>
         public override bool Estado
         {
             get
@@ -48,7 +52,9 @@ namespace CiberCafe
             }
         }
 
-
+        /// <summary>
+        /// Propiedad Caracteristicas permite acceder al diccionario de caracteristicas del equipo
+        /// </summary>
         public Dictionary<string, string> Caracteristicas
         {
             get
@@ -58,6 +64,9 @@ namespace CiberCafe
 
         }
 
+        /// <summary>
+        /// Propiedad UsoActual permite leer o setear el uso de la computadora en el momento, si no esta siendo utilizada devuelve null
+        /// </summary>
         public UsoComputadora UsoActual
         {
             get
@@ -72,13 +81,15 @@ namespace CiberCafe
         }
 
         /// <summary>
-        /// agrega al diccionary de caracteristicas una clave y un valor que recibe por parametros
+        /// agrega al diccionary de caracteristicas una clave y un valor que recibe por parametros. 
+        /// si la computadora ya tiene esa caracteristica no la agrega
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
+        /// <return> devuelve true si se agrego la caracteristica y false si no se agrego</return>
         public bool AgregarCaracteristica(string key, string value)
         {
-            foreach (KeyValuePair<string, string> item in this.caracteristicas)
+            foreach (KeyValuePair<string, string> caracteristica in this.caracteristicas)
             {
                 if(this.caracteristicas.ContainsKey(key))
                 {
@@ -93,9 +104,9 @@ namespace CiberCafe
 
 
         /// <summary>
-        /// muestra los datos de la clase llamando a la clase base 
+        /// muestra los datos de la computadora incluyendo los de la clase base 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>devuelve los datos</returns>
         protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -106,10 +117,15 @@ namespace CiberCafe
             {
                 sb.AppendLine("Placa de video");
             }
-            foreach(KeyValuePair <string, string> item in this.Caracteristicas)
+            sb.AppendLine("-------------------");
+            if(this.caracteristicas is not null)
             {
-                sb.AppendLine($"{item.Value} ");
+                foreach (KeyValuePair<string, string> item in this.caracteristicas)
+                {
+                    sb.AppendLine($"{item.Value} ");
+                }
             }
+            
 
             return sb.ToString();
         }
@@ -123,15 +139,6 @@ namespace CiberCafe
             return this.Mostrar();
         }
 
-        public static bool operator ==(Computadora computadora1, Computadora computadora2)
-        {
-            return (computadora1.Id == computadora2.Id);
-        }
-
-        public static bool operator !=(Computadora computadora1, Computadora computadora2)
-        {
-            return !(computadora1.Id == computadora2.Id);
-        }
 
         /// <summary>
         /// libera la computadora y determina el tiempo de finalizacion

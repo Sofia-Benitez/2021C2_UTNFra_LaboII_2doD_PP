@@ -62,6 +62,7 @@ namespace Benitez.Sofia.PrimerParcial
 
         /// <summary>
         /// al presional el boton de asignar controla que la computadora seleccionada tenga los elementos que el cliente necesita, sino no permite la asignacion
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -123,6 +124,11 @@ namespace Benitez.Sofia.PrimerParcial
             }
         }
 
+        /// <summary>
+        /// si se desea cerrar el formulario antes de asignar una cabina arroja un mensaje de advertencia
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmComputadora_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(computadora is null)
@@ -133,6 +139,23 @@ namespace Benitez.Sofia.PrimerParcial
                 }
             }
             
+        }
+
+        /// <summary>
+        /// boton de ayuda quem muestra un mensaje con instrucciones para utilizar  el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("En esta pantalla pueden verse todas las computadoras con sus especificaciones. \n");
+            sb.AppendLine("Seleccione la computadora que quiere asignarle al cliente. \n");
+            sb.AppendLine("Si la computadora no tiene los elementos que el cliente ha solicitado no se le podrá asignar.\n");
+            sb.AppendLine("Seleccione Tiempo libre si el cliente no especificó la cantidad de tiempo que quiere utilizar la computadora \n");
+            sb.AppendLine("Si el cliente quiere utilizar la computadora por un tiempo determinado seleccione el tiempo que solicitó el cliente  \n");
+            sb.AppendLine("Presione el botono Asignar para asignarle la computadora al cliente. \n");
+            MessageBox.Show(sb.ToString());
         }
     }
 }

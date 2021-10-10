@@ -10,7 +10,7 @@ namespace CiberCafe
     {
         
         private Computadora computadora;
-        protected double costoFraccion;
+        private static double costoFraccion = 0.5;
 
         /// <summary>
         /// constructor
@@ -22,7 +22,6 @@ namespace CiberCafe
         {
             
             this.computadora = computadora;
-            this.costoFraccion = 0.5F;
         }
 
         /// <summary>
@@ -37,23 +36,12 @@ namespace CiberCafe
             this.tiempoFinalizacion = tiempoFinalizacion;
         }
 
-        public double Costo 
-        {
-            get
-            {
-                return this.costoFraccion;
-            }
-
-            set
-            {
-                this.costoFraccion = value;
-            }
-        }
+        
 
         /// <summary>
         /// propiedad que devuelve lo que retorna el metodo CalcularCosto
         /// </summary>
-        public double CostoBruto
+        public override decimal CostoBruto
         {
             get
             {
@@ -64,7 +52,7 @@ namespace CiberCafe
         /// <summary>
         /// propiedad que devuelve lo que retorna CalcularCostoNeto
         /// </summary>
-        public override double CostoNeto
+        public override decimal CostoNeto
         {
             get
             {
@@ -74,26 +62,18 @@ namespace CiberCafe
 
         
 
-        public Computadora Computadora
-        {
-            get
-            {
-                return this.computadora;
-            }
-        }
-
         /// <summary>
-        /// calcula el costo total
+        /// calcula el costo total del uso del servicio
         /// </summary>
         /// <returns></returns>
-        public override double CalcularCosto()
+        public override decimal CalcularCosto()
         {
-            double costoTotal = 0;
+            decimal costoTotal = 0;
 
             if (this.TiempoFinalizacion != DateTime.MinValue)
             {
 
-                costoTotal= Math.Ceiling(this.UsoEnMinutosTotales / 30) * this.costoFraccion;
+                costoTotal= (decimal)(Math.Ceiling(this.UsoEnMinutosTotales / 30) * costoFraccion);
                 
                 
             }
@@ -104,7 +84,7 @@ namespace CiberCafe
         /// agrega el iva al costo total
         /// </summary>
         /// <returns></returns>
-        public override double CalcularCostoNeto()
+        public override decimal CalcularCostoNeto()
         {
            return  this.CostoBruto * IVA;
         }
@@ -117,16 +97,18 @@ namespace CiberCafe
         {
             StringBuilder sb = new StringBuilder();
 
+            sb.AppendLine($"Computadora: {this.computadora.Id}");
+            sb.AppendLine($"Costo media hora: ${costoFraccion}");
             sb.AppendLine(base.Mostrar());
-            sb.AppendLine($"Computadora: {this.computadora}");
-            sb.AppendLine($"Costo media hora: ${this.costoFraccion}");
-            sb.AppendLine($"Costo bruto: ${this.CostoBruto}");
-            sb.AppendLine($"Costo neto: ${this.CostoNeto}");
+
 
             return sb.ToString();
         }
 
-
+        /// <summary>
+        /// sobrecarga del metodo ToString() para devolver los datos del uso
+        /// </summary>
+        /// <returns>devuelve los datos del uso del Metodo mstrar()</returns>
         public override string ToString()
         {
             return this.Mostrar();

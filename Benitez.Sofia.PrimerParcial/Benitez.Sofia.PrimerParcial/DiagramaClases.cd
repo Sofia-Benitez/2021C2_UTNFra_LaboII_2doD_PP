@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="CiberCafe.Cliente">
+    <Position X="0.5" Y="0.5" Width="3.75" />
+    <NestedTypes>
+      <Class Name="CiberCafe.Cliente.Necesidad" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="CiberCafe.Uso">
+    <Position X="1" Y="8.75" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="CiberCafe.UsoCabina">
+    <Position X="0.5" Y="13.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="CiberCafe.UsoCabina.TipoLlamada">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="CiberCafe.UsoComputadora">
+    <Position X="4.5" Y="13.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="CiberCafe.Ciber">
+    <Position X="5" Y="0.5" Width="5.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="CiberCafe.Cabina">
+    <Position X="5" Y="5.75" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="CiberCafe.Cabina.Tipo">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="CiberCafe.Computadora">
+    <Position X="8" Y="5.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

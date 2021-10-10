@@ -50,25 +50,31 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnNumeral = new System.Windows.Forms.Button();
             this.btn0 = new System.Windows.Forms.Button();
             this.btnAsterisco = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbxCabinas.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAsignarCabina
             // 
-            this.btnAsignarCabina.Location = new System.Drawing.Point(592, 327);
+            this.btnAsignarCabina.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btnAsignarCabina.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsignarCabina.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAsignarCabina.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAsignarCabina.Location = new System.Drawing.Point(595, 374);
             this.btnAsignarCabina.Name = "btnAsignarCabina";
-            this.btnAsignarCabina.Size = new System.Drawing.Size(147, 40);
+            this.btnAsignarCabina.Size = new System.Drawing.Size(162, 54);
             this.btnAsignarCabina.TabIndex = 7;
             this.btnAsignarCabina.Text = "Asignar";
-            this.btnAsignarCabina.UseVisualStyleBackColor = true;
+            this.btnAsignarCabina.UseVisualStyleBackColor = false;
             this.btnAsignarCabina.Click += new System.EventHandler(this.btnAsignarCabina_Click);
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(378, 9);
+            this.lblCliente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCliente.Location = new System.Drawing.Point(377, 20);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(44, 15);
+            this.lblCliente.Size = new System.Drawing.Size(51, 19);
             this.lblCliente.TabIndex = 8;
             this.lblCliente.Text = "Cliente";
             // 
@@ -134,7 +140,8 @@ namespace Benitez.Sofia.PrimerParcial
             this.gbxCabinas.Controls.Add(this.rbtnCabina5);
             this.gbxCabinas.Controls.Add(this.rbtnCabina2);
             this.gbxCabinas.Controls.Add(this.rbtnCabina1);
-            this.gbxCabinas.Location = new System.Drawing.Point(20, 27);
+            this.gbxCabinas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbxCabinas.Location = new System.Drawing.Point(21, 56);
             this.gbxCabinas.Name = "gbxCabinas";
             this.gbxCabinas.Size = new System.Drawing.Size(736, 129);
             this.gbxCabinas.TabIndex = 14;
@@ -143,137 +150,178 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(316, 214);
+            this.btn1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn1.Location = new System.Drawing.Point(310, 239);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(37, 33);
+            this.btn1.Size = new System.Drawing.Size(48, 43);
             this.btn1.TabIndex = 15;
             this.btn1.Text = "1";
-            this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.UseVisualStyleBackColor = false;
             this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(369, 214);
+            this.btn2.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn2.Location = new System.Drawing.Point(364, 239);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(37, 33);
+            this.btn2.Size = new System.Drawing.Size(48, 43);
             this.btn2.TabIndex = 16;
             this.btn2.Text = "2";
-            this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.UseVisualStyleBackColor = false;
             this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(422, 214);
+            this.btn3.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn3.Location = new System.Drawing.Point(418, 239);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(37, 33);
+            this.btn3.Size = new System.Drawing.Size(48, 43);
             this.btn3.TabIndex = 17;
             this.btn3.Text = "3";
-            this.btn3.UseVisualStyleBackColor = true;
+            this.btn3.UseVisualStyleBackColor = false;
             this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
             // btn6
             // 
-            this.btn6.Location = new System.Drawing.Point(422, 253);
+            this.btn6.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn6.Location = new System.Drawing.Point(418, 288);
             this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(37, 33);
+            this.btn6.Size = new System.Drawing.Size(48, 43);
             this.btn6.TabIndex = 20;
             this.btn6.Text = "6";
-            this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.UseVisualStyleBackColor = false;
             this.btn6.Click += new System.EventHandler(this.btn6_Click);
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(369, 253);
+            this.btn5.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn5.Location = new System.Drawing.Point(364, 288);
             this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(37, 33);
+            this.btn5.Size = new System.Drawing.Size(48, 43);
             this.btn5.TabIndex = 19;
             this.btn5.Text = "5";
-            this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.UseVisualStyleBackColor = false;
             this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(316, 253);
+            this.btn4.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn4.Location = new System.Drawing.Point(310, 288);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(37, 33);
+            this.btn4.Size = new System.Drawing.Size(48, 43);
             this.btn4.TabIndex = 18;
             this.btn4.Text = "4";
-            this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.UseVisualStyleBackColor = false;
             this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
             // btn9
             // 
-            this.btn9.Location = new System.Drawing.Point(422, 292);
+            this.btn9.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn9.Location = new System.Drawing.Point(418, 336);
             this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(37, 33);
+            this.btn9.Size = new System.Drawing.Size(48, 43);
             this.btn9.TabIndex = 23;
             this.btn9.Text = "9";
-            this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.UseVisualStyleBackColor = false;
             this.btn9.Click += new System.EventHandler(this.btn9_Click);
             // 
             // btn8
             // 
-            this.btn8.Location = new System.Drawing.Point(369, 292);
+            this.btn8.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn8.Location = new System.Drawing.Point(364, 336);
             this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(37, 33);
+            this.btn8.Size = new System.Drawing.Size(48, 43);
             this.btn8.TabIndex = 22;
             this.btn8.Text = "8";
-            this.btn8.UseVisualStyleBackColor = true;
+            this.btn8.UseVisualStyleBackColor = false;
             this.btn8.Click += new System.EventHandler(this.btn8_Click);
             // 
             // btn7
             // 
-            this.btn7.Location = new System.Drawing.Point(316, 292);
+            this.btn7.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn7.Location = new System.Drawing.Point(310, 336);
             this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(37, 33);
+            this.btn7.Size = new System.Drawing.Size(48, 43);
             this.btn7.TabIndex = 21;
             this.btn7.Text = "7";
-            this.btn7.UseVisualStyleBackColor = true;
+            this.btn7.UseVisualStyleBackColor = false;
             this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
             // txtNumeroDestino
             // 
-            this.txtNumeroDestino.Location = new System.Drawing.Point(282, 174);
+            this.txtNumeroDestino.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNumeroDestino.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNumeroDestino.Location = new System.Drawing.Point(285, 204);
             this.txtNumeroDestino.Name = "txtNumeroDestino";
-            this.txtNumeroDestino.Size = new System.Drawing.Size(214, 23);
+            this.txtNumeroDestino.Size = new System.Drawing.Size(214, 29);
             this.txtNumeroDestino.TabIndex = 25;
             this.txtNumeroDestino.Text = "Numero destino";
             // 
             // btnNumeral
             // 
-            this.btnNumeral.Location = new System.Drawing.Point(422, 331);
+            this.btnNumeral.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnNumeral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNumeral.Location = new System.Drawing.Point(419, 385);
             this.btnNumeral.Name = "btnNumeral";
-            this.btnNumeral.Size = new System.Drawing.Size(37, 33);
+            this.btnNumeral.Size = new System.Drawing.Size(47, 43);
             this.btnNumeral.TabIndex = 28;
             this.btnNumeral.Text = "#";
-            this.btnNumeral.UseVisualStyleBackColor = true;
+            this.btnNumeral.UseVisualStyleBackColor = false;
             this.btnNumeral.Click += new System.EventHandler(this.btnNumeral_Click);
             // 
             // btn0
             // 
-            this.btn0.Location = new System.Drawing.Point(369, 331);
+            this.btn0.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn0.Location = new System.Drawing.Point(366, 385);
             this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(37, 33);
+            this.btn0.Size = new System.Drawing.Size(47, 43);
             this.btn0.TabIndex = 27;
             this.btn0.Text = "0";
-            this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.UseVisualStyleBackColor = false;
             this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
             // btnAsterisco
             // 
-            this.btnAsterisco.Location = new System.Drawing.Point(316, 331);
+            this.btnAsterisco.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnAsterisco.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsterisco.Location = new System.Drawing.Point(310, 385);
             this.btnAsterisco.Name = "btnAsterisco";
-            this.btnAsterisco.Size = new System.Drawing.Size(37, 33);
+            this.btnAsterisco.Size = new System.Drawing.Size(48, 43);
             this.btnAsterisco.TabIndex = 26;
             this.btnAsterisco.Text = "*";
-            this.btnAsterisco.UseVisualStyleBackColor = true;
+            this.btnAsterisco.UseVisualStyleBackColor = false;
             this.btnAsterisco.Click += new System.EventHandler(this.btnAsterisco_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(714, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(43, 42);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "?";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmCabina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 380);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(778, 443);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNumeral);
             this.Controls.Add(this.btn0);
             this.Controls.Add(this.btnAsterisco);
@@ -290,6 +338,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.Controls.Add(this.gbxCabinas);
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.btnAsignarCabina);
+            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "FrmCabina";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignar cabina";
@@ -323,5 +372,6 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.Button btnNumeral;
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btnAsterisco;
+        private System.Windows.Forms.Button button1;
     }
 }

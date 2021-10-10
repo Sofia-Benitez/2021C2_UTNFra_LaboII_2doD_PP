@@ -14,6 +14,7 @@ namespace Benitez.Sofia.PrimerParcial
     public partial class FrmPrincipal : Form
     {
 
+        
         Ciber miCiber = new Ciber("Sofía Benítez", DateTime.Now);
 
         //harcodeo cabinas
@@ -36,11 +37,11 @@ namespace Benitez.Sofia.PrimerParcial
         Computadora c10 = new Computadora("C10",true, "128", "Pentium 4", false);
 
         //Harcodeo clientes
-        Cliente cliente1 = new Cliente("41565434", "Lisa", "Simpson", 16, Cliente.Necesidad.Computadora);
+        Cliente cliente1 = new Cliente("41565434", "Lisa", "Simpson", 16, Cliente.Necesidad.Computadora, "30 min");
         Cliente cliente2 = new Cliente("24687764", "Michael", "Scott", 40, Cliente.Necesidad.Computadora);
-        Cliente cliente3 = new Cliente("23987676", "Ted", "Lasso", 40, Cliente.Necesidad.Computadora);
+        Cliente cliente3 = new Cliente("23987676", "Ted", "Lasso", 40, Cliente.Necesidad.Computadora, "60 min");
         Cliente cliente4 = new Cliente("31985664", "Jim", "Halpert", 35, Cliente.Necesidad.Computadora);
-        Cliente cliente5 = new Cliente("29876767", "Dwight", "Schrute", 32, Cliente.Necesidad.Computadora);
+        Cliente cliente5 = new Cliente("29876767", "Dwight", "Schrute", 32, Cliente.Necesidad.Computadora, "30 min");
         Cliente cliente6 = new Cliente("32987676", "Pam", "Beesley", 39, Cliente.Necesidad.Computadora);
         Cliente cliente7 = new Cliente("35564456", "Chiqui", "Perez", 25, Cliente.Necesidad.Cabina);
         Cliente cliente8 = new Cliente("33464456", "Ricardo", "Perez", 24, Cliente.Necesidad.Cabina);
@@ -51,8 +52,8 @@ namespace Benitez.Sofia.PrimerParcial
         Cliente cliente13 = new Cliente("25674456", "Ross", "Geller", 34, Cliente.Necesidad.Computadora);
         Cliente cliente14 = new Cliente("24564456", "Mónica", "Geller", 29, Cliente.Necesidad.Computadora);
 
-        
-       
+ 
+
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -78,11 +79,13 @@ namespace Benitez.Sofia.PrimerParcial
 
             c3.AgregarCaracteristica("J02", "Age of Empires II");
             c3.AgregarCaracteristica("S02", "MSN");
-            c1.AgregarCaracteristica("S01", "Ares");
+            c3.AgregarCaracteristica("S01", "Ares");
+            c3.AgregarCaracteristica("J01", "Counter Strike");
 
             c4.AgregarCaracteristica("P03", "Cámara");
             c4.AgregarCaracteristica("J04", "Warcraft III");
             c4.AgregarCaracteristica("S03", "Office");
+            c4.AgregarCaracteristica("S02", "MSN");
 
             c5.AgregarCaracteristica("P02", "Micrófono");
             c5.AgregarCaracteristica("P01", "Auriculares");
@@ -114,7 +117,7 @@ namespace Benitez.Sofia.PrimerParcial
             c9.AgregarCaracteristica("S01", "Ares");
 
             c10.AgregarCaracteristica("P01", "Auriculares");
-            c10.AgregarCaracteristica("P02", "Micrófono");
+            c10.AgregarCaracteristica("S03", "Office");
             c10.AgregarCaracteristica("P03", "Cámara");
             c10.AgregarCaracteristica("S04", "ICQ");
 
@@ -137,7 +140,7 @@ namespace Benitez.Sofia.PrimerParcial
             miCiber["T04"] = t4;
             miCiber["T05"] = t5;
 
-            //agrego requerimientos a los clientes 
+            //agrego requerimientos a los clientes de manera random
             Random rndNumber = new Random();
             List<KeyValuePair<string, string>> listaRandom = new List<KeyValuePair<string, string>>();
             int numero;
@@ -251,11 +254,11 @@ namespace Benitez.Sofia.PrimerParcial
             UsoComputadora uso3 = new UsoComputadora(fecha3, fecha3.AddSeconds(90), cliente4, (Computadora)miCiber["C02"]);
             UsoComputadora uso4 = new UsoComputadora(fecha5, fecha5.AddSeconds(30), cliente2, (Computadora)miCiber["C03"]);
             UsoComputadora uso5 = new UsoComputadora(fecha5, fecha5.AddSeconds(60), cliente11, (Computadora)miCiber["C08"]);
-            UsoLlamada uso6 = new UsoLlamada(fecha4, "541165567866", UsoLlamada.TipoLlamada.Local, cliente7, (Cabina)miCiber["T01"]);
+            UsoCabina uso6 = new UsoCabina(fecha4, "541164578787", UsoCabina.TipoLlamada.Local, cliente7, (Cabina)miCiber["T01"]);
             uso6.TiempoFinalizacion = fecha4.AddSeconds(25);
-            UsoLlamada uso7 = new UsoLlamada(fecha5, "546665567866", UsoLlamada.TipoLlamada.LargaDistancia, cliente8, (Cabina)miCiber["T03"]);
+            UsoCabina uso7 = new UsoCabina(fecha5, "54666666667", UsoCabina.TipoLlamada.LargaDistancia, cliente8, (Cabina)miCiber["T03"]);
             uso7.TiempoFinalizacion = fecha5.AddSeconds(55);
-            UsoLlamada uso8 = new UsoLlamada(fecha3, "14565567866", UsoLlamada.TipoLlamada.Internacional, cliente9, (Cabina)miCiber["T04"]);
+            UsoCabina uso8 = new UsoCabina(fecha3, "14565567867", UsoCabina.TipoLlamada.Internacional, cliente9, (Cabina)miCiber["T04"]);
             uso8.TiempoFinalizacion = fecha3.AddSeconds(59);
 
 
@@ -283,7 +286,7 @@ namespace Benitez.Sofia.PrimerParcial
 
         // BOTONES COMPUTADORAS
         /// <summary>
-        /// Boton que marca el estado de la computadora 1 y permite liberarla si esta en uso. 
+        /// Boton que muestra el estado de la computadora y permite liberarla si esta en uso mostrando un mensaje con los datos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -295,6 +298,11 @@ namespace Benitez.Sofia.PrimerParcial
 
         }
 
+        /// <summary>
+        /// Boton que muestra el estado de la computadora y permite liberarla si esta en uso mostrando un mensaje con los datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCompu2_Click(object sender, EventArgs e)
         {
             string datosUso = ((Computadora)miCiber["C02"]).LiberarComputadora();
@@ -302,6 +310,11 @@ namespace Benitez.Sofia.PrimerParcial
             Refrescar();
         }
 
+        /// <summary>
+        /// Boton que muestra el estado de la computadora y permite liberarla si esta en uso mostrando un mensaje con los datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCompu3_Click(object sender, EventArgs e)
         {
             string datosUso = ((Computadora)miCiber["C03"]).LiberarComputadora();
@@ -309,48 +322,77 @@ namespace Benitez.Sofia.PrimerParcial
             Refrescar();
         }
 
+        /// <summary>
+        /// Boton que muestra el estado de la computadora y permite liberarla si esta en uso mostrando un mensaje con los datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCompu4_Click(object sender, EventArgs e)
         {
             string datosUso = ((Computadora)miCiber["C04"]).LiberarComputadora();
             MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
-
+        /// <summary>
+        /// Boton que muestra el estado de la computadora y permite liberarla si esta en uso mostrando un mensaje con los datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCompu5_Click(object sender, EventArgs e)
         {
             string datosUso = ((Computadora)miCiber["C05"]).LiberarComputadora();
             MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
-
+        /// <summary>
+        /// Boton que muestra el estado de la computadora y permite liberarla si esta en uso mostrando un mensaje con los datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCompu6_Click(object sender, EventArgs e)
         {
             string datosUso = ((Computadora)miCiber["C06"]).LiberarComputadora();
             MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
-
+        /// <summary>
+        /// Boton que muestra el estado de la computadora y permite liberarla si esta en uso mostrando un mensaje con los datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCompu7_Click(object sender, EventArgs e)
         {
             string datosUso = ((Computadora)miCiber["C07"]).LiberarComputadora();
             MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
-
+        /// <summary>
+        /// Boton que muestra el estado de la computadora y permite liberarla si esta en uso mostrando un mensaje con los datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCompu8_Click(object sender, EventArgs e)
         {
             string datosUso = ((Computadora)miCiber["C08"]).LiberarComputadora();
             MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
-
+        /// <summary>
+        /// Boton que muestra el estado de la computadora y permite liberarla si esta en uso mostrando un mensaje con los datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCompu9_Click(object sender, EventArgs e)
         {
             string datosUso = ((Computadora)miCiber["C09"]).LiberarComputadora();
             MessageBox.Show(datosUso, "Finalizar uso", MessageBoxButtons.OK);
             Refrescar();
         }
-
+        /// <summary>
+        /// Boton que muestra el estado de la computadora y permite liberarla si esta en uso mostrando un mensaje con los datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCompu10_Click(object sender, EventArgs e)
         {
             string datosUso = ((Computadora)miCiber["C10"]).LiberarComputadora();
@@ -363,7 +405,8 @@ namespace Benitez.Sofia.PrimerParcial
         #region Botones estados Cabinas
 
         /// <summary>
-        /// libera la cabina correspondiente y muestra la informacion del uso (tiempo, cliente, costo)
+        /// muestra el estado de la caiba 
+        ///  y si esta en uso libera la cabina correspondiente y muestra la informacion del uso (tiempo, cliente, costo)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -375,6 +418,12 @@ namespace Benitez.Sofia.PrimerParcial
             Refrescar();
         }
 
+        /// <summary>
+        /// muestra el estado de la caiba 
+        ///  y si esta en uso libera la cabina correspondiente y muestra la informacion del uso (tiempo, cliente, costo)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCabina2_Click(object sender, EventArgs e)
         {
             string datosUso = ((Cabina)miCiber["T02"]).LiberarCabina();
@@ -382,6 +431,12 @@ namespace Benitez.Sofia.PrimerParcial
             Refrescar();
         }
 
+        /// <summary>
+        /// muestra el estado de la caiba 
+        ///  y si esta en uso libera la cabina correspondiente y muestra la informacion del uso (tiempo, cliente, costo)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCabina3_Click(object sender, EventArgs e)
         {
             string datosUso = ((Cabina)miCiber["T03"]).LiberarCabina();
@@ -389,6 +444,12 @@ namespace Benitez.Sofia.PrimerParcial
             Refrescar();
         }
 
+        /// <summary>
+        /// muestra el estado de la caiba 
+        ///  y si esta en uso libera la cabina correspondiente y muestra la informacion del uso (tiempo, cliente, costo)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCabina4_Click(object sender, EventArgs e)
         {
             string datosUso = ((Cabina)miCiber["T04"]).LiberarCabina();
@@ -396,6 +457,12 @@ namespace Benitez.Sofia.PrimerParcial
             Refrescar();
         }
 
+        /// <summary>
+        /// muestra el estado de la caiba 
+        ///  y si esta en uso libera la cabina correspondiente y muestra la informacion del uso (tiempo, cliente, costo)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCabina5_Click(object sender, EventArgs e)
         {
             string datosUso = ((Cabina)miCiber["T05"]).LiberarCabina();
@@ -509,7 +576,7 @@ namespace Benitez.Sofia.PrimerParcial
         }
 
         /// <summary>
-        /// muestra la estadistica del ciber, por el momento muestra usos historicos
+        /// Abre el formulario que permite ver las estadisticas historicas del ciber
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -545,7 +612,8 @@ namespace Benitez.Sofia.PrimerParcial
         
 
         /// <summary>
-        /// funcion que se llama cada 10 segundos. Busca usos finalizados y si encuentra uno lo muestra y actualiza los estados de los equipos
+        /// metodo que se ejecuta cada 5 segundos. 
+        /// Busca usos finalizados y si encuentra uno lo muestra y actualiza los estados de los equipos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -577,9 +645,6 @@ namespace Benitez.Sofia.PrimerParcial
             
         }
 
-        
-
-        
         
         /// <summary>
         /// maneja la apariencia de los botones asociados a los servicios segun su estado
@@ -792,6 +857,11 @@ namespace Benitez.Sofia.PrimerParcial
             }
         }
 
+        /// <summary>
+        /// Al presionar el boton muestra un mensaje con instruciones para utilizar la pantalla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAyuda_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
