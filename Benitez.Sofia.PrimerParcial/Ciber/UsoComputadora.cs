@@ -34,7 +34,7 @@ namespace CiberCafe
         /// <param name="computadora"></param>
         public UsoComputadora(DateTime tiempoInicio, DateTime tiempoFinalizacion, Cliente cliente, Computadora computadora) : this(tiempoInicio, cliente, computadora)
         {
-
+            this.tiempoFinalizacion = tiempoFinalizacion;
         }
 
         public double Costo 

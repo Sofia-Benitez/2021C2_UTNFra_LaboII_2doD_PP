@@ -24,16 +24,16 @@ namespace Benitez.Sofia.PrimerParcial
         Cabina t5 = new Cabina("T05", "Philips", Cabina.Tipo.Teclado, true);
 
         //Harcodeo computadoras
-        Computadora c1 = new Computadora("C01", true);
-        Computadora c2 = new Computadora("C02", true);
-        Computadora c3 = new Computadora("C03", true);
-        Computadora c4 = new Computadora("C04", true);
-        Computadora c5 = new Computadora("C05", true);
-        Computadora c6 = new Computadora("C06", true);
-        Computadora c7 = new Computadora("C07", true);
-        Computadora c8 = new Computadora("C08", true);
-        Computadora c9 = new Computadora("C09", true);
-        Computadora c10 = new Computadora("C10",true);
+        Computadora c1 = new Computadora("C01", true, "128", "Pentium 4", false);
+        Computadora c2 = new Computadora("C02", true, "256", "Pentium 4", true);
+        Computadora c3 = new Computadora("C03", true, "128", "Athlon", false);
+        Computadora c4 = new Computadora("C04", true, "256", "Athlon", true);
+        Computadora c5 = new Computadora("C05", true, "128", "Athlon", false);
+        Computadora c6 = new Computadora("C06", true, "256", "Athlon", true);
+        Computadora c7 = new Computadora("C07", true, "128", "Pentium 4", false);
+        Computadora c8 = new Computadora("C08", true, "128", "Athlon", false);
+        Computadora c9 = new Computadora("C09", true, "128", "Athlon", false);
+        Computadora c10 = new Computadora("C10",true, "128", "Pentium 4", false);
 
         //Harcodeo clientes
         Cliente cliente1 = new Cliente("41565434", "Lisa", "Simpson", 16, Cliente.Necesidad.Computadora);
@@ -51,6 +51,8 @@ namespace Benitez.Sofia.PrimerParcial
         Cliente cliente13 = new Cliente("25674456", "Ross", "Geller", 34, Cliente.Necesidad.Computadora);
         Cliente cliente14 = new Cliente("24564456", "Mónica", "Geller", 29, Cliente.Necesidad.Computadora);
 
+        
+       
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -72,12 +74,15 @@ namespace Benitez.Sofia.PrimerParcial
             c2.AgregarCaracteristica("J01", "Counter Strike");
             c2.AgregarCaracteristica("P01", "Auriculares");
             c2.AgregarCaracteristica("P02", "Micrófono");
+            c2.AgregarCaracteristica("J04", "Warcraft III");
 
             c3.AgregarCaracteristica("J02", "Age of Empires II");
             c3.AgregarCaracteristica("S02", "MSN");
+            c1.AgregarCaracteristica("S01", "Ares");
 
             c4.AgregarCaracteristica("P03", "Cámara");
-            c4.AgregarCaracteristica("J05", "Warcraft III");
+            c4.AgregarCaracteristica("J04", "Warcraft III");
+            c4.AgregarCaracteristica("S03", "Office");
 
             c5.AgregarCaracteristica("P02", "Micrófono");
             c5.AgregarCaracteristica("P01", "Auriculares");
@@ -88,6 +93,8 @@ namespace Benitez.Sofia.PrimerParcial
             c6.AgregarCaracteristica("P03", "Cámara");
             c6.AgregarCaracteristica("S03", "Office");
             c6.AgregarCaracteristica("J01", "Counter Strike");
+            c6.AgregarCaracteristica("S01", "Ares");
+            c6.AgregarCaracteristica("P01", "Auriculares");
 
             c7.AgregarCaracteristica("J03", "Diablo II");
             c7.AgregarCaracteristica("J02", "Age of Empires II");
@@ -98,10 +105,13 @@ namespace Benitez.Sofia.PrimerParcial
             c8.AgregarCaracteristica("P02", "Micrófono");
             c8.AgregarCaracteristica("P01", "Auriculares");
             c8.AgregarCaracteristica("S03", "Office");
+            c8.AgregarCaracteristica("J03", "Diablo II");
+            c8.AgregarCaracteristica("J02", "Age of Empires II");
 
             c9.AgregarCaracteristica("P02", "Micrófono");
             c9.AgregarCaracteristica("P01", "Auriculares");
-            c8.AgregarCaracteristica("S02", "MSN");
+            c9.AgregarCaracteristica("S02", "MSN");
+            c9.AgregarCaracteristica("S01", "Ares");
 
             c10.AgregarCaracteristica("P01", "Auriculares");
             c10.AgregarCaracteristica("P02", "Micrófono");
@@ -128,36 +138,86 @@ namespace Benitez.Sofia.PrimerParcial
             miCiber["T05"] = t5;
 
             //agrego requerimientos a los clientes 
-            cliente1.AgregarRequerimiento("J01", "Counter Strike");
+            Random rndNumber = new Random();
+            List<KeyValuePair<string, string>> listaRandom = new List<KeyValuePair<string, string>>();
+            int numero;
 
-            cliente2.AgregarRequerimiento("P01", "Auriculares");
+            listaRandom.Insert(0, new KeyValuePair<string, string>("J01", "Counter Strike"));
+            listaRandom.Insert(1, new KeyValuePair<string, string>("J02", "Age of Empires II"));
+            listaRandom.Insert(2, new KeyValuePair<string, string>("J03", "Diablo II"));
+            listaRandom.Insert(3, new KeyValuePair<string, string>("J04", "Warcraft III"));
+            listaRandom.Insert(4, new KeyValuePair<string, string>("J05", "Mu Online"));
+            listaRandom.Insert(5, new KeyValuePair<string, string>("P01", "Auriculares"));
+            listaRandom.Insert(6, new KeyValuePair<string, string>("P02", "Micrófono"));
+            listaRandom.Insert(7, new KeyValuePair<string, string>("P03", "Cámara"));
+            listaRandom.Insert(8, new KeyValuePair<string, string>("S01", "Ares"));
+            listaRandom.Insert(9, new KeyValuePair<string, string>("S02", "MSN"));
+            listaRandom.Insert(10, new KeyValuePair<string, string>("S03", "Office"));
+            listaRandom.Insert(11, new KeyValuePair<string, string>("S04", "ICQ"));
 
+
+
+            numero = rndNumber.Next(12);
+            cliente1.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente1.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
             
-            cliente3.AgregarRequerimiento("J01", "Counter Strike");
 
-            cliente4.AgregarRequerimiento("J02", "Age of Empires II");
+            numero = rndNumber.Next(12);
+            cliente2.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente2.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente2.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
 
-            cliente5.AgregarRequerimiento("P03", "Cámara");
-            cliente5.AgregarRequerimiento("S02", "MSN");
+            numero = rndNumber.Next(12);
+            cliente3.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente3.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            
 
-            cliente6.AgregarRequerimiento("P02", "Micrófono");
-            cliente6.AgregarRequerimiento("P03", "Cámara");
-            cliente6.AgregarRequerimiento("S02", "MSN");
+            numero = rndNumber.Next(12);
+            cliente4.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente4.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente4.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
 
-            cliente11.AgregarRequerimiento("P02", "Micrófono");
-            cliente11.AgregarRequerimiento("S04", "ICQ");
-            cliente11.AgregarRequerimiento("P01", "Auriculares");
+            numero = rndNumber.Next(12);
+            cliente5.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente5.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            
 
-            cliente12.AgregarRequerimiento("P02", "Micrófono");
-            cliente12.AgregarRequerimiento("P03", "Cámara");
+            numero = rndNumber.Next(12);
+            cliente6.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente6.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            
 
-            cliente13.AgregarRequerimiento("P02", "Micrófono");
-            cliente13.AgregarRequerimiento("J04", "Mu Online");
+            numero = rndNumber.Next(12);
+            cliente11.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente11.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            
 
-            cliente14.AgregarRequerimiento("J02", "Age of Empires II");
-            cliente14.AgregarRequerimiento("P01", "Auriculares");
+            numero = rndNumber.Next(12);
+            cliente12.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente12.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            
 
-
+            numero = rndNumber.Next(12);
+            cliente13.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente13.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+           
+            numero = rndNumber.Next(12);
+            cliente14.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente14.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
+            numero = rndNumber.Next(12);
+            cliente14.AgregarRequerimiento(listaRandom[numero].Key, listaRandom[numero].Value);
 
             // Agrego clientes a la cola
             miCiber += cliente1;
@@ -167,18 +227,56 @@ namespace Benitez.Sofia.PrimerParcial
             miCiber += cliente5;
             miCiber += cliente6;
             miCiber += cliente7;
-            miCiber += cliente8;
-            miCiber += cliente9;
-            miCiber += cliente10;
             miCiber += cliente11;
+            miCiber += cliente9;
             miCiber += cliente12;
+            miCiber += cliente8;
             miCiber += cliente13;
             miCiber += cliente14;
+            miCiber += cliente10;
 
             //muestro fila de clientes
             Refrescar();
 
-           
+            //harcodeo usos historicos
+            DateTime fecha1 = new DateTime(2021, 8, 1, 14, 20, 13);
+            DateTime fecha2 = new DateTime(2021, 8, 1, 14, 21, 00);
+            DateTime fecha3 = new DateTime(2021, 9, 1, 16, 20, 12);
+            DateTime fecha4 = new DateTime(2021, 9, 1, 16, 20, 39);
+            DateTime fecha5 = new DateTime(2021, 9, 1, 17, 15, 59);
+            
+
+            UsoComputadora uso1 = new UsoComputadora(fecha1, fecha1.AddSeconds(30), cliente1, (Computadora)miCiber["C01"]);
+            UsoComputadora uso2 = new UsoComputadora(fecha2, fecha2.AddSeconds(60), cliente3, (Computadora)miCiber["C01"]);
+            UsoComputadora uso3 = new UsoComputadora(fecha3, fecha3.AddSeconds(90), cliente4, (Computadora)miCiber["C02"]);
+            UsoComputadora uso4 = new UsoComputadora(fecha5, fecha5.AddSeconds(30), cliente2, (Computadora)miCiber["C03"]);
+            UsoComputadora uso5 = new UsoComputadora(fecha5, fecha5.AddSeconds(60), cliente11, (Computadora)miCiber["C08"]);
+            UsoLlamada uso6 = new UsoLlamada(fecha4, "541165567866", UsoLlamada.TipoLlamada.Local, cliente7, (Cabina)miCiber["T01"]);
+            uso6.TiempoFinalizacion = fecha4.AddSeconds(25);
+            UsoLlamada uso7 = new UsoLlamada(fecha5, "546665567866", UsoLlamada.TipoLlamada.LargaDistancia, cliente8, (Cabina)miCiber["T03"]);
+            uso7.TiempoFinalizacion = fecha5.AddSeconds(55);
+            UsoLlamada uso8 = new UsoLlamada(fecha3, "14565567866", UsoLlamada.TipoLlamada.Internacional, cliente9, (Cabina)miCiber["T04"]);
+            uso8.TiempoFinalizacion = fecha3.AddSeconds(59);
+
+
+            miCiber.ListaDeUsos.Add(uso1);
+            miCiber.ListaDeUsos.Add(uso2);
+            miCiber.ListaDeUsos.Add(uso3);
+            miCiber.ListaDeUsos.Add(uso4);
+            miCiber.ListaDeUsos.Add(uso5);
+            miCiber.ListaDeUsos.Add(uso6);
+            miCiber.ListaDeUsos.Add(uso7);
+            miCiber.ListaDeUsos.Add(uso8);
+            miCiber.ListaDeClientesAtendidos.Add(cliente1);
+            miCiber.ListaDeClientesAtendidos.Add(cliente2);
+            miCiber.ListaDeClientesAtendidos.Add(cliente3);
+            miCiber.ListaDeClientesAtendidos.Add(cliente4);
+            miCiber.ListaDeClientesAtendidos.Add(cliente7);
+            miCiber.ListaDeClientesAtendidos.Add(cliente8);
+            miCiber.ListaDeClientesAtendidos.Add(cliente11);
+            miCiber.ListaDeClientesAtendidos.Add(cliente9);
+
+
         }
 
         #region Botones estados computadoras
@@ -694,31 +792,17 @@ namespace Benitez.Sofia.PrimerParcial
             }
         }
 
-       
-
-        #region mensajes ayuda
-        private void gbEquipos_MouseHover(object sender, EventArgs e)
+        private void btnAyuda_Click(object sender, EventArgs e)
         {
-            lblAyudaEquipos.Visible = true;
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("La lista de la izquierda muestra los clientes que aún no han sido atendidos. \n");
+            sb.AppendLine("Para asignarle una computadora o cabina al cliente debe seleccionarlo de la lista y presionar el botón Asignar cabina o Asignar computadora, según corresponda. \n");
+            sb.AppendLine("Para finalizar el uso de un servicio presionar el boton del equipo correspondiente, esto solo se puede realizar si el equipo esta en uso. \n");
+            sb.AppendLine("Los usos de computadora que se alquilan por un tiempo anticipado finalizan automaticamente y se muestran con un mensaje en la pantalla.\n");
+            sb.AppendLine("Para ver las estadísticas históricas del ciber presione el botón Estadisticas.");
+               
+
+            MessageBox.Show(sb.ToString());
         }
-
-        private void gbEquipos_MouseLeave(object sender, EventArgs e)
-        {
-            lblAyudaEquipos.Visible = false;
-        }
-
-        private void lstbClientes_MouseHover(object sender, EventArgs e)
-        {
-            lblAyudaClientes.Visible = true;
-        }
-
-
-        private void lstbClientes_MouseLeave_1(object sender, EventArgs e)
-        {
-            lblAyudaClientes.Visible = false;
-        }
-
-        #endregion
-
     }
 }

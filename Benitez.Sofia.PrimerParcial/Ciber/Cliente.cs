@@ -81,7 +81,7 @@ namespace CiberCafe
             {
                 foreach (KeyValuePair<string, string> item in requerimientos)
                 {
-                    sb.Append(item.Value);
+                    sb.Append(item.Value + " ");
                 }
             }
            
@@ -162,9 +162,17 @@ namespace CiberCafe
         }
 
 
+        public override bool Equals(object obj)
+        {
+            Cliente cliente = obj as Cliente;
 
-        //sobrecargar equals y hash
+            return cliente is not null && this == cliente;
+        }
 
+        public override int GetHashCode()
+        {
+            return dni.GetHashCode();
+        }
 
         /// <summary>
         /// sobrecarga del operador == para ocmparar clientes por su numero de DNI

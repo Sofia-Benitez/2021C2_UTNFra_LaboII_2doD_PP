@@ -41,14 +41,21 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rtbxEstadisticas
             // 
+            this.rtbxEstadisticas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rtbxEstadisticas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtbxEstadisticas.Location = new System.Drawing.Point(46, 23);
+            this.rtbxEstadisticas.MaximumSize = new System.Drawing.Size(843, 723);
+            this.rtbxEstadisticas.MaxLength = 4000000;
             this.rtbxEstadisticas.Name = "rtbxEstadisticas";
+            this.rtbxEstadisticas.ReadOnly = true;
             this.rtbxEstadisticas.Size = new System.Drawing.Size(443, 323);
             this.rtbxEstadisticas.TabIndex = 0;
-            this.rtbxEstadisticas.Text = "";
+            this.rtbxEstadisticas.Text = "Estadísticas históricas del ciber";
             // 
             // btnEstadistica1
             // 
+            this.btnEstadistica1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstadistica1.AutoSize = true;
             this.btnEstadistica1.Location = new System.Drawing.Point(520, 23);
             this.btnEstadistica1.Name = "btnEstadistica1";
             this.btnEstadistica1.Size = new System.Drawing.Size(202, 41);
@@ -59,6 +66,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica2
             // 
+            this.btnEstadistica2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEstadistica2.Location = new System.Drawing.Point(520, 70);
             this.btnEstadistica2.Name = "btnEstadistica2";
             this.btnEstadistica2.Size = new System.Drawing.Size(202, 41);
@@ -69,6 +77,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica3
             // 
+            this.btnEstadistica3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEstadistica3.Location = new System.Drawing.Point(520, 117);
             this.btnEstadistica3.Name = "btnEstadistica3";
             this.btnEstadistica3.Size = new System.Drawing.Size(202, 41);
@@ -79,6 +88,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica4
             // 
+            this.btnEstadistica4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEstadistica4.Location = new System.Drawing.Point(520, 164);
             this.btnEstadistica4.Name = "btnEstadistica4";
             this.btnEstadistica4.Size = new System.Drawing.Size(202, 41);
@@ -89,6 +99,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica5
             // 
+            this.btnEstadistica5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEstadistica5.Location = new System.Drawing.Point(520, 211);
             this.btnEstadistica5.Name = "btnEstadistica5";
             this.btnEstadistica5.Size = new System.Drawing.Size(202, 41);
@@ -99,6 +110,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica6
             // 
+            this.btnEstadistica6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEstadistica6.Location = new System.Drawing.Point(520, 258);
             this.btnEstadistica6.Name = "btnEstadistica6";
             this.btnEstadistica6.Size = new System.Drawing.Size(202, 41);
@@ -109,6 +121,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica7
             // 
+            this.btnEstadistica7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEstadistica7.Location = new System.Drawing.Point(520, 305);
             this.btnEstadistica7.Name = "btnEstadistica7";
             this.btnEstadistica7.Size = new System.Drawing.Size(202, 41);
@@ -131,8 +144,10 @@ namespace Benitez.Sofia.PrimerParcial
             this.Controls.Add(this.btnEstadistica1);
             this.Controls.Add(this.rtbxEstadisticas);
             this.Name = "FrmEstadisticas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estadísticas históricas";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

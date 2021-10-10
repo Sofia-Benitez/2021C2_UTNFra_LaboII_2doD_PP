@@ -8,16 +8,20 @@ namespace CiberCafe
     {
         private Dictionary<string, string> caracteristicas;
         private UsoComputadora usoActual;
-        
-        
+        private string memoriaRam;
+        private string procesador;
+        private bool placaVideo;
+
         /// <summary>
         /// constructor de una computadora. Instancia un diaccionario para las caracteristicas
         /// </summary>
         /// <param name="id">id</param>
         /// <param name="estado">estado de la computadora (en uso o libre)</param>
-        public Computadora(string id, bool estado):base(id, estado)
+        public Computadora(string id, bool estado, string memoria, string procesador, bool placaDeVideo):base(id, estado)
         {
-
+            this.memoriaRam = memoria;
+            this.procesador = procesador;
+            this.placaVideo = placaDeVideo;
             this.caracteristicas = new Dictionary<string, string>();
              
         }
@@ -96,6 +100,12 @@ namespace CiberCafe
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(base.Mostrar());
+            sb.AppendLine($"Ram: {this.memoriaRam}");
+            sb.AppendLine($"Procesador: {this.procesador}");
+            if(this.placaVideo)
+            {
+                sb.AppendLine("Placa de video");
+            }
             foreach(KeyValuePair <string, string> item in this.Caracteristicas)
             {
                 sb.AppendLine($"{item.Value} ");

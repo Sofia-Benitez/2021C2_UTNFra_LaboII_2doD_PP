@@ -69,6 +69,14 @@ namespace CiberCafe
             }
         }
 
+        public List<Cliente> ListaDeClientesAtendidos
+        {
+            get
+            {
+                return listaClientesAtendidos;
+            }
+        }
+
         public List<Servicios> ListaDeServicios
         {
             get
@@ -76,6 +84,7 @@ namespace CiberCafe
                 return listaServicios;
             }
         }
+
         public List<Uso> ListaDeUsos
         {
             get
@@ -191,24 +200,6 @@ namespace CiberCafe
 
         
         
-
-        /// <summary>
-        /// muestra los datos de los usos de la lista
-        /// </summary>
-        /// <returns></returns>
-        public string MostrarUsos()
-        {
-            StringBuilder sb = new StringBuilder();
-            foreach (Uso item in this.listaDeUsos)
-            {
-                sb.AppendLine(item.Mostrar());
-                sb.AppendLine("--------------------------");
-            }
-            return sb.ToString();
-        }
-
-     
-
         /// <summary>
         /// metodo que instancia un nuevo uso de computadora sin tiempo de finalizacion. remueve al cliente de la lista de espera y agrega el uso a la lista de usos del ciber 
         /// </summary>
@@ -355,12 +346,12 @@ namespace CiberCafe
                     gananciasCabina += item.CostoNeto;
                 }
             }
-            sb.AppendLine(" ****************************************Ganancias ***********************************");
+            sb.AppendLine(" ************************  Ganancias *************************");
             sb.AppendLine($"Ganancias totales: ${gananciasTotales}");
-            sb.AppendLine("**************************************************************************************");
+            sb.AppendLine("**************************************************************");
             sb.AppendLine($"Ganancias uso de cabinas: ${gananciasCabina}");
             sb.AppendLine($"Ganancias uso de computadoras: ${gananciasComputadora}");
-            sb.AppendLine("**************************************************************************************");
+            sb.AppendLine("**************************************************************");
 
 
             return sb.ToString();
@@ -400,8 +391,8 @@ namespace CiberCafe
                 }
             }
             horasTotales = (int) minutosLlamadas / 60;
-            
-            sb.AppendLine("*************** Horas totales y la recaudación por tipo de llamada ****************\n");
+           
+            sb.AppendLine("**** Horas totales y la recaudación por tipo de llamada ****\n");
             if (horasTotales < 1)
             {
                 sb.AppendLine($"Tiempo total de llamadas: menos de 1 hora");
@@ -414,11 +405,11 @@ namespace CiberCafe
             {
                 sb.AppendLine($"Tiempo total de llamadas: {horasTotales} horas");
             }
-            sb.AppendLine("**************************************************************************************");
+            sb.AppendLine("**************************************************************");
             sb.AppendLine($"Ganancias por llamadas locales: ${gananciasLocal}");
             sb.AppendLine($"Ganancias por llamadas de larga distancia: ${gananciasLargaDistancia}");
             sb.AppendLine($"Ganancias por llamadas internacionales: ${gananciasInternacional}");
-            sb.AppendLine("**************************************************************************************");
+            sb.AppendLine("**************************************************************");
 
 
             return sb.ToString();

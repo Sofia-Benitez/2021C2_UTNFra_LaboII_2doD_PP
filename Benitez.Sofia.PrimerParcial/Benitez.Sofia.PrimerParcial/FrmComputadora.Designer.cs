@@ -45,7 +45,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.rbtnC5 = new System.Windows.Forms.RadioButton();
             this.chbTiempoLibre = new System.Windows.Forms.CheckBox();
             this.numMinutos = new System.Windows.Forms.NumericUpDown();
-            this.lblAyudaTiempo = new System.Windows.Forms.Label();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.gbxCompus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMinutos)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +53,7 @@ namespace Benitez.Sofia.PrimerParcial
             // rbtnC1
             // 
             this.rbtnC1.AutoSize = true;
-            this.rbtnC1.Location = new System.Drawing.Point(9, 44);
+            this.rbtnC1.Location = new System.Drawing.Point(30, 43);
             this.rbtnC1.Name = "rbtnC1";
             this.rbtnC1.Size = new System.Drawing.Size(94, 19);
             this.rbtnC1.TabIndex = 0;
@@ -64,7 +64,7 @@ namespace Benitez.Sofia.PrimerParcial
             // rbtnC2
             // 
             this.rbtnC2.AutoSize = true;
-            this.rbtnC2.Location = new System.Drawing.Point(9, 172);
+            this.rbtnC2.Location = new System.Drawing.Point(30, 203);
             this.rbtnC2.Name = "rbtnC2";
             this.rbtnC2.Size = new System.Drawing.Size(94, 19);
             this.rbtnC2.TabIndex = 1;
@@ -75,7 +75,7 @@ namespace Benitez.Sofia.PrimerParcial
             // rbtnC3
             // 
             this.rbtnC3.AutoSize = true;
-            this.rbtnC3.Location = new System.Drawing.Point(191, 44);
+            this.rbtnC3.Location = new System.Drawing.Point(212, 43);
             this.rbtnC3.Name = "rbtnC3";
             this.rbtnC3.Size = new System.Drawing.Size(94, 19);
             this.rbtnC3.TabIndex = 2;
@@ -86,7 +86,7 @@ namespace Benitez.Sofia.PrimerParcial
             // rbtnC4
             // 
             this.rbtnC4.AutoSize = true;
-            this.rbtnC4.Location = new System.Drawing.Point(191, 172);
+            this.rbtnC4.Location = new System.Drawing.Point(212, 203);
             this.rbtnC4.Name = "rbtnC4";
             this.rbtnC4.Size = new System.Drawing.Size(94, 19);
             this.rbtnC4.TabIndex = 3;
@@ -96,29 +96,37 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnAsignarComputadora
             // 
-            this.btnAsignarComputadora.Location = new System.Drawing.Point(734, 335);
+            this.btnAsignarComputadora.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btnAsignarComputadora.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsignarComputadora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAsignarComputadora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAsignarComputadora.Location = new System.Drawing.Point(743, 439);
             this.btnAsignarComputadora.Name = "btnAsignarComputadora";
-            this.btnAsignarComputadora.Size = new System.Drawing.Size(169, 50);
+            this.btnAsignarComputadora.Size = new System.Drawing.Size(169, 38);
             this.btnAsignarComputadora.TabIndex = 4;
             this.btnAsignarComputadora.Text = "Asignar";
-            this.btnAsignarComputadora.UseVisualStyleBackColor = true;
+            this.btnAsignarComputadora.UseVisualStyleBackColor = false;
             this.btnAsignarComputadora.Click += new System.EventHandler(this.btnAsignarComputadora_Click);
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(483, 9);
+            this.lblCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCliente.Location = new System.Drawing.Point(470, 9);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(44, 15);
+            this.lblCliente.Size = new System.Drawing.Size(55, 20);
             this.lblCliente.TabIndex = 5;
             this.lblCliente.Text = "Cliente";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(467, 330);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(386, 448);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 15);
+            this.label1.Size = new System.Drawing.Size(67, 21);
             this.label1.TabIndex = 7;
             this.label1.Text = "Minutos";
             // 
@@ -134,9 +142,10 @@ namespace Benitez.Sofia.PrimerParcial
             this.gbxCompus.Controls.Add(this.rbtnC2);
             this.gbxCompus.Controls.Add(this.rbtnC1);
             this.gbxCompus.Controls.Add(this.rbtnC4);
-            this.gbxCompus.Location = new System.Drawing.Point(25, 40);
+            this.gbxCompus.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbxCompus.Location = new System.Drawing.Point(25, 66);
             this.gbxCompus.Name = "gbxCompus";
-            this.gbxCompus.Size = new System.Drawing.Size(887, 276);
+            this.gbxCompus.Size = new System.Drawing.Size(887, 361);
             this.gbxCompus.TabIndex = 8;
             this.gbxCompus.TabStop = false;
             this.gbxCompus.Text = "Computadoras";
@@ -144,7 +153,7 @@ namespace Benitez.Sofia.PrimerParcial
             // rbtnC10
             // 
             this.rbtnC10.AutoSize = true;
-            this.rbtnC10.Location = new System.Drawing.Point(709, 172);
+            this.rbtnC10.Location = new System.Drawing.Point(730, 203);
             this.rbtnC10.Name = "rbtnC10";
             this.rbtnC10.Size = new System.Drawing.Size(94, 19);
             this.rbtnC10.TabIndex = 9;
@@ -155,7 +164,7 @@ namespace Benitez.Sofia.PrimerParcial
             // rbtnC9
             // 
             this.rbtnC9.AutoSize = true;
-            this.rbtnC9.Location = new System.Drawing.Point(709, 44);
+            this.rbtnC9.Location = new System.Drawing.Point(730, 43);
             this.rbtnC9.Name = "rbtnC9";
             this.rbtnC9.Size = new System.Drawing.Size(94, 19);
             this.rbtnC9.TabIndex = 8;
@@ -166,7 +175,7 @@ namespace Benitez.Sofia.PrimerParcial
             // rbtnC8
             // 
             this.rbtnC8.AutoSize = true;
-            this.rbtnC8.Location = new System.Drawing.Point(535, 172);
+            this.rbtnC8.Location = new System.Drawing.Point(556, 203);
             this.rbtnC8.Name = "rbtnC8";
             this.rbtnC8.Size = new System.Drawing.Size(94, 19);
             this.rbtnC8.TabIndex = 7;
@@ -177,7 +186,7 @@ namespace Benitez.Sofia.PrimerParcial
             // rbtnC7
             // 
             this.rbtnC7.AutoSize = true;
-            this.rbtnC7.Location = new System.Drawing.Point(535, 44);
+            this.rbtnC7.Location = new System.Drawing.Point(556, 43);
             this.rbtnC7.Name = "rbtnC7";
             this.rbtnC7.Size = new System.Drawing.Size(94, 19);
             this.rbtnC7.TabIndex = 6;
@@ -188,7 +197,7 @@ namespace Benitez.Sofia.PrimerParcial
             // rbtnC6
             // 
             this.rbtnC6.AutoSize = true;
-            this.rbtnC6.Location = new System.Drawing.Point(365, 172);
+            this.rbtnC6.Location = new System.Drawing.Point(386, 203);
             this.rbtnC6.Name = "rbtnC6";
             this.rbtnC6.Size = new System.Drawing.Size(94, 19);
             this.rbtnC6.TabIndex = 5;
@@ -199,7 +208,7 @@ namespace Benitez.Sofia.PrimerParcial
             // rbtnC5
             // 
             this.rbtnC5.AutoSize = true;
-            this.rbtnC5.Location = new System.Drawing.Point(365, 44);
+            this.rbtnC5.Location = new System.Drawing.Point(386, 43);
             this.rbtnC5.Name = "rbtnC5";
             this.rbtnC5.Size = new System.Drawing.Size(94, 19);
             this.rbtnC5.TabIndex = 4;
@@ -212,9 +221,11 @@ namespace Benitez.Sofia.PrimerParcial
             this.chbTiempoLibre.AutoSize = true;
             this.chbTiempoLibre.Checked = true;
             this.chbTiempoLibre.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbTiempoLibre.Location = new System.Drawing.Point(252, 352);
+            this.chbTiempoLibre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chbTiempoLibre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chbTiempoLibre.Location = new System.Drawing.Point(159, 447);
             this.chbTiempoLibre.Name = "chbTiempoLibre";
-            this.chbTiempoLibre.Size = new System.Drawing.Size(92, 19);
+            this.chbTiempoLibre.Size = new System.Drawing.Size(116, 25);
             this.chbTiempoLibre.TabIndex = 9;
             this.chbTiempoLibre.Text = "Tiempo libre";
             this.chbTiempoLibre.UseVisualStyleBackColor = true;
@@ -223,12 +234,13 @@ namespace Benitez.Sofia.PrimerParcial
             // numMinutos
             // 
             this.numMinutos.Enabled = false;
+            this.numMinutos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numMinutos.Increment = new decimal(new int[] {
             30,
             0,
             0,
             0});
-            this.numMinutos.Location = new System.Drawing.Point(467, 348);
+            this.numMinutos.Location = new System.Drawing.Point(459, 447);
             this.numMinutos.Maximum = new decimal(new int[] {
             180,
             0,
@@ -236,25 +248,28 @@ namespace Benitez.Sofia.PrimerParcial
             0});
             this.numMinutos.Name = "numMinutos";
             this.numMinutos.ReadOnly = true;
-            this.numMinutos.Size = new System.Drawing.Size(138, 23);
+            this.numMinutos.Size = new System.Drawing.Size(138, 29);
             this.numMinutos.TabIndex = 11;
             // 
-            // lblAyudaTiempo
+            // btnAyuda
             // 
-            this.lblAyudaTiempo.AutoSize = true;
-            this.lblAyudaTiempo.Location = new System.Drawing.Point(252, 385);
-            this.lblAyudaTiempo.Name = "lblAyudaTiempo";
-            this.lblAyudaTiempo.Size = new System.Drawing.Size(357, 15);
-            this.lblAyudaTiempo.TabIndex = 12;
-            this.lblAyudaTiempo.Text = "Elección de tiempo de uso. Solo es posible asignar una modalidad.";
-            this.lblAyudaTiempo.Visible = false;
+            this.btnAyuda.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAyuda.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAyuda.Location = new System.Drawing.Point(871, 12);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(41, 30);
+            this.btnAyuda.TabIndex = 12;
+            this.btnAyuda.Text = "?";
+            this.btnAyuda.UseVisualStyleBackColor = false;
             // 
             // FrmComputadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 409);
-            this.Controls.Add(this.lblAyudaTiempo);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(941, 489);
+            this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.numMinutos);
             this.Controls.Add(this.chbTiempoLibre);
             this.Controls.Add(this.gbxCompus);
@@ -291,6 +306,6 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.RadioButton rbtnC9;
         private System.Windows.Forms.CheckBox chbTiempoLibre;
         private System.Windows.Forms.NumericUpDown numMinutos;
-        private System.Windows.Forms.Label lblAyudaTiempo;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }

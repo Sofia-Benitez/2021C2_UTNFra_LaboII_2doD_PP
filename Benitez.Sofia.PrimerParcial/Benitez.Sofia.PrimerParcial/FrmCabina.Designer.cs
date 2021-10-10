@@ -291,7 +291,8 @@ namespace Benitez.Sofia.PrimerParcial
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.btnAsignarCabina);
             this.Name = "FrmCabina";
-            this.Text = "t";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Asignar cabina";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCabina_FormClosing);
             this.gbxCabinas.ResumeLayout(false);
             this.gbxCabinas.PerformLayout();
