@@ -27,6 +27,9 @@ La aplicación permite ver las **estadísticas históricas** del local. Para con
 Cada formulario cuenta con un botón de ayuda que explica su funcionamiento. 
 
 ## Diagrama de clases
+![DiagramaClases.png](DiagramaClases.png)
+
+No pude agregar la clase Servicio al diagrama. No sé por qué pero lo voy a solucionar para el recuperatorio. Tampoco se muestran los atributos de todas las clases. 
 
 ## Justificación técnica
 
