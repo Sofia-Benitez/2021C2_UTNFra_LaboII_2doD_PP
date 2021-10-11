@@ -120,6 +120,7 @@ namespace Benitez.Sofia.PrimerParcial
             c10.AgregarCaracteristica("S03", "Office");
             c10.AgregarCaracteristica("P03", "Cámara");
             c10.AgregarCaracteristica("S04", "ICQ");
+            c10.AgregarCaracteristica("J05", "Mu Online");
 
             //agregar computadoras al ciber
             miCiber["C01"] = c1;
