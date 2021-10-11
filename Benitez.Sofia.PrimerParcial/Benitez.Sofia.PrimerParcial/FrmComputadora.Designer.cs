@@ -100,6 +100,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnAsignarComputadora
             // 
+            this.btnAsignarComputadora.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAsignarComputadora.BackColor = System.Drawing.Color.DarkOrchid;
             this.btnAsignarComputadora.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsignarComputadora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -114,10 +115,11 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCliente
             // 
+            this.lblCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCliente.Location = new System.Drawing.Point(450, 9);
+            this.lblCliente.Location = new System.Drawing.Point(411, 9);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(55, 20);
             this.lblCliente.TabIndex = 5;
@@ -125,6 +127,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -136,6 +139,8 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // gbxCompus
             // 
+            this.gbxCompus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbxCompus.AutoSize = true;
             this.gbxCompus.Controls.Add(this.rbtnC10);
             this.gbxCompus.Controls.Add(this.rbtnC9);
             this.gbxCompus.Controls.Add(this.rbtnC8);
@@ -228,6 +233,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // chbTiempoLibre
             // 
+            this.chbTiempoLibre.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.chbTiempoLibre.AutoSize = true;
             this.chbTiempoLibre.Checked = true;
             this.chbTiempoLibre.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -243,6 +249,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // numMinutos
             // 
+            this.numMinutos.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.numMinutos.Enabled = false;
             this.numMinutos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numMinutos.Increment = new decimal(new int[] {
@@ -263,6 +270,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnAyuda
             // 
+            this.btnAyuda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAyuda.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAyuda.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -287,6 +295,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.btnAsignarComputadora);
+            this.MinimumSize = new System.Drawing.Size(957, 552);
             this.Name = "FrmComputadora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignar computadora";

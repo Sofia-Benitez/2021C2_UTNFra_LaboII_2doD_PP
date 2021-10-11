@@ -39,7 +39,7 @@ namespace Benitez.Sofia.PrimerParcial
         //Harcodeo clientes
         Cliente cliente1 = new Cliente("41565434", "Lisa", "Simpson", 16, Cliente.Necesidad.Computadora, "30 min");
         Cliente cliente2 = new Cliente("24687764", "Michael", "Scott", 40, Cliente.Necesidad.Computadora);
-        Cliente cliente3 = new Cliente("23987676", "Ted", "Lasso", 40, Cliente.Necesidad.Computadora, "60 min");
+        Cliente cliente3 = new Cliente("23987676", "Joey", "Tribiani", 40, Cliente.Necesidad.Computadora, "60 min");
         Cliente cliente4 = new Cliente("31985664", "Jim", "Halpert", 35, Cliente.Necesidad.Computadora);
         Cliente cliente5 = new Cliente("29876767", "Dwight", "Schrute", 32, Cliente.Necesidad.Computadora, "30 min");
         Cliente cliente6 = new Cliente("32987676", "Pam", "Beesley", 39, Cliente.Necesidad.Computadora);
@@ -875,5 +875,7 @@ namespace Benitez.Sofia.PrimerParcial
 
             MessageBox.Show(sb.ToString());
         }
+
+        
     }
 }
