@@ -876,6 +876,9 @@ namespace Benitez.Sofia.PrimerParcial
             MessageBox.Show(sb.ToString());
         }
 
-        
+        private void lstbClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

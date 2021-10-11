@@ -190,6 +190,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.lstbClientes.Name = "lstbClientes";
             this.lstbClientes.Size = new System.Drawing.Size(377, 259);
             this.lstbClientes.TabIndex = 7;
+            this.lstbClientes.SelectedIndexChanged += new System.EventHandler(this.lstbClientes_SelectedIndexChanged);
             this.lstbClientes.SelectedValueChanged += new System.EventHandler(this.lstbClientes_SelectedValueChanged);
             // 
             // gbEquipos
@@ -230,9 +231,9 @@ namespace Benitez.Sofia.PrimerParcial
             this.gbEquipos.Controls.Add(this.lblCompu1);
             this.gbEquipos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gbEquipos.Location = new System.Drawing.Point(395, 63);
-            this.gbEquipos.MinimumSize = new System.Drawing.Size(610, 281);
+            this.gbEquipos.MinimumSize = new System.Drawing.Size(610, 270);
             this.gbEquipos.Name = "gbEquipos";
-            this.gbEquipos.Size = new System.Drawing.Size(610, 281);
+            this.gbEquipos.Size = new System.Drawing.Size(610, 270);
             this.gbEquipos.TabIndex = 3;
             this.gbEquipos.TabStop = false;
             // 
