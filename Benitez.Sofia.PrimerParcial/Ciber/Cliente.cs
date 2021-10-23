@@ -12,9 +12,13 @@ namespace CiberCafe
         private string nombre;
         private string apellido;
         private int edad;
-        public Necesidad necesidad;
-        private  Dictionary<string, string> requerimientos;
+        private Necesidad necesidad;
+        private Dictionary<string, string> requerimientos;
         private string tiempoSolicitado;
+        private bool necesitaImprimir;
+        private string impresion;
+        private int cantidadCopias;
+        private bool color;
 
 
         /// <summary>
@@ -22,7 +26,7 @@ namespace CiberCafe
         /// </summary>
         public enum Necesidad
         {
-            Cabina,Computadora
+            Cabina,Computadora, Impresora
         }
         
         /// <summary>
@@ -41,6 +45,7 @@ namespace CiberCafe
             this.edad = edad;
             this.necesidad = necesidad;
             this.requerimientos = new Dictionary<string, string>();
+            
         }
 
         /// <summary>
@@ -56,7 +61,27 @@ namespace CiberCafe
         {
             this.tiempoSolicitado = tiempoSolicitado;
         }
-        
+
+        /// <summary>
+        /// construtor para clientes que van a imprimir
+        /// </summary>
+        /// <param name="dni"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="edad"></param>
+        /// <param name="necesidad"></param>
+        /// <param name="tiempoSolicitado"></param>
+        /// <param name="impresion"></param>
+        /// <param name="cantidad"></param>
+        /// <param name="color"></param>
+        public Cliente(string dni, string nombre, string apellido, int edad, Necesidad necesidad, string tiempoSolicitado, bool imprimir, string impresion, int cantidad, bool color) : this(dni, nombre, apellido, edad, necesidad, tiempoSolicitado)
+        {
+            this.necesitaImprimir = imprimir;
+            this.impresion = impresion;
+            this.cantidadCopias = cantidad;
+            this.color = color;
+        }
+
         /// <summary>
         /// pripiedad que permite leer el nombre del cliente
         /// </summary>
@@ -114,7 +139,32 @@ namespace CiberCafe
             
         }
 
-        
+        public bool NecesitaImprimir
+        {
+            get
+            {
+                return this.necesitaImprimir;
+            }
+        }
+
+        public bool NecesitaImprimirAColor
+        {
+            get
+            {
+                return this.color;
+            }
+        }
+
+        public string ArchivoAImprimir
+        {
+            get
+            {
+                return this.impresion;
+            }
+        }
+
+
+
 
         /// <summary>
         /// muestra el nombre del cliente, el servicio que necesita, el tiempo que solicita si no es tiempo libre y los requerimientos
@@ -180,38 +230,7 @@ namespace CiberCafe
             return false;
         }
 
-        /// <summary>
-        /// sobrecarga == para comprobar si lo que necesita el cliente esta en la computadora
-        /// </summary>
-        /// <param name="cliente"></param>
-        /// <param name="computadora"></param>
-        /// <returns>devuelve true si lo que necesita el cliente esta en la computadora</returns>
-        public static bool operator ==(Cliente cliente, Computadora computadora)
-        {
-           
-                foreach (KeyValuePair<string, string> item in cliente.Requerimientos)
-                {
-                    if (!(computadora.Caracteristicas.ContainsKey(item.Key)))
-                    {
-                        return false;
-                    }
-
-                }
-                return true;
-            
-            
-        }
-
-        /// <summary>
-        /// sobrecarga del operador !=
-        /// </summary>
-        /// <param name="cliente"></param>
-        /// <param name="computadora"></param>
-        /// <returns>devuelve true si lo que necesita el cliente no esta en la computadora </returns>
-        public static bool operator !=(Cliente cliente, Computadora computadora)
-        {
-            return (!(cliente == computadora));
-        }
+        
 
         
 
@@ -256,6 +275,24 @@ namespace CiberCafe
         public override int GetHashCode()
         {
             return dni.GetHashCode();
+        }
+
+        public string MostrarDatosImpresion()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(impresion);
+            sb.Append($"\nCantidad: {cantidadCopias}\n");
+            if(color)
+            {
+                sb.Append("Color");
+            }
+            else
+            {
+                sb.Append("Blanco y negro");
+            }
+
+            return sb.ToString();
         }
     }
 }

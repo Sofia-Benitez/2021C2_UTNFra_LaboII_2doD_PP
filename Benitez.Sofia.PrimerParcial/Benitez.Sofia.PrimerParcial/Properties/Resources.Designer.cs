@@ -59,5 +59,15 @@ namespace Benitez.Sofia.PrimerParcial.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _94_945959_printer_7_icons_print_icon_vector_png {
+            get {
+                object obj = ResourceManager.GetObject("94-945959_printer-7-icons-print-icon-vector-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

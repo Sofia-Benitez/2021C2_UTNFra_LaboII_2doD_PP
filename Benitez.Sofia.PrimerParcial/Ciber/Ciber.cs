@@ -180,7 +180,7 @@ namespace CiberCafe
         /// <param name="computadora">computadora que se pasara por referencia en el uso nuevo</param>
         /// <param name="cliente">cliente que se pasara por referencia en el uso nuevo</param>
         /// <returns>devuelve el uso de computadora que se ha creado</returns>
-        public UsoComputadora AsignarComputadoraLibre(Computadora computadora, Cliente cliente)
+        public UsoComputadora AsignarComputadora(Computadora computadora, Cliente cliente)
         {
             if(computadora is not null && computadora.Estado==true)
             {
@@ -196,15 +196,15 @@ namespace CiberCafe
         }
 
         /// <summary>
-        /// metodo que instancia un nuevo uso de computadora con tiempo de finalizacion definido
-        /// /// remueve al cliente de la lista de espera y agrega el uso a la lista de usos del ciber 
+        /// sobrecarga del metodo AsignarComputadora() que instancia un nuevo uso de computadora con tiempo de finalizacion definido
+        /// remueve al cliente de la lista de espera y agrega el uso a la lista de usos del ciber 
         /// agrega al cliente a la lista de clientes ya atendidos y le asigna el uso a la computadora correspondiente
         /// </summary>
         /// <param name="computadora"></param>
         /// <param name="cliente"></param>
         /// <param name="tiempoSeleccionado">reciba el tiempo seleccionado de uso que viene desde el form de computadoras</param>
         /// <returns>devuelve el uso de computadora que se ha creado</returns>
-        public UsoComputadora AsignarComputadoraPorTiempo(Computadora computadora, Cliente cliente, double tiempoSeleccionado)
+        public UsoComputadora AsignarComputadora(Computadora computadora, Cliente cliente, double tiempoSeleccionado)
         {
             DateTime tiempoInicio = DateTime.Now;
             UsoComputadora uso = new UsoComputadora(tiempoInicio, cliente, computadora);
@@ -290,7 +290,7 @@ namespace CiberCafe
             int minutosUso1 = (int)uso1.UsoEnMinutosTotales;
             int minutosUso2 = (int)uso2.UsoEnMinutosTotales;
 
-            return minutosUso1 - minutosUso2;
+            return minutosUso2 - minutosUso1;
         }
 
         /// <summary>
@@ -334,7 +334,7 @@ namespace CiberCafe
             int minutosUso1 = (int)uso1.UsoEnMinutosTotales;
             int minutosUso2 = (int)uso2.UsoEnMinutosTotales;
 
-            return minutosUso1 - minutosUso2;
+            return minutosUso2 - minutosUso1;
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace CiberCafe
             }
             set
             {
-                if((value.Length > 7 && value.Length <= 15))
+                if((value.Length > 6 && value.Length <= 20))
                 {
                     this.numero = value;
                 }
@@ -156,17 +156,26 @@ namespace CiberCafe
         /// <returns>Devuelve el enumerado correspondiente al tipo de llamada </returns>
         public static UsoCabina.TipoLlamada ObtenerTipoLlamada(string numero)
         {
-            UsoCabina.TipoLlamada tipo = UsoCabina.TipoLlamada.LargaDistancia;
+            UsoCabina.TipoLlamada tipo = UsoCabina.TipoLlamada.Internacional;
 
             if ((numero[0] == '5' && numero[1] == '4' && numero[2] == '0' && numero[3] == '1' && numero[4] == '1')
                 || (numero[0] == '5' && numero[1] == '4' && numero[2] == '1' && numero[3] == '1'))
             {
                 tipo = UsoCabina.TipoLlamada.Local;
             }
-            else if (numero[0] != '5' && numero[1] != '4')
+            else if((numero[2] != '0' && numero[3] != '1' && numero[4] != '1') || (numero[2] != '1' && numero[3] != '1'))
             {
-                tipo = UsoCabina.TipoLlamada.Internacional;
+                if((numero[0] == '5' && numero[1] == '4'))
+                {
+                    tipo = UsoCabina.TipoLlamada.LargaDistancia;
+                }
+                else if((numero[0] != '5' && numero[1] != '4'))
+                {
+                    tipo = UsoCabina.TipoLlamada.Internacional;
+                }
+                
             }
+            
 
 
             return tipo;

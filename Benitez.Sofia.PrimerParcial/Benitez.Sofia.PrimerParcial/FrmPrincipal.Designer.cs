@@ -30,6 +30,7 @@ namespace Benitez.Sofia.PrimerParcial
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.gbUsuario = new System.Windows.Forms.GroupBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -73,6 +74,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.lblCompu1 = new System.Windows.Forms.Label();
             this.btnEstadistica = new System.Windows.Forms.Button();
             this.lblDatosCliente = new System.Windows.Forms.Label();
+            this.btnImpresora = new System.Windows.Forms.Button();
             this.gbUsuario.SuspendLayout();
             this.gbEquipos.SuspendLayout();
             this.SuspendLayout();
@@ -170,7 +172,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnAyuda.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAyuda.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAyuda.Location = new System.Drawing.Point(902, 7);
+            this.btnAyuda.Location = new System.Drawing.Point(964, 7);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(41, 40);
             this.btnAyuda.TabIndex = 9;
@@ -190,7 +192,6 @@ namespace Benitez.Sofia.PrimerParcial
             this.lstbClientes.Name = "lstbClientes";
             this.lstbClientes.Size = new System.Drawing.Size(377, 259);
             this.lstbClientes.TabIndex = 7;
-            this.lstbClientes.SelectedIndexChanged += new System.EventHandler(this.lstbClientes_SelectedIndexChanged);
             this.lstbClientes.SelectedValueChanged += new System.EventHandler(this.lstbClientes_SelectedValueChanged);
             // 
             // gbEquipos
@@ -680,12 +681,27 @@ namespace Benitez.Sofia.PrimerParcial
             this.lblDatosCliente.TabIndex = 10;
             this.lblDatosCliente.Text = "Cliente";
             // 
+            // btnImpresora
+            // 
+            this.btnImpresora.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btnImpresora.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnImpresora.Image = ((System.Drawing.Image)(resources.GetObject("btnImpresora.Image")));
+            this.btnImpresora.Location = new System.Drawing.Point(888, 374);
+            this.btnImpresora.Name = "btnImpresora";
+            this.btnImpresora.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnImpresora.Size = new System.Drawing.Size(98, 99);
+            this.btnImpresora.TabIndex = 11;
+            this.btnImpresora.UseVisualStyleBackColor = false;
+            this.btnImpresora.Click += new System.EventHandler(this.btnImpresora_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1017, 485);
+            this.Controls.Add(this.btnImpresora);
             this.Controls.Add(this.lblDatosCliente);
             this.Controls.Add(this.btnEstadistica);
             this.Controls.Add(this.btnAsignarCabina);
@@ -756,5 +772,6 @@ namespace Benitez.Sofia.PrimerParcial
         private System.Windows.Forms.Label lblCompu1;
         private System.Windows.Forms.Button btnEstadistica;
         private System.Windows.Forms.Label lblDatosCliente;
+        private System.Windows.Forms.Button btnImpresora;
     }
 }

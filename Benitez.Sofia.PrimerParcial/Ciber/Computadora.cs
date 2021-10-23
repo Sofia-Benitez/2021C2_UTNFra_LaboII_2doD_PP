@@ -154,8 +154,50 @@ namespace CiberCafe
             return aux;
         }
 
+        /// <summary>
+        /// sobrecarga == para comprobar si lo que necesita el cliente esta en la computadora
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <param name="computadora"></param>
+        /// <returns>devuelve true si lo que necesita el cliente esta en la computadora</returns>
+        public static bool operator ==(Cliente cliente, Computadora computadora)
+        {
+
+            foreach (KeyValuePair<string, string> item in cliente.Requerimientos)
+            {
+                if (!(computadora.Caracteristicas.ContainsKey(item.Key)))
+                {
+                    return false;
+                }
+
+            }
+            return true;
 
 
+        }
+
+        /// <summary>
+        /// sobrecarga del operador !=
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <param name="computadora"></param>
+        /// <returns>devuelve true si lo que necesita el cliente no esta en la computadora </returns>
+        public static bool operator !=(Cliente cliente, Computadora computadora)
+        {
+            return (!(cliente == computadora));
+        }
+
+        public override bool Equals(object obj)
+        {
+            Computadora computadora = obj as Computadora;
+
+            return computadora is not null && this == computadora;
+        }
+
+        public override int GetHashCode()
+        {
+            return id.GetHashCode();
+        }
 
     }
 }

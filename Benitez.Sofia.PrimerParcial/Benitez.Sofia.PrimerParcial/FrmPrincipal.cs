@@ -14,7 +14,6 @@ namespace Benitez.Sofia.PrimerParcial
     public partial class FrmPrincipal : Form
     {
 
-        
         Ciber miCiber = new Ciber("Sofía Benítez", DateTime.Now);
 
         //harcodeo cabinas
@@ -36,21 +35,26 @@ namespace Benitez.Sofia.PrimerParcial
         Computadora c9 = new Computadora("C09", true, "128", "Athlon", false);
         Computadora c10 = new Computadora("C10",true, "128", "Pentium 4", false);
 
+        //harcodeo impresoras
+        Impresora i1 = new Impresora("I01", true, "HP", true);
+        Impresora i2 = new Impresora("I02", true, "HP", false);
+        Impresora i3 = new Impresora("I03", true, "EPSON", true);
+
         //Harcodeo clientes
-        Cliente cliente1 = new Cliente("41565434", "Lisa", "Simpson", 16, Cliente.Necesidad.Computadora, "30 min");
-        Cliente cliente2 = new Cliente("24687764", "Michael", "Scott", 40, Cliente.Necesidad.Computadora);
-        Cliente cliente3 = new Cliente("23987676", "Joey", "Tribiani", 40, Cliente.Necesidad.Computadora, "60 min");
-        Cliente cliente4 = new Cliente("31985664", "Jim", "Halpert", 35, Cliente.Necesidad.Computadora);
-        Cliente cliente5 = new Cliente("29876767", "Dwight", "Schrute", 32, Cliente.Necesidad.Computadora, "30 min");
-        Cliente cliente6 = new Cliente("32987676", "Pam", "Beesley", 39, Cliente.Necesidad.Computadora);
+        Cliente cliente1 = new Cliente("41565434", "Lisa", "Simpson", 16, Cliente.Necesidad.Computadora, "30 min", true, "carta documento", 1, true);
+        Cliente cliente2 = new Cliente("24687764", "Michael", "Scott", 40, Cliente.Necesidad.Computadora, "Libre", true, "Factura celular", 1, false);
+        Cliente cliente3 = new Cliente("23987676", "Joey", "Tribiani", 40, Cliente.Necesidad.Computadora, "60 min", true, "Trabajo práctico", 1, false);
+        Cliente cliente4 = new Cliente("31985664", "Jim", "Halpert", 35, Cliente.Necesidad.Computadora, "Libre");
+        Cliente cliente5 = new Cliente("29876767", "Dwight", "Schrute", 32, Cliente.Necesidad.Computadora, "30 min", true, "CV", 4, false);
+        Cliente cliente6 = new Cliente("32987676", "Pam", "Beesley", 39, Cliente.Necesidad.Computadora, "Libre");
         Cliente cliente7 = new Cliente("35564456", "Chiqui", "Perez", 25, Cliente.Necesidad.Cabina);
         Cliente cliente8 = new Cliente("33464456", "Ricardo", "Perez", 24, Cliente.Necesidad.Cabina);
         Cliente cliente9 = new Cliente("323564456", "Pollo", "Perez", 27, Cliente.Necesidad.Cabina);
         Cliente cliente10 = new Cliente("31564456", "Walter", "Perez", 24, Cliente.Necesidad.Cabina);
-        Cliente cliente11 = new Cliente("28564456", "Rachel", "Green", 29, Cliente.Necesidad.Computadora);
-        Cliente cliente12 = new Cliente("23334456", "Chandler", "Bing", 32, Cliente.Necesidad.Computadora);
-        Cliente cliente13 = new Cliente("25674456", "Ross", "Geller", 34, Cliente.Necesidad.Computadora);
-        Cliente cliente14 = new Cliente("24564456", "Mónica", "Geller", 29, Cliente.Necesidad.Computadora);
+        Cliente cliente11 = new Cliente("28564456", "Rachel", "Green", 29, Cliente.Necesidad.Computadora, "Libre");
+        Cliente cliente12 = new Cliente("23334456", "Chandler", "Bing", 32, Cliente.Necesidad.Computadora, "Libre");
+        Cliente cliente13 = new Cliente("25674456", "Ross", "Geller", 34, Cliente.Necesidad.Computadora, "Libre");
+        Cliente cliente14 = new Cliente("24564456", "Mónica", "Geller", 29, Cliente.Necesidad.Computadora, "Libre");
 
  
 
@@ -86,6 +90,7 @@ namespace Benitez.Sofia.PrimerParcial
             c4.AgregarCaracteristica("J04", "Warcraft III");
             c4.AgregarCaracteristica("S03", "Office");
             c4.AgregarCaracteristica("S02", "MSN");
+            c4.AgregarCaracteristica("P01", "Auriculares");
 
             c5.AgregarCaracteristica("P02", "Micrófono");
             c5.AgregarCaracteristica("P01", "Auriculares");
@@ -140,6 +145,11 @@ namespace Benitez.Sofia.PrimerParcial
             miCiber["T03"] = t3;
             miCiber["T04"] = t4;
             miCiber["T05"] = t5;
+
+            //agrego impresoras al ciber
+            miCiber["I01"] = i1;
+            miCiber["I02"] = i2;
+            miCiber["I03"] = i3;
 
             //agrego requerimientos a los clientes de manera random
             Random rndNumber = new Random();
@@ -250,10 +260,10 @@ namespace Benitez.Sofia.PrimerParcial
             DateTime fecha5 = new DateTime(2021, 9, 1, 17, 15, 59);
             
 
-            UsoComputadora uso1 = new UsoComputadora(fecha1, fecha1.AddSeconds(30), cliente1, (Computadora)miCiber["C01"]);
-            UsoComputadora uso2 = new UsoComputadora(fecha2, fecha2.AddSeconds(60), cliente3, (Computadora)miCiber["C01"]);
-            UsoComputadora uso3 = new UsoComputadora(fecha3, fecha3.AddSeconds(90), cliente4, (Computadora)miCiber["C02"]);
-            UsoComputadora uso4 = new UsoComputadora(fecha5, fecha5.AddSeconds(30), cliente2, (Computadora)miCiber["C03"]);
+            UsoComputadora uso1 = new UsoComputadora(fecha1, fecha1.AddSeconds(30), cliente11, (Computadora)miCiber["C01"]);
+            UsoComputadora uso2 = new UsoComputadora(fecha2, fecha2.AddSeconds(60), cliente12, (Computadora)miCiber["C01"]);
+            UsoComputadora uso3 = new UsoComputadora(fecha3, fecha3.AddSeconds(90), cliente14, (Computadora)miCiber["C02"]);
+            UsoComputadora uso4 = new UsoComputadora(fecha5, fecha5.AddSeconds(30), cliente13, (Computadora)miCiber["C03"]);
             UsoComputadora uso5 = new UsoComputadora(fecha5, fecha5.AddSeconds(60), cliente11, (Computadora)miCiber["C08"]);
             UsoCabina uso6 = new UsoCabina(fecha4, "541164578787", UsoCabina.TipoLlamada.Local, cliente7, (Cabina)miCiber["T01"]);
             uso6.TiempoFinalizacion = fecha4.AddSeconds(25);
@@ -271,15 +281,15 @@ namespace Benitez.Sofia.PrimerParcial
             miCiber.ListaDeUsos.Add(uso6);
             miCiber.ListaDeUsos.Add(uso7);
             miCiber.ListaDeUsos.Add(uso8);
-            miCiber.ListaDeClientesAtendidos.Add(cliente1);
-            miCiber.ListaDeClientesAtendidos.Add(cliente2);
-            miCiber.ListaDeClientesAtendidos.Add(cliente3);
-            miCiber.ListaDeClientesAtendidos.Add(cliente4);
+            miCiber.ListaDeClientesAtendidos.Add(cliente13);
+            miCiber.ListaDeClientesAtendidos.Add(cliente12);
+            miCiber.ListaDeClientesAtendidos.Add(cliente14);
             miCiber.ListaDeClientesAtendidos.Add(cliente7);
             miCiber.ListaDeClientesAtendidos.Add(cliente8);
             miCiber.ListaDeClientesAtendidos.Add(cliente11);
             miCiber.ListaDeClientesAtendidos.Add(cliente9);
 
+            
 
         }
 
@@ -506,11 +516,11 @@ namespace Benitez.Sofia.PrimerParcial
                     {
                         if(frmComputadora.tiempo == "tiempo libre")
                         {
-                            miCiber.AsignarComputadoraLibre(frmComputadora.computadora, frmComputadora.cliente);
+                            miCiber.AsignarComputadora(frmComputadora.computadora, frmComputadora.cliente);
                         }
                         else
                         {
-                            miCiber.AsignarComputadoraPorTiempo(frmComputadora.computadora, frmComputadora.cliente, frmComputadora.tiempoSeleccionado);
+                            miCiber.AsignarComputadora(frmComputadora.computadora, frmComputadora.cliente, frmComputadora.tiempoSeleccionado);
                         }
                         
                         
@@ -876,9 +886,13 @@ namespace Benitez.Sofia.PrimerParcial
             MessageBox.Show(sb.ToString());
         }
 
-        private void lstbClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        
 
+        private void btnImpresora_Click(object sender, EventArgs e)
+        {
+            FrmImpresora frmImrpesora = new FrmImpresora(miCiber, miCiber.ListaDeClientesAtendidos);
+
+            frmImrpesora.ShowDialog();
         }
     }
 }
