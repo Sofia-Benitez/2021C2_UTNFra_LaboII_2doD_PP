@@ -16,9 +16,10 @@ namespace Benitez.Sofia.PrimerParcial
         public Impresora impresora;
         public Ciber miCiber;
         string color = "";
-        string cantidad = "";
+        int cantidad = 0;
         StringBuilder sb = new StringBuilder();
         string mensaje;
+        List<Cliente> clientesParaImprimir = new List<Cliente>();
 
 
         public FrmImpresora(Ciber ciber, List<Cliente> clientes)
@@ -38,10 +39,12 @@ namespace Benitez.Sofia.PrimerParcial
             {
                 if(item is not null && item.NecesidadCliente == Cliente.Necesidad.Computadora && item.NecesitaImprimir)
                 {
-                    lstbColaImpresiones.Items.Add(item);
+                    clientesParaImprimir.Add(item);
                 }
                 
             }
+
+            RefrescarColaClientes();
         }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
@@ -53,7 +56,7 @@ namespace Benitez.Sofia.PrimerParcial
                 }
             }
 
-            cantidad = numCantCopias.Text;
+            cantidad = (int)numCantCopias.Value;
             Cliente clienteAux = (Cliente)lstbColaImpresiones.SelectedItem;
             impresora=(Impresora)lstbImpresoras.SelectedItem;
             if(clienteAux is not null && impresora is not null && color!="" && clienteAux==impresora)
@@ -62,26 +65,21 @@ namespace Benitez.Sofia.PrimerParcial
                 sb.AppendLine($"Cantidad de copias: {cantidad}");
                 sb.AppendLine(color);
                 sb.AppendLine($"\nImpresora: {impresora}");
+                sb.AppendLine($"Pagar en caja: ${Impresora.CalcularCosto(cantidad, color)}");
                 
                 mensaje = sb.ToString();
                 if(MessageBox.Show(mensaje, "Imprimiendo...", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
                 {
                     MessageBox.Show("Impresión cancelada");
-                    sb.Clear();
+                    
                 }
                 else
                 {
-                    foreach (Cliente item in miCiber.ListaDeClientesAtendidos)
-                    {
-                        if (item is not null && item.NecesidadCliente == Cliente.Necesidad.Computadora && item.NecesitaImprimir && item.ArchivoAImprimir != clienteAux.ArchivoAImprimir)
-                        {
-                            lstbColaImpresiones.Items.Clear();
-                            lstbColaImpresiones.Items.Add(item);
-                        }
-
-                    }
+                    clientesParaImprimir.Remove((Cliente)lstbColaImpresiones.SelectedItem);
+                    RefrescarColaClientes();
                 }
-                
+                sb.Clear();
+
             }
             else
             {
@@ -108,6 +106,18 @@ namespace Benitez.Sofia.PrimerParcial
             sb.AppendLine("Seleccionar el tipo de impresión y la cantidad de copias y presionar el boton Imprimir");
             
             MessageBox.Show(sb.ToString());
+        }
+
+        /// <summary>
+        /// metodo que actualiza la lista de clientes que esperan para imprimir un archivo
+        /// </summary>
+        public void RefrescarColaClientes()
+        {
+            lstbColaImpresiones.Items.Clear();
+            foreach (Cliente cliente in clientesParaImprimir)
+            {
+                lstbColaImpresiones.Items.Add(cliente);
+            }
         }
     }
 }

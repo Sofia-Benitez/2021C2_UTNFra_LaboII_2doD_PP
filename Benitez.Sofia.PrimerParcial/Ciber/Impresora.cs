@@ -10,7 +10,11 @@ namespace CiberCafe
     {
         private string marca;
         private bool imprimeColor;
+        private static double precioCopiaByN = 0.5;
+        private static double precioCopiaColor = 1;
 
+           
+        
         /// <summary>
         /// constructor de impresora
         /// </summary>
@@ -22,6 +26,7 @@ namespace CiberCafe
         {
             this.marca = marca;
             this.imprimeColor = imprimeColor;
+         
         }
 
         public override string Id
@@ -52,7 +57,7 @@ namespace CiberCafe
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(base.Mostrar());
-            sb.Append($"  Marca: {this.marca}  ");
+            sb.Append($" Marca: {this.marca}  ");
             if(imprimeColor)
             {
                 sb.Append("Imprime color");
@@ -110,6 +115,21 @@ namespace CiberCafe
         public override int GetHashCode()
         {
             return id.GetHashCode();
+        }
+
+        public static double CalcularCosto(int cantidadCopias, string tipo)
+        {
+            double costo;
+            if(tipo == "Color")
+            {
+                costo= cantidadCopias * precioCopiaColor;
+            }
+            else
+            {
+                costo = cantidadCopias * precioCopiaByN;
+            }
+
+            return costo;
         }
     }
 }

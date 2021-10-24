@@ -881,7 +881,8 @@ namespace Benitez.Sofia.PrimerParcial
             sb.AppendLine("Para finalizar el uso de un servicio presionar el boton del equipo correspondiente, esto solo se puede realizar si el equipo esta en uso. \n");
             sb.AppendLine("Los usos de computadora que se alquilan por un tiempo anticipado finalizan automaticamente y se muestran con un mensaje en la pantalla.\n");
             sb.AppendLine("Para ver las estadísticas históricas del ciber presione el botón Estadisticas.");
-               
+            sb.AppendLine("Para imprimir archivos presionar la imagen de la impresora");
+
 
             MessageBox.Show(sb.ToString());
         }
