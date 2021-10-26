@@ -75,14 +75,16 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lstbColaImpresiones
             // 
+            this.lstbColaImpresiones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstbColaImpresiones.BackColor = System.Drawing.Color.Gainsboro;
             this.lstbColaImpresiones.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lstbColaImpresiones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstbColaImpresiones.FormattingEnabled = true;
             this.lstbColaImpresiones.ItemHeight = 15;
             this.lstbColaImpresiones.Location = new System.Drawing.Point(0, 0);
             this.lstbColaImpresiones.Name = "lstbColaImpresiones";
-            this.lstbColaImpresiones.Size = new System.Drawing.Size(241, 352);
+            this.lstbColaImpresiones.Size = new System.Drawing.Size(241, 349);
             this.lstbColaImpresiones.TabIndex = 0;
             this.lstbColaImpresiones.SelectedValueChanged += new System.EventHandler(this.lstbColaImpresiones_SelectedValueChanged);
             // 
@@ -94,13 +96,14 @@ namespace Benitez.Sofia.PrimerParcial
             this.panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.MinimumSize = new System.Drawing.Size(425, 173);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(425, 173);
             this.panel2.TabIndex = 5;
             // 
             // btnAyuda
             // 
-            this.btnAyuda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAyuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAyuda.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAyuda.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -114,8 +117,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // grbxImpresoras
             // 
+            this.grbxImpresoras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbxImpresoras.Controls.Add(this.lstbImpresoras);
-            this.grbxImpresoras.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grbxImpresoras.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grbxImpresoras.Location = new System.Drawing.Point(0, 86);
             this.grbxImpresoras.Name = "grbxImpresoras";
@@ -126,18 +130,19 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lstbImpresoras
             // 
-            this.lstbImpresoras.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstbImpresoras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstbImpresoras.FormattingEnabled = true;
             this.lstbImpresoras.ItemHeight = 15;
             this.lstbImpresoras.Location = new System.Drawing.Point(3, 19);
             this.lstbImpresoras.Name = "lstbImpresoras";
-            this.lstbImpresoras.Size = new System.Drawing.Size(419, 65);
+            this.lstbImpresoras.Size = new System.Drawing.Size(419, 64);
             this.lstbImpresoras.TabIndex = 0;
             // 
             // lblArchivo
             // 
+            this.lblArchivo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblArchivo.AutoSize = true;
-            this.lblArchivo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblArchivo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblArchivo.Location = new System.Drawing.Point(0, 0);
             this.lblArchivo.Name = "lblArchivo";
@@ -158,12 +163,14 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // gbxPropiedades
             // 
+            this.gbxPropiedades.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxPropiedades.Controls.Add(this.lblCopias);
             this.gbxPropiedades.Controls.Add(this.numCantCopias);
             this.gbxPropiedades.Controls.Add(this.rbtnByN);
             this.gbxPropiedades.Controls.Add(this.rbtnColor);
             this.gbxPropiedades.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.gbxPropiedades.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbxPropiedades.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gbxPropiedades.Location = new System.Drawing.Point(0, 0);
             this.gbxPropiedades.Name = "gbxPropiedades";
@@ -217,6 +224,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnImprimir
             // 
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImprimir.BackColor = System.Drawing.Color.DarkOrchid;
             this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -237,6 +245,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.ClientSize = new System.Drawing.Size(670, 352);
             this.Controls.Add(this.splitContainer1);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MinimumSize = new System.Drawing.Size(686, 391);
             this.Name = "FrmImpresora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imprimir";

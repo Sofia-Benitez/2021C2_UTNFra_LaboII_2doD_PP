@@ -446,11 +446,11 @@ namespace CiberCafe
             
             if (horasTotales==1)
             {
-                sb.AppendLine($"Tiempo total de llamadas: 1 hora");
+                sb.AppendLine($"Tiempo total de llamadas: 1 hora\n");
             }
             else
             {
-                sb.AppendFormat("Tiempo total de llamadas: {0:N2} horas", horasTotales);
+                sb.AppendFormat("Tiempo total de llamadas: {0:N2} horas\n", horasTotales);
             }
             sb.AppendLine("**************************************************************");
             sb.AppendFormat("Ganancias por llamadas locales: {0:C2}\n", gananciasLocal);

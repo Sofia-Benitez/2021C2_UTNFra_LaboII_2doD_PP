@@ -65,7 +65,7 @@ namespace Benitez.Sofia.PrimerParcial
                 sb.AppendLine($"Cantidad de copias: {cantidad}");
                 sb.AppendLine(color);
                 sb.AppendLine($"\nImpresora: {impresora}");
-                sb.AppendLine($"Pagar en caja: ${Impresora.CalcularCosto(cantidad, color)}");
+                sb.AppendLine($"Pagar en caja: ${Impresora.CalcularCostoImpresion(cantidad, color)}");
                 
                 mensaje = sb.ToString();
                 if(MessageBox.Show(mensaje, "Imprimiendo...", MessageBoxButtons.OKCancel) == DialogResult.Cancel)

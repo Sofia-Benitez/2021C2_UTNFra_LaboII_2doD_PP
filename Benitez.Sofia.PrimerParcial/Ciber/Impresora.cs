@@ -29,6 +29,9 @@ namespace CiberCafe
          
         }
 
+        /// <summary>
+        /// propiedad que permite leer el identificador de una impresora
+        /// </summary>
         public override string Id
         {
             get
@@ -37,6 +40,9 @@ namespace CiberCafe
             }
         }
 
+        /// <summary>
+        /// propiedad uqe permite leer o setear el estado de una impresora
+        /// </summary>
         public override bool Estado
         {
             get
@@ -117,7 +123,13 @@ namespace CiberCafe
             return id.GetHashCode();
         }
 
-        public static double CalcularCosto(int cantidadCopias, string tipo)
+        /// <summary>
+        /// calcula el costo de la impresion segun el tipo y la cantidad
+        /// </summary>
+        /// <param name="cantidadCopias"></param>
+        /// <param name="tipo"></param>
+        /// <returns>devuelve el costo de la impresion</returns>
+        public static double CalcularCostoImpresion(int cantidadCopias, string tipo)
         {
             double costo;
             if(tipo == "Color")

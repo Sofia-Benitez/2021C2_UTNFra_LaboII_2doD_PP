@@ -56,7 +56,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnAsignarCabina
             // 
-            this.btnAsignarCabina.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAsignarCabina.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAsignarCabina.BackColor = System.Drawing.Color.DarkOrchid;
             this.btnAsignarCabina.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsignarCabina.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -71,7 +71,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // lblCliente
             // 
-            this.lblCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCliente.Location = new System.Drawing.Point(366, 22);
@@ -82,6 +82,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnCabina1
             // 
+            this.rbtnCabina1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnCabina1.AutoSize = true;
             this.rbtnCabina1.Location = new System.Drawing.Point(6, 22);
             this.rbtnCabina1.Name = "rbtnCabina1";
@@ -93,6 +96,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnCabina2
             // 
+            this.rbtnCabina2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnCabina2.AutoSize = true;
             this.rbtnCabina2.Location = new System.Drawing.Point(155, 22);
             this.rbtnCabina2.Name = "rbtnCabina2";
@@ -104,6 +110,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnCabina5
             // 
+            this.rbtnCabina5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnCabina5.AutoSize = true;
             this.rbtnCabina5.Location = new System.Drawing.Point(607, 22);
             this.rbtnCabina5.Name = "rbtnCabina5";
@@ -115,6 +124,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnCabina3
             // 
+            this.rbtnCabina3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnCabina3.AutoSize = true;
             this.rbtnCabina3.Location = new System.Drawing.Point(313, 22);
             this.rbtnCabina3.Name = "rbtnCabina3";
@@ -126,6 +138,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnCabina4
             // 
+            this.rbtnCabina4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnCabina4.AutoSize = true;
             this.rbtnCabina4.Location = new System.Drawing.Point(457, 22);
             this.rbtnCabina4.Name = "rbtnCabina4";
@@ -137,7 +152,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // gbxCabinas
             // 
-            this.gbxCabinas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbxCabinas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxCabinas.Controls.Add(this.rbtnCabina4);
             this.gbxCabinas.Controls.Add(this.rbtnCabina3);
             this.gbxCabinas.Controls.Add(this.rbtnCabina5);
@@ -153,7 +170,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btn1
             // 
-            this.btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn1.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn1.Location = new System.Drawing.Point(309, 244);
@@ -166,7 +183,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btn2
             // 
-            this.btn2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn2.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn2.Location = new System.Drawing.Point(363, 244);
@@ -179,7 +196,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btn3
             // 
-            this.btn3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn3.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn3.Location = new System.Drawing.Point(417, 244);
@@ -192,7 +209,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btn6
             // 
-            this.btn6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn6.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn6.Location = new System.Drawing.Point(417, 293);
@@ -205,7 +222,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btn5
             // 
-            this.btn5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn5.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn5.Location = new System.Drawing.Point(363, 293);
@@ -218,7 +235,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btn4
             // 
-            this.btn4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn4.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn4.Location = new System.Drawing.Point(309, 293);
@@ -231,7 +248,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btn9
             // 
-            this.btn9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn9.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn9.Location = new System.Drawing.Point(417, 341);
@@ -244,7 +261,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btn8
             // 
-            this.btn8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn8.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn8.Location = new System.Drawing.Point(363, 341);
@@ -257,7 +274,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btn7
             // 
-            this.btn7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn7.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn7.Location = new System.Drawing.Point(309, 341);
@@ -270,7 +287,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // txtNumeroDestino
             // 
-            this.txtNumeroDestino.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNumeroDestino.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtNumeroDestino.BackColor = System.Drawing.Color.Gainsboro;
             this.txtNumeroDestino.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNumeroDestino.Location = new System.Drawing.Point(284, 209);
@@ -281,7 +298,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnNumeral
             // 
-            this.btnNumeral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNumeral.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnNumeral.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnNumeral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNumeral.Location = new System.Drawing.Point(418, 390);
@@ -294,7 +311,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btn0
             // 
-            this.btn0.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn0.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn0.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn0.Location = new System.Drawing.Point(365, 390);
@@ -307,7 +324,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnAsterisco
             // 
-            this.btnAsterisco.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAsterisco.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAsterisco.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnAsterisco.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsterisco.Location = new System.Drawing.Point(309, 390);
@@ -320,11 +337,11 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.MediumOrchid;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(714, 8);
+            this.button1.Location = new System.Drawing.Point(736, -1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(43, 42);
             this.button1.TabIndex = 29;

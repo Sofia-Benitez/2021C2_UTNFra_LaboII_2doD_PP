@@ -52,6 +52,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnC1
             // 
+            this.rbtnC1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnC1.AutoSize = true;
             this.rbtnC1.Location = new System.Drawing.Point(30, 34);
             this.rbtnC1.Name = "rbtnC1";
@@ -64,6 +67,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnC2
             // 
+            this.rbtnC2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnC2.AutoSize = true;
             this.rbtnC2.Location = new System.Drawing.Point(30, 203);
             this.rbtnC2.Name = "rbtnC2";
@@ -76,6 +82,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnC3
             // 
+            this.rbtnC3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnC3.AutoSize = true;
             this.rbtnC3.Location = new System.Drawing.Point(212, 34);
             this.rbtnC3.Name = "rbtnC3";
@@ -88,6 +97,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnC4
             // 
+            this.rbtnC4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnC4.AutoSize = true;
             this.rbtnC4.Location = new System.Drawing.Point(212, 203);
             this.rbtnC4.Name = "rbtnC4";
@@ -139,8 +151,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // gbxCompus
             // 
-            this.gbxCompus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gbxCompus.AutoSize = true;
+            this.gbxCompus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxCompus.Controls.Add(this.rbtnC10);
             this.gbxCompus.Controls.Add(this.rbtnC9);
             this.gbxCompus.Controls.Add(this.rbtnC8);
@@ -161,6 +174,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnC10
             // 
+            this.rbtnC10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnC10.AutoSize = true;
             this.rbtnC10.Location = new System.Drawing.Point(730, 203);
             this.rbtnC10.Name = "rbtnC10";
@@ -173,6 +189,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnC9
             // 
+            this.rbtnC9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnC9.AutoSize = true;
             this.rbtnC9.Location = new System.Drawing.Point(730, 34);
             this.rbtnC9.Name = "rbtnC9";
@@ -185,6 +204,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnC8
             // 
+            this.rbtnC8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnC8.AutoSize = true;
             this.rbtnC8.Location = new System.Drawing.Point(556, 203);
             this.rbtnC8.Name = "rbtnC8";
@@ -197,6 +219,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnC7
             // 
+            this.rbtnC7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnC7.AutoSize = true;
             this.rbtnC7.Location = new System.Drawing.Point(556, 34);
             this.rbtnC7.Name = "rbtnC7";
@@ -209,6 +234,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnC6
             // 
+            this.rbtnC6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnC6.AutoSize = true;
             this.rbtnC6.Location = new System.Drawing.Point(386, 203);
             this.rbtnC6.Name = "rbtnC6";
@@ -221,6 +249,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnC5
             // 
+            this.rbtnC5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnC5.AutoSize = true;
             this.rbtnC5.Location = new System.Drawing.Point(386, 34);
             this.rbtnC5.Name = "rbtnC5";
@@ -270,11 +301,11 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnAyuda
             // 
-            this.btnAyuda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAyuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAyuda.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAyuda.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAyuda.Location = new System.Drawing.Point(871, 12);
+            this.btnAyuda.Location = new System.Drawing.Point(900, -1);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(41, 30);
             this.btnAyuda.TabIndex = 12;

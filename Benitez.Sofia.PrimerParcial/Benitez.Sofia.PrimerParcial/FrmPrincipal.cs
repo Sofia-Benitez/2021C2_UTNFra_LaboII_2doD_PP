@@ -895,5 +895,7 @@ namespace Benitez.Sofia.PrimerParcial
 
             frmImrpesora.ShowDialog();
         }
+
+        
     }
 }

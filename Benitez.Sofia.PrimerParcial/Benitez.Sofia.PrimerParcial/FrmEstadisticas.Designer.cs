@@ -43,11 +43,13 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rtbxEstadisticas
             // 
+            this.rtbxEstadisticas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbxEstadisticas.BackColor = System.Drawing.Color.Gainsboro;
-            this.rtbxEstadisticas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbxEstadisticas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtbxEstadisticas.Location = new System.Drawing.Point(0, 0);
-            this.rtbxEstadisticas.MaximumSize = new System.Drawing.Size(843, 723);
+            this.rtbxEstadisticas.MaximumSize = new System.Drawing.Size(1200, 800);
             this.rtbxEstadisticas.MaxLength = 4000000;
             this.rtbxEstadisticas.MinimumSize = new System.Drawing.Size(394, 294);
             this.rtbxEstadisticas.Name = "rtbxEstadisticas";
@@ -59,7 +61,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica1
             // 
-            this.btnEstadistica1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstadistica1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEstadistica1.AutoSize = true;
             this.btnEstadistica1.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnEstadistica1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -74,7 +76,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica2
             // 
-            this.btnEstadistica2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstadistica2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEstadistica2.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnEstadistica2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEstadistica2.Location = new System.Drawing.Point(550, 83);
@@ -88,7 +90,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica3
             // 
-            this.btnEstadistica3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstadistica3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEstadistica3.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnEstadistica3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEstadistica3.Location = new System.Drawing.Point(550, 130);
@@ -102,7 +104,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica4
             // 
-            this.btnEstadistica4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstadistica4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEstadistica4.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnEstadistica4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEstadistica4.Location = new System.Drawing.Point(550, 177);
@@ -116,7 +118,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica5
             // 
-            this.btnEstadistica5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstadistica5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEstadistica5.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnEstadistica5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEstadistica5.Location = new System.Drawing.Point(550, 224);
@@ -130,7 +132,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica6
             // 
-            this.btnEstadistica6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstadistica6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEstadistica6.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnEstadistica6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEstadistica6.Location = new System.Drawing.Point(550, 271);
@@ -144,7 +146,7 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // btnEstadistica7
             // 
-            this.btnEstadistica7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstadistica7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEstadistica7.BackColor = System.Drawing.Color.MediumOrchid;
             this.btnEstadistica7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEstadistica7.Location = new System.Drawing.Point(550, 318);
@@ -158,8 +160,10 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.rtbxEstadisticas);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(494, 392);
