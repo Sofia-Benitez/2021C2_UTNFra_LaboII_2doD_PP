@@ -26,7 +26,6 @@ namespace CiberCafe
         {
             this.marca = marca;
             this.imprimeColor = imprimeColor;
-         
         }
 
         /// <summary>
@@ -56,9 +55,9 @@ namespace CiberCafe
         }
 
         /// <summary>
-        /// metodo que devuelve un string con los datos de la impresora
+        /// sobrecarga del metodo Mostrar() de la clase base para incluir los datos de la impresora
         /// </summary>
-        /// <returns></returns>
+        /// <returns>devuelve un string con los datos de la impresora</returns>
         protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -126,8 +125,8 @@ namespace CiberCafe
         /// <summary>
         /// calcula el costo de la impresion segun el tipo y la cantidad
         /// </summary>
-        /// <param name="cantidadCopias"></param>
-        /// <param name="tipo"></param>
+        /// <param name="cantidadCopias">cantida de copias que se imprmen</param>
+        /// <param name="tipo">tipo de impresion: Color o Blnaco y negro</param>
         /// <returns>devuelve el costo de la impresion</returns>
         public static double CalcularCostoImpresion(int cantidadCopias, string tipo)
         {

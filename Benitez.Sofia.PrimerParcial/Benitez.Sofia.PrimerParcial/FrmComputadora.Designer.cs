@@ -52,56 +52,46 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnC1
             // 
-            this.rbtnC1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnC1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnC1.AutoSize = true;
             this.rbtnC1.Location = new System.Drawing.Point(30, 34);
             this.rbtnC1.Name = "rbtnC1";
             this.rbtnC1.Size = new System.Drawing.Size(94, 19);
             this.rbtnC1.TabIndex = 0;
-            this.rbtnC1.TabStop = true;
             this.rbtnC1.Text = "radioButton1";
             this.rbtnC1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnC1.UseVisualStyleBackColor = true;
             // 
             // rbtnC2
             // 
-            this.rbtnC2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnC2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnC2.AutoSize = true;
-            this.rbtnC2.Location = new System.Drawing.Point(30, 203);
+            this.rbtnC2.Location = new System.Drawing.Point(30, 237);
             this.rbtnC2.Name = "rbtnC2";
             this.rbtnC2.Size = new System.Drawing.Size(94, 19);
             this.rbtnC2.TabIndex = 1;
-            this.rbtnC2.TabStop = true;
             this.rbtnC2.Text = "radioButton2";
             this.rbtnC2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnC2.UseVisualStyleBackColor = true;
             // 
             // rbtnC3
             // 
-            this.rbtnC3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnC3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnC3.AutoSize = true;
             this.rbtnC3.Location = new System.Drawing.Point(212, 34);
             this.rbtnC3.Name = "rbtnC3";
             this.rbtnC3.Size = new System.Drawing.Size(94, 19);
             this.rbtnC3.TabIndex = 2;
-            this.rbtnC3.TabStop = true;
             this.rbtnC3.Text = "radioButton3";
             this.rbtnC3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnC3.UseVisualStyleBackColor = true;
             // 
             // rbtnC4
             // 
-            this.rbtnC4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnC4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnC4.AutoSize = true;
-            this.rbtnC4.Location = new System.Drawing.Point(212, 203);
+            this.rbtnC4.Checked = true;
+            this.rbtnC4.Location = new System.Drawing.Point(212, 237);
             this.rbtnC4.Name = "rbtnC4";
             this.rbtnC4.Size = new System.Drawing.Size(94, 19);
             this.rbtnC4.TabIndex = 3;
@@ -117,7 +107,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.btnAsignarComputadora.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsignarComputadora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAsignarComputadora.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAsignarComputadora.Location = new System.Drawing.Point(743, 463);
+            this.btnAsignarComputadora.Location = new System.Drawing.Point(743, 495);
             this.btnAsignarComputadora.Name = "btnAsignarComputadora";
             this.btnAsignarComputadora.Size = new System.Drawing.Size(169, 38);
             this.btnAsignarComputadora.TabIndex = 4;
@@ -131,7 +121,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCliente.Location = new System.Drawing.Point(411, 9);
+            this.lblCliente.Location = new System.Drawing.Point(377, 9);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(55, 20);
             this.lblCliente.TabIndex = 5;
@@ -143,7 +133,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(377, 471);
+            this.label1.Location = new System.Drawing.Point(377, 503);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 21);
             this.label1.TabIndex = 7;
@@ -167,97 +157,79 @@ namespace Benitez.Sofia.PrimerParcial
             this.gbxCompus.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gbxCompus.Location = new System.Drawing.Point(25, 66);
             this.gbxCompus.Name = "gbxCompus";
-            this.gbxCompus.Size = new System.Drawing.Size(887, 382);
+            this.gbxCompus.Size = new System.Drawing.Size(887, 414);
             this.gbxCompus.TabIndex = 8;
             this.gbxCompus.TabStop = false;
             this.gbxCompus.Text = "Computadoras";
             // 
             // rbtnC10
             // 
-            this.rbtnC10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnC10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnC10.AutoSize = true;
-            this.rbtnC10.Location = new System.Drawing.Point(730, 203);
+            this.rbtnC10.Location = new System.Drawing.Point(730, 237);
             this.rbtnC10.Name = "rbtnC10";
             this.rbtnC10.Size = new System.Drawing.Size(94, 19);
             this.rbtnC10.TabIndex = 9;
-            this.rbtnC10.TabStop = true;
             this.rbtnC10.Text = "radioButton1";
             this.rbtnC10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnC10.UseVisualStyleBackColor = true;
             // 
             // rbtnC9
             // 
-            this.rbtnC9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnC9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnC9.AutoSize = true;
             this.rbtnC9.Location = new System.Drawing.Point(730, 34);
             this.rbtnC9.Name = "rbtnC9";
             this.rbtnC9.Size = new System.Drawing.Size(94, 19);
             this.rbtnC9.TabIndex = 8;
-            this.rbtnC9.TabStop = true;
             this.rbtnC9.Text = "radioButton1";
             this.rbtnC9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnC9.UseVisualStyleBackColor = true;
             // 
             // rbtnC8
             // 
-            this.rbtnC8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnC8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnC8.AutoSize = true;
-            this.rbtnC8.Location = new System.Drawing.Point(556, 203);
+            this.rbtnC8.Location = new System.Drawing.Point(556, 237);
             this.rbtnC8.Name = "rbtnC8";
             this.rbtnC8.Size = new System.Drawing.Size(94, 19);
             this.rbtnC8.TabIndex = 7;
-            this.rbtnC8.TabStop = true;
             this.rbtnC8.Text = "radioButton1";
             this.rbtnC8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnC8.UseVisualStyleBackColor = true;
             // 
             // rbtnC7
             // 
-            this.rbtnC7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnC7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnC7.AutoSize = true;
             this.rbtnC7.Location = new System.Drawing.Point(556, 34);
             this.rbtnC7.Name = "rbtnC7";
             this.rbtnC7.Size = new System.Drawing.Size(94, 19);
             this.rbtnC7.TabIndex = 6;
-            this.rbtnC7.TabStop = true;
             this.rbtnC7.Text = "radioButton1";
             this.rbtnC7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnC7.UseVisualStyleBackColor = true;
             // 
             // rbtnC6
             // 
-            this.rbtnC6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnC6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnC6.AutoSize = true;
-            this.rbtnC6.Location = new System.Drawing.Point(386, 203);
+            this.rbtnC6.Location = new System.Drawing.Point(386, 237);
             this.rbtnC6.Name = "rbtnC6";
             this.rbtnC6.Size = new System.Drawing.Size(94, 19);
             this.rbtnC6.TabIndex = 5;
-            this.rbtnC6.TabStop = true;
             this.rbtnC6.Text = "radioButton1";
             this.rbtnC6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnC6.UseVisualStyleBackColor = true;
             // 
             // rbtnC5
             // 
-            this.rbtnC5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnC5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnC5.AutoSize = true;
             this.rbtnC5.Location = new System.Drawing.Point(386, 34);
             this.rbtnC5.Name = "rbtnC5";
             this.rbtnC5.Size = new System.Drawing.Size(94, 19);
             this.rbtnC5.TabIndex = 4;
-            this.rbtnC5.TabStop = true;
             this.rbtnC5.Text = "radioButton1";
             this.rbtnC5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtnC5.UseVisualStyleBackColor = true;
@@ -270,7 +242,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.chbTiempoLibre.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbTiempoLibre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.chbTiempoLibre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.chbTiempoLibre.Location = new System.Drawing.Point(160, 471);
+            this.chbTiempoLibre.Location = new System.Drawing.Point(160, 503);
             this.chbTiempoLibre.Name = "chbTiempoLibre";
             this.chbTiempoLibre.Size = new System.Drawing.Size(116, 25);
             this.chbTiempoLibre.TabIndex = 9;
@@ -288,7 +260,7 @@ namespace Benitez.Sofia.PrimerParcial
             0,
             0,
             0});
-            this.numMinutos.Location = new System.Drawing.Point(450, 470);
+            this.numMinutos.Location = new System.Drawing.Point(450, 502);
             this.numMinutos.Maximum = new decimal(new int[] {
             180,
             0,
@@ -318,7 +290,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(941, 513);
+            this.ClientSize = new System.Drawing.Size(941, 545);
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.numMinutos);
             this.Controls.Add(this.chbTiempoLibre);
@@ -326,7 +298,7 @@ namespace Benitez.Sofia.PrimerParcial
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.btnAsignarComputadora);
-            this.MinimumSize = new System.Drawing.Size(957, 552);
+            this.MinimumSize = new System.Drawing.Size(957, 584);
             this.Name = "FrmComputadora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignar computadora";

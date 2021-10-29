@@ -15,7 +15,6 @@ namespace CiberCafe
         private Necesidad necesidad;
         private Dictionary<string, string> requerimientos;
         private string tiempoSolicitado;
-        private bool necesitaImprimir;
         private string impresion;
         private int cantidadCopias;
         private bool color;
@@ -26,7 +25,7 @@ namespace CiberCafe
         /// </summary>
         public enum Necesidad
         {
-            Cabina,Computadora, Impresora
+            Cabina,Computadora
         }
         
         /// <summary>
@@ -49,7 +48,7 @@ namespace CiberCafe
         }
 
         /// <summary>
-        /// sobrecarga del cosntructor cliente para que incluya el tiempo solicitado de uso del serivcio
+        /// sobrecarga del cosntructor cliente para que incluya el tiempo solicitado de uso del servicio
         /// </summary>
         /// <param name="dni"></param>
         /// <param name="nombre"></param>
@@ -71,13 +70,12 @@ namespace CiberCafe
         /// <param name="edad"></param>
         /// <param name="necesidad"></param>
         /// <param name="tiempoSolicitado"></param>
-        /// <param name="impresion"></param>
+        /// <param name="archivoAImprimir"></param>
         /// <param name="cantidad"></param>
         /// <param name="color"></param>
-        public Cliente(string dni, string nombre, string apellido, int edad, Necesidad necesidad, string tiempoSolicitado, bool imprimir, string impresion, int cantidad, bool color) : this(dni, nombre, apellido, edad, necesidad, tiempoSolicitado)
+        public Cliente(string dni, string nombre, string apellido, int edad, Necesidad necesidad, string tiempoSolicitado, string archivoAImprimir, int cantidad, bool color) : this(dni, nombre, apellido, edad, necesidad, tiempoSolicitado)
         {
-            this.necesitaImprimir = imprimir;
-            this.impresion = impresion;
+            this.impresion = archivoAImprimir;
             this.cantidadCopias = cantidad;
             this.color = color;
         }
@@ -139,14 +137,27 @@ namespace CiberCafe
             
         }
 
+        /// <summary>
+        /// propiedad que devuelve true si se cargo el nombre del archivo a imprimir. Si no se cargó ningun archivo devuelve false 
+        /// </summary>
         public bool NecesitaImprimir
         {
             get
             {
-                return this.necesitaImprimir;
+                if(string.IsNullOrWhiteSpace(impresion))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
         }
 
+        /// <summary>
+        /// propiedad que permite leer si el cliente quiere imprimir a color (true) o si quiere imprimir en blanco y negro (false)
+        /// </summary>
         public bool NecesitaImprimirAColor
         {
             get
@@ -155,6 +166,9 @@ namespace CiberCafe
             }
         }
 
+        /// <summary>
+        /// propiedad que permite leer el nombre del archivo que el cliente desea imprimir
+        /// </summary>
         public string ArchivoAImprimir
         {
             get
@@ -183,13 +197,17 @@ namespace CiberCafe
                 }
             }
            
+            if(!string.IsNullOrWhiteSpace(impresion))
+            {
+                sb.Append($" | Imprimir: {impresion}");
+            }
             return sb.ToString();
         }
 
         /// <summary>
         /// muestra los datos personales del cliente
         /// </summary>
-        /// <returns></returns>
+        /// <returns>devuelve un string con los datos personales del cliente</returns>
         public string MostrarDatosCliente()
         {
             StringBuilder sb = new StringBuilder();
@@ -202,7 +220,7 @@ namespace CiberCafe
         /// <summary>
         /// Sobrecarga del metodo ToString() para mostrar los datos escenciales del cliente dentro del contexto
         /// </summary>
-        /// <returns></returns>
+        /// <returns>devuelve el Metodo Mostrar()</returns>
         public override string ToString()
         {
             return this.Mostrar();
@@ -211,8 +229,8 @@ namespace CiberCafe
         /// <summary>
         /// agrega requerimientos al diccionario mientras no se encuentren ya en el diccionario
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
+        /// <param name="key">codigo del requerimiento que funciona ocmo key</param>
+        /// <param name="value">nombre del requeriiento</param>
         public bool AgregarRequerimiento(string key, string value)
         {
             if(this.necesidad == Necesidad.Computadora)
@@ -277,6 +295,10 @@ namespace CiberCafe
             return dni.GetHashCode();
         }
 
+        /// <summary>
+        /// muestra los datos relacionados a la impresion que el cliente quiere realizar
+        /// </summary>
+        /// <returns></returns>
         public string MostrarDatosImpresion()
         {
             StringBuilder sb = new StringBuilder();

@@ -46,6 +46,14 @@ namespace Benitez.Sofia.PrimerParcial
 
             RefrescarColaClientes();
         }
+
+        /// <summary>
+        /// metodo que se ejecuta al presioan el boton imprimir. Muestra un mensaje con el archivo seleccionado
+        /// y las propiedades de impresión. Solo se muestra si se ha seleccionado un cliente, una impresora adecuada y el tipo de impresion
+        /// si se realiza la impresion se quita al cliente de la cola, si se cancela no. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             foreach (Control item in gbxPropiedades.Controls)
@@ -90,6 +98,11 @@ namespace Benitez.Sofia.PrimerParcial
 
         }
 
+        /// <summary>
+        /// muestra el archivo del cliente seleccionado en la parte superior del formulario. si el cliente selecciionado cambia, cambia el texto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstbColaImpresiones_SelectedValueChanged(object sender, EventArgs e)
         {
             if (lstbColaImpresiones.SelectedItem is not null)
@@ -99,9 +112,15 @@ namespace Benitez.Sofia.PrimerParcial
             }
         }
 
+        /// <summary>
+        /// al presiona le boton muestra un mensaje que explica brevemente como funciona el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAyuda_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("En la lista de la izquierda se encuentran los clientes ya atendidos que mandaron a imprimir un archivo.");
             sb.AppendLine("Para imprimir un archivo seleccionar un cliente de la cola y elegir una impresora que cumpla con los requisitos del cliente.");
             sb.AppendLine("Seleccionar el tipo de impresión y la cantidad de copias y presionar el boton Imprimir");
             

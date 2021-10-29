@@ -82,11 +82,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnCabina1
             // 
-            this.rbtnCabina1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnCabina1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnCabina1.AutoSize = true;
-            this.rbtnCabina1.Location = new System.Drawing.Point(6, 22);
+            this.rbtnCabina1.Location = new System.Drawing.Point(16, 19);
             this.rbtnCabina1.Name = "rbtnCabina1";
             this.rbtnCabina1.Size = new System.Drawing.Size(94, 19);
             this.rbtnCabina1.TabIndex = 9;
@@ -96,11 +94,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnCabina2
             // 
-            this.rbtnCabina2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnCabina2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnCabina2.AutoSize = true;
-            this.rbtnCabina2.Location = new System.Drawing.Point(155, 22);
+            this.rbtnCabina2.Location = new System.Drawing.Point(166, 19);
             this.rbtnCabina2.Name = "rbtnCabina2";
             this.rbtnCabina2.Size = new System.Drawing.Size(94, 19);
             this.rbtnCabina2.TabIndex = 10;
@@ -110,11 +106,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnCabina5
             // 
-            this.rbtnCabina5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnCabina5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnCabina5.AutoSize = true;
-            this.rbtnCabina5.Location = new System.Drawing.Point(607, 22);
+            this.rbtnCabina5.Location = new System.Drawing.Point(320, 19);
             this.rbtnCabina5.Name = "rbtnCabina5";
             this.rbtnCabina5.Size = new System.Drawing.Size(94, 19);
             this.rbtnCabina5.TabIndex = 11;
@@ -124,11 +118,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnCabina3
             // 
-            this.rbtnCabina3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnCabina3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnCabina3.AutoSize = true;
-            this.rbtnCabina3.Location = new System.Drawing.Point(313, 22);
+            this.rbtnCabina3.Location = new System.Drawing.Point(462, 19);
             this.rbtnCabina3.Name = "rbtnCabina3";
             this.rbtnCabina3.Size = new System.Drawing.Size(94, 19);
             this.rbtnCabina3.TabIndex = 12;
@@ -138,11 +130,9 @@ namespace Benitez.Sofia.PrimerParcial
             // 
             // rbtnCabina4
             // 
-            this.rbtnCabina4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtnCabina4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnCabina4.AutoSize = true;
-            this.rbtnCabina4.Location = new System.Drawing.Point(457, 22);
+            this.rbtnCabina4.Location = new System.Drawing.Point(600, 19);
             this.rbtnCabina4.Name = "rbtnCabina4";
             this.rbtnCabina4.Size = new System.Drawing.Size(94, 19);
             this.rbtnCabina4.TabIndex = 13;

@@ -41,11 +41,11 @@ namespace Benitez.Sofia.PrimerParcial
         Impresora i3 = new Impresora("I03", true, "EPSON", true);
 
         //Harcodeo clientes
-        Cliente cliente1 = new Cliente("41565434", "Lisa", "Simpson", 16, Cliente.Necesidad.Computadora, "30 min", true, "carta documento", 1, true);
-        Cliente cliente2 = new Cliente("24687764", "Michael", "Scott", 40, Cliente.Necesidad.Computadora, "Libre", true, "Factura celular", 1, false);
-        Cliente cliente3 = new Cliente("23987676", "Joey", "Tribiani", 40, Cliente.Necesidad.Computadora, "60 min", true, "Trabajo práctico", 1, false);
+        Cliente cliente1 = new Cliente("41565434", "Lisa", "Simpson", 16, Cliente.Necesidad.Computadora, "30 min", "carta documento", 1, true);
+        Cliente cliente2 = new Cliente("24687764", "Michael", "Scott", 40, Cliente.Necesidad.Computadora, "Libre", "Factura celular", 1, false);
+        Cliente cliente3 = new Cliente("23987676", "Joey", "Tribiani", 40, Cliente.Necesidad.Computadora, "60 min", "Trabajo práctico", 1, false);
         Cliente cliente4 = new Cliente("31985664", "Jim", "Halpert", 35, Cliente.Necesidad.Computadora, "Libre");
-        Cliente cliente5 = new Cliente("29876767", "Dwight", "Schrute", 32, Cliente.Necesidad.Computadora, "30 min", true, "CV", 4, false);
+        Cliente cliente5 = new Cliente("29876767", "Dwight", "Schrute", 32, Cliente.Necesidad.Computadora, "30 min", "CV", 4, false);
         Cliente cliente6 = new Cliente("32987676", "Pam", "Beesley", 39, Cliente.Necesidad.Computadora, "Libre");
         Cliente cliente7 = new Cliente("35564456", "Chiqui", "Perez", 25, Cliente.Necesidad.Cabina);
         Cliente cliente8 = new Cliente("33464456", "Ricardo", "Perez", 24, Cliente.Necesidad.Cabina);
@@ -75,16 +75,19 @@ namespace Benitez.Sofia.PrimerParcial
             c1.AgregarCaracteristica("S01", "Ares");
             c1.AgregarCaracteristica("P01", "Auriculares");
             c1.AgregarCaracteristica("P02", "Micrófono");
+            c1.AgregarCaracteristica("S02", "MSN");
 
             c2.AgregarCaracteristica("J01", "Counter Strike");
             c2.AgregarCaracteristica("P01", "Auriculares");
             c2.AgregarCaracteristica("P02", "Micrófono");
             c2.AgregarCaracteristica("J04", "Warcraft III");
+            c2.AgregarCaracteristica("S03", "Office");
 
             c3.AgregarCaracteristica("J02", "Age of Empires II");
             c3.AgregarCaracteristica("S02", "MSN");
             c3.AgregarCaracteristica("S01", "Ares");
             c3.AgregarCaracteristica("J01", "Counter Strike");
+            c3.AgregarCaracteristica("J03", "Diablo II");
 
             c4.AgregarCaracteristica("P03", "Cámara");
             c4.AgregarCaracteristica("J04", "Warcraft III");
@@ -96,6 +99,7 @@ namespace Benitez.Sofia.PrimerParcial
             c5.AgregarCaracteristica("P01", "Auriculares");
             c5.AgregarCaracteristica("S03", "Office");
             c5.AgregarCaracteristica("S04", "ICQ");
+            c5.AgregarCaracteristica("J05", "Mu Online");
 
 
             c6.AgregarCaracteristica("P03", "Cámara");
@@ -120,6 +124,7 @@ namespace Benitez.Sofia.PrimerParcial
             c9.AgregarCaracteristica("P01", "Auriculares");
             c9.AgregarCaracteristica("S02", "MSN");
             c9.AgregarCaracteristica("S01", "Ares");
+            c9.AgregarCaracteristica("S04", "ICQ");
 
             c10.AgregarCaracteristica("P01", "Auriculares");
             c10.AgregarCaracteristica("S03", "Office");
@@ -488,6 +493,7 @@ namespace Benitez.Sofia.PrimerParcial
 
 
         /// <summary>
+        /// metodo que se ejecuta al presionar el boton asignar computadora
         /// si se selecciono un cliente de la lista que necesita una computadora abre un nuevo formulario con las computadoras disponibles 
         /// donde se puede seleccionar una y elegir el tiempo de uso. Si el usuario acepta se crea un nuevo uso de esa computadora
         /// luego se actualiza la fila de clientes pendientes 
@@ -499,7 +505,7 @@ namespace Benitez.Sofia.PrimerParcial
             Cliente clienteAux;
             if(lstbClientes.SelectedItem is null)
             {
-                MessageBox.Show("Error. Tenés que seleccionar un cliente!");
+                MessageBox.Show("Error. Tenés que seleccionar un cliente");
                 
             }
             else
@@ -523,15 +529,10 @@ namespace Benitez.Sofia.PrimerParcial
                             miCiber.AsignarComputadora(frmComputadora.computadora, frmComputadora.cliente, frmComputadora.tiempoSeleccionado);
                         }
                         
-                        
                    
                     }
-                    else
-                    {
-                        MessageBox.Show("No se ha seleccionado ninguna computadora");
-                    }
                     
-
+                   
                     Refrescar();
                 }
                 else
@@ -554,7 +555,7 @@ namespace Benitez.Sofia.PrimerParcial
 
             if (lstbClientes.SelectedItem is null)
             {
-                MessageBox.Show("Error. Tenés que seleccionar un cliente!");
+                MessageBox.Show("Error. Tenés que seleccionar un cliente");
 
             }
             else
@@ -584,6 +585,19 @@ namespace Benitez.Sofia.PrimerParcial
 
             }
 
+        }
+
+        /// <summary>
+        /// metodo que se ejecuta al presionar el boton con la imagen de una impresora
+        /// abre un nuevo formulario que permite ver e imprimir archivos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnImpresora_Click(object sender, EventArgs e)
+        {
+            FrmImpresora frmImrpesora = new FrmImpresora(miCiber, miCiber.ListaDeClientesAtendidos);
+
+            frmImrpesora.ShowDialog();
         }
 
         /// <summary>
@@ -889,12 +903,7 @@ namespace Benitez.Sofia.PrimerParcial
 
         
 
-        private void btnImpresora_Click(object sender, EventArgs e)
-        {
-            FrmImpresora frmImrpesora = new FrmImpresora(miCiber, miCiber.ListaDeClientesAtendidos);
-
-            frmImrpesora.ShowDialog();
-        }
+        
 
         
     }
