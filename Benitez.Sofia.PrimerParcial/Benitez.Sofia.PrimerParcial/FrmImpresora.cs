@@ -91,7 +91,7 @@ namespace Benitez.Sofia.PrimerParcial
             }
             else
             {
-                MessageBox.Show("Error. Debe seleccionar una impresora y el archivo a imprimir");
+                MessageBox.Show("Error. No se ha seleccionado una impresora o la misma no puede imprimir el archivo ");
             }
             
 
