@@ -29,7 +29,7 @@ Cada formulario cuenta con un botón de ayuda que explica su funcionamiento.
 ## Diagrama de clases
 ![DiagramaClases.png](DiagramaClases.png)
 
-No pude agregar la clase Servicio al diagrama. No sé por qué pero lo voy a solucionar para el recuperatorio. Tampoco se muestran los atributos de todas las clases. 
+
 
 ## Justificación técnica
 
@@ -89,4 +89,4 @@ De hecho, necesito el tipo de llamada para poder instanciar una llamada. Necesit
 
 ## Propuesta de valor agregado
 
-No llegué a hacer esta parte.
+Mi propuesta de valor agregado para la aplicación es la implementación de un formulario que permite manejar las impresiones que solicitan los clientes cuando usan las computadoras. Esta nueva pantalla permite ver los clientes que ya utilizaron o estan utilizando una computadora y mandaron a imprimir un archivo. Al seleccionar un cliente de la lista se muestra el nombre del archivo, la cantidad de copias requeridas y el tipo de impresión (color o blanco y negro). Luego se debe seleccionar una impresora, y configurar las propiedades. Al presionar el boton Imprimir se mostrará un mensaje que simulará la impresión y mostrará los datos de la misma y el costo que deberá pagar el cliente por las copias. Para poder llevar a cabo esta implementación agregué la clase Impresora que hereda de la clase Servicio. En esta clase se encuentra el metodo que calcula el costo total segun el tipo de impresión. Este monto se paga por separado, no influye en el resto de los calculos de costo. 
